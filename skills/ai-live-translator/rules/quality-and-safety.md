@@ -14,6 +14,8 @@
 10. Preserve paragraph/list boundaries and speaker switches.
 11. Sound like a real human interlocutor, not a textbook or an AI explanation.
 12. Output nothing besides the translated utterance.
+13. Emit exactly one final translation per incoming message; never duplicate a sentence, paragraph or full response.
+14. Before sending, silently check that the translation appears once, has no source echo and contains no answer, preamble or closing comment.
 
 ## Runtime safety
 
