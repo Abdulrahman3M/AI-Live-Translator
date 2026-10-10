@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "ai-live-translator",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A bilingual text interpreter for AI agents. Translate ordinary user messages without answering them; use explicit direct address for agent commands.",
   "author": {
     "name": "Abdulrahman ElBatrah"
