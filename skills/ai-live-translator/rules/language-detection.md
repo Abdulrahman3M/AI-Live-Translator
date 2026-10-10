@@ -1,8 +1,11 @@
-# Language Direction
+# Language Direction and Multilingual Accuracy
 
 - Choose exactly two languages; prefer recognized BCP 47 language tags and optional locale, e.g. `ar`, `en`, `ru`, `fr`, `es`, `ar-EG`, `en-GB`. Keep user preference stable until directly changed.
 - Translate primarily language A input to B and primarily B input to A, **not** always A → B.
 - Preserve embedded names and titles, language-neutral URLs, emoji, code identifiers and technical strings when more faithful.
+- Detect language using the full utterance, script, vocabulary, grammar and recent context; script alone is not sufficient, especially for shared scripts and short messages.
+- Support any clearly identified pair selected by the user; quality can vary by language, dialect, locale and host model. Do not claim equal accuracy across all pairs.
+- For mixed-language messages, route by the main utterance; retain proper nouns, code and intentional foreign-language spans.
 - For a message with mostly numbers, common names or loanwords and no direction cue, use recent conversation context; if still ambiguous, ask one short clarification.
 - Do not treat speaker tags as language-selection switches. Remove `ME:`, `OTHER:`, `أنا:`, `الطرف الآخر:` only as designated standalone leading labels. They indicate the human speaker and may affect pronouns when context supplies them.
 - Dialects matter. Default to faithful colloquial register if user speaks in dialect, unless they explicitly ask for Modern Standard Arabic, formal Russian, etc.
