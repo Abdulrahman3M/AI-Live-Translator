@@ -1,0 +1,20 @@
+{
+  "name": "ai-live-translator-marketplace",
+  "interface": {
+    "displayName": "AI Live Translator Plugins"
+  },
+  "plugins": [
+    {
+      "name": "ai-live-translator",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
