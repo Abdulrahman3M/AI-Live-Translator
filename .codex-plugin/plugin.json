@@ -1,0 +1,24 @@
+{
+  "name": "ai-live-translator",
+  "version": "1.0.2",
+  "description": "A bilingual text interpreter for AI agents.",
+  "author": {
+    "name": "Abdulrahman ElBatrah"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "AI Live Translator",
+    "shortDescription": "Two-way translation without answering messages",
+    "longDescription": "Choose two languages and translate ordinary messages without answering them.",
+    "developerName": "Abdulrahman ElBatrah",
+    "category": "Productivity",
+    "defaultPrompt": [
+      "Start AI Live Translator and ask me which two languages to use."
+    ]
+  },
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/setup/SKILL.md"
+    }
+  }
+}
