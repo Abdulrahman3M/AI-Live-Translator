@@ -2,6 +2,13 @@
 
 All notable releases follow [Semantic Versioning](https://semver.org/).
 
+## [1.0.2] — 2026-10-10
+
+### Fixed
+- Simplified the ChatGPT installation ZIP after v1.0.1 was rejected by ChatGPT.
+- Synchronized release identifiers to **1.0.2** (not 1.0.20) across root and distribution manifests, documentation and version metadata.
+- Documented the dedicated ChatGPT ZIP build process to prevent users uploading incompatible source archives.
+
 ## [1.0.1] — 2026-10-10
 
 ### Added
