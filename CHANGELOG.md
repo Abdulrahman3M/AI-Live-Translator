@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.0.3] — 2026-10-10
+
+### Improved
+- Added a one-output-per-message rule and a silent duplicate/source-echo check to reduce repeated translations and conversational replies.
+- Strengthened multilingual language detection, mixed-language handling, dialect/register preservation and uncertainty behavior.
+- Added bilingual first-use guidance recommending ChatGPT Voice Advanced and Auto-detect based on owner testing, with clear model- and language-pair variability notes.
+- Synchronized release identifiers to 1.0.3 across manifests, prompts, docs and version metadata.
+
+
 All notable releases follow [Semantic Versioning](https://semver.org/).
 
 ## [1.0.2] — 2026-10-10
