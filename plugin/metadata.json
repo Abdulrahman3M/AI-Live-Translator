@@ -1,0 +1,16 @@
+{
+  "name": "AI Live Translator",
+  "id": "ai-live-translator",
+  "version": "1.0.1",
+  "format": "portable-metadata-not-standard-plugin-schema",
+  "entrypoint": "skills/ai-live-translator/SKILL.md",
+  "prompt": "prompt/live-translation.md",
+  "supported_models": "host dependent",
+  "permission_requirements": [],
+  "capabilities": [
+    "text-bidirectional-translation",
+    "explicit-control-routing",
+    "speaker-hints"
+  ],
+  "network_required": false
+}

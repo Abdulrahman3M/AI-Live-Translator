@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI Live Translator session state (optional host-managed representation)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "mode",
+    "languages"
+  ],
+  "properties": {
+    "mode": {
+      "enum": [
+        "SETUP",
+        "READY",
+        "TRANSLATING",
+        "PAUSED",
+        "STOPPED"
+      ]
+    },
+    "languages": {
+      "type": "array",
+      "minItems": 0,
+      "maxItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 2
+      }
+    },
+    "agent_names": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "speaker": {
+      "enum": [
+        "ME",
+        "OTHER",
+        "UNSPECIFIED"
+      ]
+    },
+    "message_count": {
+      "type": "integer",
+      "minimum": 0
+    }
+  }
+}

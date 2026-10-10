@@ -1,0 +1,1 @@
+Explain the AI Live Translator workflow, including its explicit-address control rule, optional speaker labels, and host portability limits. If the live translation mode is already active, treat this namespaced plugin command as an explicit direct-address control request, not content to translate.

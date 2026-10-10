@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "ai-live-translator",
+  "version": "1.0.1",
+  "description": "A bilingual text interpreter for AI agents. Translate ordinary user messages without answering them; use explicit direct address for agent commands.",
+  "author": {
+    "name": "Abdulrahman ElBatrah"
+  },
+  "repository": "https://github.com/Abdulrahman3M/AI-Live-Translator",
+  "license": "MIT",
+  "keywords": [
+    "translation",
+    "live-interpreter",
+    "bilingual",
+    "agent-skills"
+  ],
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/setup/SKILL.md",
+      "interface": {
+        "displayName": "AI Live Translator",
+        "shortDescription": "Translate messages between two languages without answering them.",
+        "longDescription": "Activate a two-way text interpreter, choose any two languages, and get only natural translations of ordinary messages. Explicit direct address lets you control the agent, pause, or change languages. No external account, API, or microphone access is required.",
+        "developerName": "Abdulrahman ElBatrah",
+        "category": "Productivity",
+        "defaultPrompt": [
+          "Start AI Live Translator and ask me which two languages to use.",
+          "ابدأ المترجم الحي واسألني عن اللغتين."
+        ]
+      }
+    }
+  }
+}

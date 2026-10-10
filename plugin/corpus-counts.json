@@ -1,0 +1,26 @@
+{
+  "curated_pairs": 330,
+  "directional_records": 660,
+  "per_file": {
+    "en-ar.jsonl": [
+      195,
+      390
+    ],
+    "en-ru.jsonl": [
+      30,
+      60
+    ],
+    "en-fr.jsonl": [
+      30,
+      60
+    ],
+    "en-es.jsonl": [
+      30,
+      60
+    ],
+    "ar-ru.jsonl": [
+      45,
+      90
+    ]
+  }
+}
