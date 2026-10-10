@@ -1,4 +1,4 @@
-# AI Live Translator · v1.0.1
+# AI Live Translator · v1.0.2
 
 **Turn a compatible AI chat into a two-way, message-only interpreter.** After activation, choose two languages. Ordinary messages are **translated, not answered**. The assistant only leaves translation-only behavior when the speaker **explicitly addresses the agent** or uses a reserved control command.
 
@@ -6,7 +6,7 @@
 
 ## Install as a ChatGPT plugin
 
-Use **Plugins → Add → Upload plugin** to upload the `AI-Live-Translator-v1.0.1.zip` file if your account offers direct ZIP upload; otherwise use **Plugins → Add (+) → Plugin Creator**. The archive now includes a portable Agent Plugins root `plugin.json`, a setup skill, and a compatible `.codex-plugin/plugin.json`. See [`plugin/adapters/chatgpt.md`](plugin/adapters/chatgpt.md). The GitHub connector cannot install a ChatGPT plugin on your behalf.
+Use **Plugins → Add → Upload plugin** to upload the `AI-Live-Translator-ChatGPT-Plugin-v1.0.2.zip` file if your account offers direct ZIP upload; otherwise use **Plugins → Add (+) → Plugin Creator**. Use the dedicated **ChatGPT distribution archive**, not the full repository ZIP: the previously uploaded v1.0.1 distribution failed ChatGPT installation; the simplified v1.0.2 distribution succeeded in the user's installation. **Do not upload GitHub's automatic source ZIP as a ChatGPT plugin.** See [`plugin/installation/BUILD-CHATGPT.md`](plugin/installation/BUILD-CHATGPT.md). The archive includes a portable Agent Plugins root `plugin.json`, a setup skill, and a compatible `.codex-plugin/plugin.json`. See [`plugin/adapters/chatgpt.md`](plugin/adapters/chatgpt.md). The GitHub connector cannot install a ChatGPT plugin on your behalf.
 
 ## Quick start
 
@@ -79,7 +79,7 @@ The example corpus supports evaluation, not promise of exact model output or exh
 
 ## License
 
-MIT. See `LICENSE`. For changes, update `VERSION`, `.claude-plugin/plugin.json`, `plugin/metadata.json`, README title, and `CHANGELOG.md` together; validate before release.
+MIT. See `LICENSE`. For changes, update `VERSION`, root `plugin.json`, host-specific plugin manifests, `plugin/metadata.json`, both README titles, and `CHANGELOG.md` together; validate before release.
 
 ## Publish to GitHub
 
