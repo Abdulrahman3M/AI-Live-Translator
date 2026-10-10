@@ -1,6 +1,6 @@
 {
   "name": "ai-live-translator",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A bilingual text interpreter for AI agents.",
   "author": {
     "name": "Abdulrahman ElBatrah"
@@ -9,7 +9,7 @@
   "interface": {
     "displayName": "AI Live Translator",
     "shortDescription": "Two-way translation without answering messages",
-    "longDescription": "Choose two languages and translate ordinary messages without answering them.",
+    "longDescription": "Choose two languages and translate ordinary messages without answering them. With voice transcripts, distinguish intended speech from background voices and ask for clarification when speakers are unclear.",
     "developerName": "Abdulrahman ElBatrah",
     "category": "Productivity",
     "defaultPrompt": [

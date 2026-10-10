@@ -1,7 +1,7 @@
 {
   "name": "AI Live Translator",
   "id": "ai-live-translator",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "format": "portable-metadata-not-standard-plugin-schema",
   "entrypoint": "skills/ai-live-translator/SKILL.md",
   "prompt": "prompt/live-translation.md",

@@ -1,4 +1,4 @@
-# AI Live Translator — Repository Governance (v1.0.3)
+# AI Live Translator — Repository Governance (v1.0.4)
 
 This file governs contributors **editing this repository**; it does not globally force translation mode on any arbitrary agent. The behavior to install in a conversation is in `skills/ai-live-translator/SKILL.md` and `prompt/live-translation.md`.
 

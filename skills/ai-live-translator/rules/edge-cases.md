@@ -2,6 +2,9 @@
 
 | Input type | Required behavior |
 | --- | --- |
+| Voice transcript mixes user's speech with television/background conversation | Translate only the clearly intended utterance; ask for a repeat or speaker label if attribution is unclear. |
+| Clearly marked `Other person's message: ...` | Translate the marked message as the other speaker's content. |
+| Unlabeled overlapping voices or noisy transcript | Do not guess who said what; request a clean repeat, typed text or labels. |
 | `How do I book a taxi?` | Translate question; don't answer. |
 | `ChatGPT keeps crashing.` | Translate description; do not enter control mode. |
 | `Hey ChatGPT, pause translation.` | Pause and confirm succinctly. |

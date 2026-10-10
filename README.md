@@ -1,4 +1,4 @@
-# AI Live Translator · v1.0.3
+# AI Live Translator · v1.0.4
 
 **Turn a compatible AI chat into a two-way, message-only interpreter.** After activation, choose two languages. Ordinary messages are **translated, not answered**. The assistant only leaves translation-only behavior when the speaker **explicitly addresses the agent** or uses a reserved control command.
 
@@ -6,7 +6,7 @@
 
 ## Install as a ChatGPT plugin
 
-Use **Plugins → Add → Upload plugin** to upload the `AI-Live-Translator-ChatGPT-Plugin-v1.0.3.zip` file if your account offers direct ZIP upload; otherwise use **Plugins → Add (+) → Plugin Creator**. Use the dedicated **ChatGPT distribution archive**, not the full repository ZIP: the previously uploaded v1.0.1 distribution failed ChatGPT installation; the simplified v1.0.3 distribution succeeded in the user's installation. **Do not upload GitHub's automatic source ZIP as a ChatGPT plugin.** See [`plugin/installation/BUILD-CHATGPT.md`](plugin/installation/BUILD-CHATGPT.md). The archive includes a portable Agent Plugins root `plugin.json`, a setup skill, and a compatible `.codex-plugin/plugin.json`. See [`plugin/adapters/chatgpt.md`](plugin/adapters/chatgpt.md). The GitHub connector cannot install a ChatGPT plugin on your behalf.
+Use **Plugins → Add → Upload plugin** to upload the `AI-Live-Translator-ChatGPT-Plugin-v1.0.4.zip` file if your account offers direct ZIP upload; otherwise use **Plugins → Add (+) → Plugin Creator**. Use the dedicated **ChatGPT distribution archive**, not the full repository ZIP: the previously uploaded v1.0.1 distribution failed ChatGPT installation; the simplified v1.0.4 distribution succeeded in the user's installation. **Do not upload GitHub's automatic source ZIP as a ChatGPT plugin.** See [`plugin/installation/BUILD-CHATGPT.md`](plugin/installation/BUILD-CHATGPT.md). The archive includes a portable Agent Plugins root `plugin.json`, a setup skill, and a compatible `.codex-plugin/plugin.json`. See [`plugin/adapters/chatgpt.md`](plugin/adapters/chatgpt.md). The GitHub connector cannot install a ChatGPT plugin on your behalf.
 
 ## Quick start
 
@@ -18,7 +18,7 @@ Use **Plugins → Add → Upload plugin** to upload the `AI-Live-Translator-Chat
 
 ## Recommended first-time setup
 
-For the most consistent experience, start with ChatGPT and its **Voice → Model → Advanced** setting (as shown in the included screenshot); keep Language on **Auto-detect** when using voice input. In Advanced Voice, speak one utterance at a time and allow the transcript to finish before sending. Then activate this translator, select the two languages, and use it to translate each message. This recommendation reflects the owner's extensive testing with ChatGPT; it is not a guarantee of perfect results.
+For the most consistent experience, start with ChatGPT and its **Voice → Model → Advanced** setting (as shown in the included screenshot); keep Language on **Auto-detect** when using voice input. In Advanced Voice, speak one utterance at a time and let the transcript finish before sending. Clearly distinguish your message from the other person's message with cues such as “My message:” or “Other person's message:” when needed. Avoid speaking over people, television, or surrounding conversations. The translator receives text supplied by the host; it cannot inspect raw audio or reliably identify an unlabeled voice. If a transcript mixes speakers or includes noise that could affect meaning, request a clean repeat, typed text, or a speaker label instead of guessing. Then activate this translator, select the two languages, and translate each message. This recommendation reflects the owner's extensive testing with ChatGPT; it is not a guarantee of perfect results.
 
 The project is built from instructions and skills, so it does not contain its own translation model. Other AI assistants may work, but translation quality and adherence to the one-translation-only behavior can vary between models, language pairs and sessions. The selected AI's language ability is the main factor. Review translations involving important or sensitive details.
 

@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.0.4] — 2026-10-10
+
+### Changed
+- Confirmed the ChatGPT display label as **AI Live Translator** in Title Case, with spaces and no hyphens; the internal plugin ID remains `ai-live-translator`.
+
+### Improved
+- Added detailed voice-transcript guidance to distinguish intended speech from other speakers and background noise.
+- Instructed the assistant to request clarification when speaker attribution is uncertain instead of guessing or treating noise as the user's message.
+- Synchronized release metadata to 1.0.4.
+
 ## [1.0.3] — 2026-10-10
 
 ### Improved
