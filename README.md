@@ -1,4 +1,4 @@
-# AI Live Translator · v1.0.4
+# AI Live Translator · v1.0.5
 
 **Turn a compatible AI chat into a two-way, message-only interpreter.** After activation, choose two languages. Ordinary messages are **translated, not answered**. The assistant only leaves translation-only behavior when the speaker **explicitly addresses the agent** or uses a reserved control command.
 
