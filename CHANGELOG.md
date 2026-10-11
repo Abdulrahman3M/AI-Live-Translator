@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.0.5] — 2026-10-11
+
+### Added
+- Expanded bilingual setup notices with three accuracy tips: prefer standard/formal language, avoid local dialects where possible, and optionally introduce the text to translate with “The text of my next message is”.
+- Documented both recommended ChatGPT workflows: written/voice-message input with text translation, and Voice Advanced; users are encouraged to try both.
+
+### Changed
+- Synchronized release metadata to 1.0.5 across manifests, prompts, and documentation.
+
+
 ## [1.0.4] — 2026-10-10
 
 ### Changed
