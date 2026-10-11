@@ -16,19 +16,6 @@ Use **Plugins → Add → Upload plugin** to upload the `AI-Live-Translator-Chat
 4. Send natural messages in either language. Receive **only** the translation in the other language. Optional `ME:` / `OTHER:` and `أنا:` / `الطرف الآخر:` markers help clarify who is speaking and are never copied into the translation.
 5. To control the agent, start a message with `@agent:` or an **unambiguous direct address** such as `ChatGPT, change the languages to English and Russian.` or `يا ChatGPT، غيّر اللغتين إلى العربية والروسية.` Mere mentions of AI names *inside a message* are translated like normal text.
 
-## Advanced user and maintainer guidance
-
-The instructions displayed to the end user after language selection are separate from the setup recommendations below. They are localized in the selected language pair and do not contain host-specific product guidance.
-
-AI Live Translator is designed for use with compatible AI assistants. For ChatGPT, advanced users and maintainers can recommend trying either of these workflows:
-
-1. **Message workflow:** Type messages, or use ChatGPT's voice-message input and let ChatGPT transcribe the speech. The translator processes the text supplied by ChatGPT and returns the translation as text.
-2. **Voice Advanced workflow:** Select ChatGPT **Voice → Model → Advanced** and keep Language on **Auto-detect** when using voice input. Speak one utterance at a time and let the transcript finish before sending.
-
-Try both workflows and use the one that works best for your conversation. In either workflow, clearly distinguish your own words from the other person's message when needed, for example “My message:” or “Other person's message:”. Avoid speaking over people, television, or surrounding conversations. The translator receives text supplied by the host; it cannot inspect raw audio or reliably identify an unlabeled voice. If a transcript mixes speakers or includes noise that could affect meaning, request a clean repeat, typed text, or a speaker label instead of guessing. This recommendation reflects the owner's experience with ChatGPT; it is not a guarantee of perfect results.
-
-The project is built from instructions and skills, so it does not contain its own translation model. Other AI assistants may work, but translation quality and adherence to the one-translation-only behavior can vary between models, language pairs and sessions. The selected AI's language ability is the main factor. Review translations involving important or sensitive details.
-
 ## End-user setup guidance
 
 After language selection, the translator displays these points, localized separately in each of the two chosen languages:
@@ -41,15 +28,16 @@ After language selection, the translator displays these points, localized separa
 
 ## Advanced user and maintainer guidance
 
-These workflow notes are documented here for advanced users and maintainers; they are not displayed in the post-selection user notice:
+The instructions displayed to the end user after language selection are separate from the setup recommendations below. They are localized in the selected language pair and do not contain host-specific product guidance.
 
-1. AI Live Translator is an Agent Skill and prompt that relies on the host AI model; it is not an independent translation engine or speech-recognition service.
-2. ChatGPT users can try typed messages or voice-message input that produces text, with written translation output.
-3. ChatGPT Voice Advanced is a second workflow to try; compare both and use what works best.
-4. With voice transcripts, speak one utterance at a time, wait for transcription, distinguish the intended speaker, and avoid overlapping speakers/background noise.
-5. If transcription or speaker attribution is unclear, request a clean repeat, typed text, or speaker label instead of guessing.
-6. Accuracy and adherence vary by model, language pair, locale/dialect, host and session; review important translations.
-7. Other AI hosts have their own installation/loading method; no universal installer exists and host policies take priority.
+AI Live Translator is designed for use with compatible AI assistants. For ChatGPT, advanced users and maintainers can recommend trying either of these workflows:
+
+1. **Message workflow:** Type messages, or use ChatGPT's voice-message input and let ChatGPT transcribe the speech. The translator processes the text supplied by ChatGPT and returns the translation as text.
+2. **Voice Advanced workflow:** Select ChatGPT **Voice → Model → Advanced** and keep Language on **Auto-detect** when using voice input. Speak one utterance at a time and let the transcript finish before sending.
+
+Try both workflows and use the one that works best for your conversation. In either workflow, clearly distinguish your own words from the other person's message when needed, for example “My message:” or “Other person's message:”. Avoid speaking over people, television, or surrounding conversations. The translator receives text supplied by the host; it cannot inspect raw audio or reliably identify an unlabeled voice. If a transcript mixes speakers or includes noise that could affect meaning, request a clean repeat, typed text, or a speaker label instead of guessing. This recommendation reflects the owner's experience with ChatGPT; it is not a guarantee of perfect results.
+
+The project is built from instructions and skills, so it does not contain its own translation model. Other AI assistants may work, but translation quality and adherence to the one-translation-only behavior can vary between models, language pairs and sessions. The selected AI's language ability is the main factor. Review translations involving important or sensitive details.
 
 ## Translation contract
 
