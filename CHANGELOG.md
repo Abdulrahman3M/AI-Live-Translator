@@ -3,8 +3,10 @@
 ## [1.0.5] — 2026-10-11
 
 ### Added
-- Expanded bilingual setup notices with three accuracy tips: prefer standard/formal language, avoid local dialects where possible, and optionally introduce the text to translate with “The text of my next message is”.
-- Documented both recommended ChatGPT workflows: written/voice-message input with text translation, and Voice Advanced; users are encouraged to try both.
+- Defined separate end-user and advanced-user guidance: end-user notices are naturally localized in both selected languages only; host-specific ChatGPT workflow advice stays in project documentation.
+- Clarified the end-user accuracy advice: standard/formal language and avoiding local dialects are optional recommendations, not requirements, and do not override faithful translation of dialect input.
+- Kept “The text of my next message is” as an optional user cue.
+- Documented both ChatGPT workflows for advanced users: written/voice-message input with text translation, and Voice Advanced; users are encouraged to try both.
 
 ### Changed
 - Synchronized release metadata to 1.0.5 across manifests, prompts, and documentation.
