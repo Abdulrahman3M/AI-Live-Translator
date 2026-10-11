@@ -16,9 +16,11 @@ Use **Plugins → Add → Upload plugin** to upload the `AI-Live-Translator-Chat
 4. Send natural messages in either language. Receive **only** the translation in the other language. Optional `ME:` / `OTHER:` and `أنا:` / `الطرف الآخر:` markers help clarify who is speaking and are never copied into the translation.
 5. To control the agent, start a message with `@agent:` or an **unambiguous direct address** such as `ChatGPT, change the languages to English and Russian.` or `يا ChatGPT، غيّر اللغتين إلى العربية والروسية.` Mere mentions of AI names *inside a message* are translated like normal text.
 
-## Recommended first-time setup
+## Advanced user and maintainer guidance
 
-AI Live Translator is designed for use with compatible AI assistants. We recommend trying it in ChatGPT using either of these workflows:
+The instructions displayed to the end user after language selection are separate from the setup recommendations below. They are localized in the selected language pair and do not contain host-specific product guidance.
+
+AI Live Translator is designed for use with compatible AI assistants. For ChatGPT, advanced users and maintainers can recommend trying either of these workflows:
 
 1. **Message workflow:** Type messages, or use ChatGPT's voice-message input and let ChatGPT transcribe the speech. The translator processes the text supplied by ChatGPT and returns the translation as text.
 2. **Voice Advanced workflow:** Select ChatGPT **Voice → Model → Advanced** and keep Language on **Auto-detect** when using voice input. Speak one utterance at a time and let the transcript finish before sending.
