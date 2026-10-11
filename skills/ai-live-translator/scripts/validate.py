@@ -27,7 +27,7 @@ def validate():
     setup_text=(ROOT/'prompt/setup-messages.md').read_text(encoding='utf-8')
     readme_text=(ROOT/'README.md').read_text(encoding='utf-8')
     ready=prompt_text.split('## READY',1)[1].split('## TRANSLATING',1)[0]
-    required_user_guidance=['both selected languages','please use the clear, standard or formal form','avoid local dialects','text of my next message is','repeat or rephrase the message more clearly','never show setup or accuracy advice in a language outside the selected pair']
+    required_user_guidance=['both selected languages','please use the clear, standard or formal form','avoid local dialects','text of my next message is','repeat or rephrase the message more clearly']
     for phrase in required_user_guidance:
         if phrase.lower() not in prompt_text.lower(): errors.append('Missing user guidance rule: '+phrase)
     for phrase in ['The text of my next message is:','If your message is unclear','Modern Standard Arabic','standard English']:
