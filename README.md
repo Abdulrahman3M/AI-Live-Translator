@@ -18,7 +18,12 @@ Use **Plugins → Add → Upload plugin** to upload the `AI-Live-Translator-Chat
 
 ## Recommended first-time setup
 
-For the most consistent experience, start with ChatGPT and its **Voice → Model → Advanced** setting (as shown in the included screenshot); keep Language on **Auto-detect** when using voice input. In Advanced Voice, speak one utterance at a time and let the transcript finish before sending. Clearly distinguish your message from the other person's message with cues such as “My message:” or “Other person's message:” when needed. Avoid speaking over people, television, or surrounding conversations. The translator receives text supplied by the host; it cannot inspect raw audio or reliably identify an unlabeled voice. If a transcript mixes speakers or includes noise that could affect meaning, request a clean repeat, typed text, or a speaker label instead of guessing. Then activate this translator, select the two languages, and translate each message. This recommendation reflects the owner's extensive testing with ChatGPT; it is not a guarantee of perfect results.
+AI Live Translator is designed for use with compatible AI assistants. We recommend trying it in ChatGPT using either of these workflows:
+
+1. **Message workflow:** Type messages, or use ChatGPT's voice-message input and let ChatGPT transcribe the speech. The translator processes the text supplied by ChatGPT and returns the translation as text.
+2. **Voice Advanced workflow:** Select ChatGPT **Voice → Model → Advanced** and keep Language on **Auto-detect** when using voice input. Speak one utterance at a time and let the transcript finish before sending.
+
+Try both workflows and use the one that works best for your conversation. In either workflow, clearly distinguish your own words from the other person's message when needed, for example “My message:” or “Other person's message:”. Avoid speaking over people, television, or surrounding conversations. The translator receives text supplied by the host; it cannot inspect raw audio or reliably identify an unlabeled voice. If a transcript mixes speakers or includes noise that could affect meaning, request a clean repeat, typed text, or a speaker label instead of guessing. This recommendation reflects the owner's experience with ChatGPT; it is not a guarantee of perfect results.
 
 The project is built from instructions and skills, so it does not contain its own translation model. Other AI assistants may work, but translation quality and adherence to the one-translation-only behavior can vary between models, language pairs and sessions. The selected AI's language ability is the main factor. Review translations involving important or sensitive details.
 
