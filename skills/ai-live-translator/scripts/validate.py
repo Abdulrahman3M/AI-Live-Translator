@@ -23,6 +23,19 @@ def validate():
     for doc in ['README.md','README.ar.md','AGENTS.md','prompt/live-translation.md']:
         if version not in (ROOT/doc).read_text(encoding='utf-8'):errors.append('Version not synchronized in '+doc)
     if ('['+version+']') not in (ROOT/'CHANGELOG.md').read_text(encoding='utf-8'):errors.append('Missing current changelog entry')
+    prompt_text=(ROOT/'prompt/live-translation.md').read_text(encoding='utf-8')
+    setup_text=(ROOT/'prompt/setup-messages.md').read_text(encoding='utf-8')
+    readme_text=(ROOT/'README.md').read_text(encoding='utf-8')
+    ready=prompt_text.split('## READY',1)[1].split('## TRANSLATING',1)[0]
+    required_user_guidance=['both selected languages','please use the clear, standard or formal form','avoid local dialects','text of my next message is','repeat or rephrase the message more clearly','never show setup or accuracy advice in a language outside the selected pair']
+    for phrase in required_user_guidance:
+        if phrase.lower() not in prompt_text.lower(): errors.append('Missing user guidance rule: '+phrase)
+    for phrase in ['The text of my next message is:','If your message is unclear','Modern Standard Arabic','standard English']:
+        if phrase.lower() not in setup_text.lower(): errors.append('Missing bilingual setup copy: '+phrase)
+    for phrase in ['## End-user setup guidance','## Advanced user and maintainer guidance','## Translation contract']:
+        if phrase not in readme_text: errors.append('Missing README guidance section: '+phrase)
+    if 'Voice Advanced' in ready or "ChatGPT's" in ready:
+        errors.append('Host-specific workflow leaked into end-user READY guidance')
     skill=(ROOT/'skills/ai-live-translator/SKILL.md').read_text(encoding='utf-8')
     if not skill.startswith('---\n'):errors.append('Skill missing YAML frontmatter')
     else:
