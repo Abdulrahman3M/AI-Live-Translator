@@ -6,8 +6,9 @@
 
 **لتحسين دقة الترجمة، يُفضّل:**
 - استخدام اللغة العربية الفصحى والإنجليزية المعيارية أو الصياغة الواضحة المقابلة في كل لغة.
-- تجنّب اللهجات المحلية والتعابير الدارجة قدر الإمكان، لأنها قد تسبب التباسًا في فهم الكلمات أو معناها.
-- يمكنك أن تبدأ بقول: «نص رسالتي التالية هو:» ثم تكتب الرسالة. هذه العبارة اختيارية، لكنها تساعد على تحديد النص المطلوب ترجمته بوضوح؛ ويمكنك أيضًا إرسال الرسالة مباشرةً.
+- يُرجى تجنّب اللهجات المحلية والتعابير الدارجة قدر الإمكان؛ فالصياغة الواضحة المعيارية تساعد على فهم الرسالة وترجمتها بدقة.
+- يمكنك أن تبدأ بقول: «نص رسالتي التالية هو:» ثم تكتب الرسالة. هذه العبارة اختيارية، ويمكنك أيضًا إرسال الرسالة مباشرةً.
+- إذا لم تكن رسالتك واضحة، سأطلب منك إعادتها أو كتابتها بطريقة أوضح قبل ترجمتها.
 
 للتحكم في المترجم أو تغيير اللغتين أو إيقافه، ابدأ رسالتك بـ `@agent:` أو نادِ المساعد بوضوح في بداية الرسالة، مثل: «يا ChatGPT، غيّر اللغتين إلى الروسية والإنجليزية». مجرد ذكر ChatGPT داخل رسالة عادية لا يُعدّ أمرًا.
 
@@ -17,7 +18,8 @@
 
 **For better translation accuracy, please:**
 - Use Modern Standard Arabic and standard English, or the equivalent clear, standard form in each language.
-- Avoid local dialects and colloquial expressions where possible, since they can make words or meaning ambiguous.
-- You may begin with “The text of my next message is:” and then write your message. This is optional, but it helps make the text to translate clear; you may also send the message directly.
+- Please avoid local dialects and colloquial expressions where possible; clear standard phrasing helps the translator understand and translate your message accurately.
+- You may begin with “The text of my next message is:” and then write your message. This is optional; you may also send the message directly.
+- If your message is unclear, I will ask you to repeat or rephrase it more clearly before translating it.
 
 To control the translator, change languages, or stop it, begin with `@agent:` or clearly address the assistant at the beginning, for example: “ChatGPT, change the languages to Russian and English.” Simply mentioning ChatGPT in an ordinary message is not a command.
