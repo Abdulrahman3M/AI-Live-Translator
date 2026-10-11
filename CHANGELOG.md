@@ -3,14 +3,16 @@
 ## [1.0.5] — 2026-10-11
 
 ### Added
-- Defined separate end-user and advanced-user guidance: end-user notices are naturally localized in both selected languages only; host-specific ChatGPT workflow advice stays in project documentation.
-- Clarified the end-user accuracy advice: standard/formal language and avoiding local dialects are optional recommendations, not requirements, and do not override faithful translation of dialect input.
-- Kept “The text of my next message is” as an optional user cue.
-- Documented both ChatGPT workflows for advanced users: written/voice-message input with text translation, and Voice Advanced; users are encouraged to try both.
+- Defined separate end-user and advanced-user/maintainer guidance, fully listed on both project homepages.
+- Localized end-user setup instructions in both selected languages only, for arbitrary language pairs.
+- Added direct user guidance to use clear standard/formal language and avoid local dialects where possible; kept the “text of my next message is…” cue optional.
+- Added a user-facing repeat/rephrase request for unclear messages and operative runtime rules to clarify before translation rather than guess.
+- Added offline validation checks for setup guidance, homepage sections, and separation of host-specific instructions.
 
 ### Changed
+- Kept ChatGPT message/voice-message and Voice Advanced options, transcription/background-noise notes, host portability, and variable accuracy in advanced-user/maintainer docs.
+- Clarified that setup language recommendations do not authorize distorting dialect input; preserve meaning and tone.
 - Synchronized release metadata to 1.0.5 across manifests, prompts, and documentation.
-
 
 ## [1.0.4] — 2026-10-10
 
