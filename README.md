@@ -6,7 +6,7 @@
 
 ## Install as a ChatGPT plugin
 
-Use **Plugins → Add → Upload plugin** to upload the `AI-Live-Translator-ChatGPT-Plugin-v1.0.4.zip` file if your account offers direct ZIP upload; otherwise use **Plugins → Add (+) → Plugin Creator**. Use the dedicated **ChatGPT distribution archive**, not the full repository ZIP: the previously uploaded v1.0.1 distribution failed ChatGPT installation; the simplified v1.0.4 distribution succeeded in the user's installation. **Do not upload GitHub's automatic source ZIP as a ChatGPT plugin.** See [`plugin/installation/BUILD-CHATGPT.md`](plugin/installation/BUILD-CHATGPT.md). The archive includes a portable Agent Plugins root `plugin.json`, a setup skill, and a compatible `.codex-plugin/plugin.json`. See [`plugin/adapters/chatgpt.md`](plugin/adapters/chatgpt.md). The GitHub connector cannot install a ChatGPT plugin on your behalf.
+Use **Plugins → Add → Upload plugin** to upload the version-matched `AI-Live-Translator-ChatGPT-Plugin-v1.0.5.zip` file if your account offers direct ZIP upload; otherwise use **Plugins → Add (+) → Plugin Creator**. Use the dedicated **ChatGPT distribution archive**, not the full repository ZIP: the previously uploaded v1.0.1 distribution failed ChatGPT installation; the v1.0.5 distribution is built from the merged source using the documented build script. **Do not upload GitHub's automatic source ZIP as a ChatGPT plugin.** See [`plugin/installation/BUILD-CHATGPT.md`](plugin/installation/BUILD-CHATGPT.md). The archive includes a portable Agent Plugins root `plugin.json`, a setup skill, and a compatible `.codex-plugin/plugin.json`. See [`plugin/adapters/chatgpt.md`](plugin/adapters/chatgpt.md). The GitHub connector cannot install a ChatGPT plugin on your behalf.
 
 ## Quick start
 
