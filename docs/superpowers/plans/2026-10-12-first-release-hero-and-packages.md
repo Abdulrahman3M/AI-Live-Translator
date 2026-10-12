@@ -121,8 +121,9 @@ Task 4: complete — the workflow regression test passed; both builders exited 0
 - [x] **Step 3: Build and inspect all five archives** after tests; verify exact v1.0.7 filenames, ZIP integrity, manifest agreement, package contents, and source-package exclusions.
 - [x] **Step 4: Remove** generated distribution ZIPs, `__pycache__`, and test caches; run `git diff --check`; review the full diff and status; confirm `.gitignore` excludes generated archives and caches.
 - [x] **Step 5: Stage only intended source/documentation files and make one Conventional Commit on `main`** after successful checks, following the repository's mandatory Git workflow.
-- [ ] **Step 6: Push `main` to `origin`, verify the remote commit, create tag `v1.0.7` on that commit, and push the tag** so the workflow builds and publishes the Release.
-- [ ] **Step 7: Verify the GitHub Release** contains the bilingual notes and exactly the ChatGPT, Codex, Claude Code, Agent Skill, and Source ZIPs; confirm the repository working tree is clean.
+- [x] **Step 6: Push `main` to `origin`, verify the remote commit, create tag `v1.0.7` on that commit, and push the tag** so the workflow builds and publishes the Release.
+- [x] **Step 7: Verify the GitHub Release** contains the bilingual notes and exactly the ChatGPT, Codex, Claude Code, Agent Skill, and Source ZIPs; confirm the repository working tree is clean.
 
 Task 5 local verification complete through Step 4 — removed all five generated ZIPs, three `__pycache__` directories, and the empty `dist/`; no cache or temporary artifacts remained; `git diff --check` passed and `.gitignore` covers caches, temporary files, virtual environments, and `dist/` archives.
 Task 5 Step 5: complete — staged only the reviewed project files and created `feat: prepare AI Live Translator v1.0.7 release` on `main`.
+Task 5 Steps 6–7: complete — `origin/main` and tag `v1.0.7` point to `e4cc04dffff8badde1ad2ffa04f608d18434b0cf`; GitHub Actions run 38268665211 succeeded; Release v1.0.7 contains the bilingual notes and all five named ZIP assets. Final clean-tree status is verified after the release record commit is pushed.
