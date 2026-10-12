@@ -117,17 +117,14 @@ class ReleaseTests(unittest.TestCase):
         self.assertIn('build-chatgpt.py',build_text)
         self.assertIn('build_release.py',build_text)
 
-    def test_bilingual_release_notes_cover_features_and_limits(self):
+    def test_english_release_notes_cover_features_and_limits(self):
         release_notes=ROOT/'docs/releases/v1.0.7.md'
         self.assertTrue(release_notes.is_file(),str(release_notes))
         text=release_notes.read_text(encoding='utf-8')
-        english,arabic=text.split('## العربية',1)
         for phrase in ('bidirectional','text-only','ordinary messages','tone','context','dialect','explicitly addressing the agent','model'):
-            with self.subTest(language='en',phrase=phrase):
-                self.assertIn(phrase.lower(),english.lower())
-        for phrase in ('ذهابًا وإيابًا','ترجمة نصية','الرسائل العادية','النبرة','السياق','اللهجة','مخاطبة الوكيل مباشرة','النموذج'):
-            with self.subTest(language='ar',phrase=phrase):
-                self.assertIn(phrase,arabic)
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase.lower(),text.lower())
+        self.assertNotRegex(text,r'[\u0600-\u06FF]')
 
     def test_readmes_surface_downloads_and_remove_duplicate_chatgpt_install_section(self):
         assets=(
