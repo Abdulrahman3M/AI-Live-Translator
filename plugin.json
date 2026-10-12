@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "ai-live-translator",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A bilingual text interpreter for AI agents. Translate ordinary user messages without answering them; use explicit direct address for agent commands.",
   "author": {
     "name": "Abdulrahman ElBatrah"
@@ -20,7 +20,7 @@
       "interface": {
         "displayName": "AI Live Translator",
         "shortDescription": "Translate messages between two languages without answering them.",
-        "longDescription": "Activate a two-way text interpreter, choose any two languages, and get only natural translations of ordinary messages. Explicit direct address lets you control the agent, pause, or change languages. No external account, API, or microphone access is required. With voice transcripts, distinguish the user's intended speech from background voices and ask for clarification when speakers are unclear.",
+        "longDescription": "Activate a two-way text interpreter, choose any two languages, and get only natural translations of ordinary messages. Setup recommends clear standard-language phrasing, explains an optional cue for identifying the text to translate, and describes ChatGPT's written or voice-message workflow plus Voice Advanced. Explicit direct address lets you control the agent, pause, or change languages.",
         "developerName": "Abdulrahman ElBatrah",
         "category": "Productivity",
         "defaultPrompt": [
