@@ -13,6 +13,7 @@ htmlcov/
 venv/
 .idea/
 .vscode/
+.superpowers/
 
 # Temporary, swap, and backup files
 *.tmp

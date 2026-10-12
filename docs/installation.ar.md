@@ -2,20 +2,26 @@
 
 **AI Live Translator** — ترجمة الرسائل ذهابًا وإيابًا.
 
-يوفر المشروع مهارة Agent Skill قابلة للنقل وموجّهًا نصيًا. تختلف طريقة تحميلهما باختلاف المنصة، كما يعتمد ظهور الأيقونة على واجهة الإضافات التي توفرها.
+## التنزيلات المباشرة — v1.0.7
 
-| المنصة | طريقة التثبيت | ظهور الأيقونة |
+- [إضافة ChatGPT — AI-Live-Translator-ChatGPT-Plugin-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-ChatGPT-Plugin-v1.0.7.zip)
+- [إضافة Codex — AI-Live-Translator-Codex-Plugin-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Codex-Plugin-v1.0.7.zip)
+- [إضافة Claude Code — AI-Live-Translator-Claude-Code-Plugin-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Claude-Code-Plugin-v1.0.7.zip)
+- [مهارة Agent Skill المحمولة — AI-Live-Translator-Agent-Skill-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Agent-Skill-v1.0.7.zip)
+- [حزمة المصدر — AI-Live-Translator-Source-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Source-v1.0.7.zip)
+
+## أي حزمة تناسب منصتك؟
+
+| المنصة | الحزمة وطريقة التثبيت | عرض الأيقونة |
 | --- | --- | --- |
-| ChatGPT | أنشئ ZIP المخصص عبر `python plugin/installation/build-chatgpt.py`، ثم ارفعه أو افتحه في Plugin Creator إذا كان متاحًا. | تشير واجهة OpenAI إلى ملف `assets/ai-live-translator-icon-128.png` لأيقونة المحرر، وإلى صورة 512 بكسل كشعار الإضافة. |
-| Codex | ثبّت الإضافة عبر سوق محلي تدعمه نسختك، أو حمّل Agent Skill من مجلد مهارات مدعوم. | يستخدم مانيفست Codex ملفات الأيقونة نفسها؛ وتعلن المهارة عن نسختين صغيرة وكبيرة لواجهات المهارات المتوافقة مع OpenAI. |
-| Claude Code | حمّل المستودع كإضافة محلية باستخدام `.claude-plugin/plugin.json` أو اتبع مسار السوق في Claude Code. | لا يعرّف هذا المانيفست حقلًا للأيقونة؛ عرض الإضافة تحدده المنصة. |
-| GitHub Copilot | اتبع دليل Copilot وحمّل المهارة أو الموجّه الذي تدعمه بيئتك. | لا يوجد حقل أيقونة عام في إعداد Copilot هنا. |
-| Gemini ووكلاء آخرون | حمّل `skills/ai-live-translator/SKILL.md` صراحةً أو الصق `prompt/live-translation.md` في مساحة التعليمات المناسبة. | يعتمد العرض على المضيف؛ معيار Agent Skills لا يحدد حقلًا موحدًا لأيقونة الإضافة. |
+| ChatGPT | ارفع حزمة ChatGPT، أو افتح ملفاتها المفكوكة في Plugin Creator إذا كان متاحًا. | تشير واجهة OpenAI إلى صورة 128 بكسل للمحرر وشعار 512 بكسل. |
+| Codex | ثبّت حزمة Codex عبر سوق محلي تدعمه نسختك، أو حمّل Agent Skill من مجلد مهارات مدعوم. | يشير المانيفست المتوافق إلى ملفات أيقونة المحرر والشعار. |
+| Claude Code | فك ضغط حزمة Claude Code وحمّل مجلد الإضافة باستخدام `--plugin-dir` أو اتبع مسار السوق في Claude Code. | تتحكم المنصة في عرض الإضافة؛ المانيفست لا يعرّف حقلًا للأيقونة. |
+| GitHub Copilot | حمّل Agent Skill المحمولة أو اتبع دليل Copilot لاستخدام ملفات الموجّهات حيث تدعمها البيئة. | لا يوجد حقل أيقونة عام لـCopilot هنا. |
+| Gemini ووكلاء آخرون | حمّل Agent Skill المحمولة إذا كانت مدعومة، أو حمّل `skills/ai-live-translator/SKILL.md` أو `prompt/live-translation.md` يدويًا. | يعتمد العرض على المضيف؛ لا يوجد حقل أيقونة موحد في Agent Skills. |
 
-يبقي مانيفست Agent Plugins المحمول إعدادات العرض الخاصة بكل مضيف ضمن امتداده. ملف SVG هو مصدر الرسم، وتغطي نسخ PNG المربعة بمقاسات 64 و128 و256 و512 بكسل احتياجات المهارة وأيقونة المحرر وقائمة الإضافات.
-
-للاطلاع على الحقول ومتطلبات الأيقونة الحالية لدى OpenAI، راجع [تجهيز الإضافة](https://developers.openai.com/plugins/build/plugins) و[رفع الإضافة وإرسالها](https://developers.openai.com/plugins/deploy/submission). وتفصل [مواصفات المانيفست المحمول](https://agent-plugins.org/plugin-authors/manifest) بيانات الحزمة عن إعدادات الأيقونات الخاصة بالمنصة.
+تبقى أيقونة الإضافة منفصلة عن صورة الواجهة العريضة للمشروع. ملف SVG هو مصدر الأيقونة، وتغطي صور PNG بمقاسات 64 و128 و256 و512 بكسل الواجهات المدعومة.
 
 ## التعليمات الكاملة
 
-لخطوات الإعداد والتحديث التفصيلية وقيود كل منصة، راجع [`plugin/installation/INSTALL.md`](../plugin/installation/INSTALL.md) وأدلة المنصات في [`plugin/adapters/`](../plugin/adapters/README.md).
+لخطوات التثبيت التفصيلية وقيود المنصات، راجع [`plugin/installation/INSTALL.md`](../plugin/installation/INSTALL.md) و[`plugin/installation/BUILD-RELEASE.md`](../plugin/installation/BUILD-RELEASE.md) وأدلة المنصات في [`plugin/adapters/`](../plugin/adapters/README.md).

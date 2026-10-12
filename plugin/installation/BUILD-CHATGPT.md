@@ -1,4 +1,4 @@
-# ChatGPT Plugin Distribution (v1.0.6)
+# ChatGPT Plugin Distribution (v1.0.7)
 
 Build the ChatGPT-specific ZIP from the merged repository source. GitHub's automatically generated source ZIP is **not** the installable plugin archive.
 
@@ -13,9 +13,9 @@ Build the ChatGPT-specific ZIP from the merged repository source. GitHub's autom
    ```sh
    python plugin/installation/build-chatgpt.py
    ```
-3. The script reads `VERSION` and verifies it matches the root `plugin.json`. For v1.0.6 it creates:
+3. The script reads `VERSION` and verifies it matches the root `plugin.json`. For v1.0.7 it creates:
    ```
-   dist/AI-Live-Translator-ChatGPT-Plugin-v1.0.6.zip
+   dist/AI-Live-Translator-ChatGPT-Plugin-v1.0.7.zip
    ```
 
 The archive contains the root plugin manifest, OpenAI icon assets, setup skill, translator skill, prompts, rules, examples and runtime scripts. It includes the 128 px composer icon, 512 px listing logo, Agent Skill icon metadata, and the full-size SVG source. The script checks the archive integrity and confirms its embedded plugin version and icon paths.

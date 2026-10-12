@@ -1,8 +1,10 @@
-# AI Live Translator · v1.0.6
+# AI Live Translator · v1.0.7
+
+![Two people exchanging messages through a two-way translation loop](assets/ai-live-translator-hero.png)
 
 **Translate messages both ways.** Turn a compatible AI chat into a two-way, message-only interpreter. After activation, choose two languages. Ordinary messages are **translated, not answered**. The assistant only leaves translation-only behavior when the speaker **explicitly addresses the agent** or uses a reserved control command.
 
-**Jump to:** [Quick start](#quick-start) · [Choose an installation method](docs/installation.md) · [Full installation guide](plugin/installation/INSTALL.md)
+**Jump to:** [Quick start](#quick-start) · [Downloads](#downloads) · [Choose an installation method](docs/installation.md) · [Full installation guide](plugin/installation/INSTALL.md)
 
 ## Quick start
 
@@ -12,6 +14,16 @@
 4. Control the agent with `@agent:` or a clear direct address at the start of a message. Mentions inside ordinary content are translated.
 
 > **Compatibility matters:** No universal AI-plugin installer exists. The core is an [Agent Skills](https://agentskills.io/specification) skill plus a reusable prompt; Claude Code has a native plugin manifest and command. Codex, Copilot, Gemini, and other hosts need their documented installation method or manual prompt loading. Their higher-priority system policies remain authoritative. This is a text-message interpreter, not a microphone, call, real-time audio, or externally hosted translation service.
+
+## Downloads
+
+Choose a package using the [short platform guide](docs/installation.md):
+
+- [ChatGPT plugin — AI-Live-Translator-ChatGPT-Plugin-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-ChatGPT-Plugin-v1.0.7.zip)
+- [Codex plugin — AI-Live-Translator-Codex-Plugin-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Codex-Plugin-v1.0.7.zip)
+- [Claude Code plugin — AI-Live-Translator-Claude-Code-Plugin-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Claude-Code-Plugin-v1.0.7.zip)
+- [Portable Agent Skill — AI-Live-Translator-Agent-Skill-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Agent-Skill-v1.0.7.zip)
+- [Source code — AI-Live-Translator-Source-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Source-v1.0.7.zip)
 
 ## Choose an installation method
 

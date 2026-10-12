@@ -1,8 +1,10 @@
-# AI Live Translator · v1.0.6
+# AI Live Translator · v1.0.7
+
+![شخصان يتبادلان الرسائل عبر حلقة ترجمة ذهابًا وإيابًا](assets/ai-live-translator-hero.png)
 
 **ترجمة الرسائل ذهابًا وإيابًا.** مترجم محادثات يعمل داخل جلسات وكلاء الذكاء الاصطناعي المتوافقة. بمجرد التفعيل، يسألك الوكيل عن اللغتين، ثم يترجم أي رسالة عادية إلى اللغة الأخرى **دون الإجابة عن محتواها**. وحدها الأوامر الموجّهة إلى الوكيل مباشرةً تسمح بالتحكم في النظام.
 
-**انتقل مباشرةً إلى:** [ابدأ بسرعة](#ابدأ-بسرعة) · [اختر طريقة التثبيت](docs/installation.ar.md) · [دليل التثبيت الكامل](plugin/installation/INSTALL.md)
+**انتقل مباشرةً إلى:** [ابدأ بسرعة](#ابدأ-بسرعة) · [التنزيلات](#التنزيلات) · [اختر طريقة التثبيت](docs/installation.ar.md) · [دليل التثبيت الكامل](plugin/installation/INSTALL.md)
 
 ## ابدأ بسرعة
 
@@ -10,6 +12,16 @@
 2. فعّل **AI Live Translator** وحدد لغتين، مثل العربية والإنجليزية.
 3. أرسل رسالتك بإحدى اللغتين لتحصل على ترجمتها فقط. ويمكنك استخدام `أنا:` أو `الطرف الآخر:` لتوضيح المتحدث.
 4. للتحكم، ابدأ بـ `@agent:` أو وجّه نداءً واضحًا للمساعد. ذكر اسمه داخل الرسالة العادية يظل جزءًا من النص المترجم.
+
+## التنزيلات
+
+استخدم [دليل المنصات المختصر](docs/installation.ar.md) لاختيار الحزمة المناسبة:
+
+- [إضافة ChatGPT — AI-Live-Translator-ChatGPT-Plugin-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-ChatGPT-Plugin-v1.0.7.zip)
+- [إضافة Codex — AI-Live-Translator-Codex-Plugin-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Codex-Plugin-v1.0.7.zip)
+- [إضافة Claude Code — AI-Live-Translator-Claude-Code-Plugin-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Claude-Code-Plugin-v1.0.7.zip)
+- [مهارة Agent Skill المحمولة — AI-Live-Translator-Agent-Skill-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Agent-Skill-v1.0.7.zip)
+- [حزمة المصدر — AI-Live-Translator-Source-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Source-v1.0.7.zip)
 
 ## اختر طريقة التثبيت
 
@@ -58,18 +70,3 @@
 بعد فك الضغط، يمكنك نشر المشروع على حسابك من خلال التعليمات في `plugin/installation/PUBLISHING.md`؛ الإعداد الافتراضي هو إنشاء مستودع **خاص** باسم `Abdulrahman3M/AI-Live-Translator`.
 
 **مقدمات اختيارية للرسائل:** يمكنك بدء الكلام بـ `رسالتي:` أو `رسالة الطرف الآخر:` أو `قل للطرف الآخر:` ثم كتابة الرسالة مباشرةً؛ ستُحذف المقدمة من النص المترجم.
-
-
-## إضافة Plugin إلى ChatGPT
-
-راجع [دليل التثبيت المختصر](docs/installation.ar.md) لاختيار المسار المناسب، و[`plugin/installation/BUILD-CHATGPT.md`](plugin/installation/BUILD-CHATGPT.md) لخطوات إنشاء الحزمة ورفعها.
-
-## حزمة التثبيت المخصصة لـ ChatGPT (v1.0.6)
-
-بعد تنزيل ملفات المشروع من فرع `main` وفك ضغطها، شغّل:
-
-```sh
-python plugin/installation/build-chatgpt.py
-```
-
-ينشئ الأمر الحزمة `dist/AI-Live-Translator-ChatGPT-Plugin-v1.0.6.zip`. تتضمن الحزمة ملفات الأيقونة. ارفع هذه الحزمة المخصصة من داخل ChatGPT، ولا ترفع ZIP المصدر الذي ينشئه GitHub تلقائيًا. راجع `plugin/installation/BUILD-CHATGPT.md` للتفاصيل.

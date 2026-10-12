@@ -1,5 +1,6 @@
 import importlib.util
 import json
+import re
 import sys
 import tempfile
 import unittest
@@ -17,6 +18,150 @@ BUILD_SPEC.loader.exec_module(builder)
 class ReleaseTests(unittest.TestCase):
     def test_package_integrity(self):
         self.assertEqual(validator.validate(),[])
+
+    def test_release_metadata_is_synchronized_to_v1_0_7(self):
+        self.assertEqual((ROOT/'VERSION').read_text(encoding='utf-8').strip(),'1.0.7')
+        for relative in ('plugin.json','.codex-plugin/plugin.json','.claude-plugin/plugin.json','plugin/metadata.json'):
+            with self.subTest(manifest=relative):
+                self.assertEqual(json.loads((ROOT/relative).read_text(encoding='utf-8'))['version'],'1.0.7')
+        self.assertEqual((ROOT/'README.md').read_text(encoding='utf-8').splitlines()[0],'# AI Live Translator · v1.0.7')
+        self.assertEqual((ROOT/'README.ar.md').read_text(encoding='utf-8').splitlines()[0],'# AI Live Translator · v1.0.7')
+        self.assertIn('## [1.0.7]',(ROOT/'CHANGELOG.md').read_text(encoding='utf-8'))
+
+    def test_project_hero_is_a_wide_png_referenced_with_localized_alt_text(self):
+        hero=ROOT/'assets/ai-live-translator-hero.png'
+        self.assertTrue(hero.is_file(),str(hero))
+        header=hero.read_bytes()[:24]
+        self.assertEqual(header[:8],b'\x89PNG\r\n\x1a\n')
+        width=int.from_bytes(header[16:20],'big')
+        height=int.from_bytes(header[20:24],'big')
+        self.assertGreater(width,height)
+        for filename in ('README.md','README.ar.md'):
+            with self.subTest(readme=filename):
+                text=(ROOT/filename).read_text(encoding='utf-8')
+                match=re.search(r'!\[([^\]]+)\]\(assets/ai-live-translator-hero\.png\)',text)
+                self.assertIsNotNone(match)
+                self.assertGreater(len(match.group(1).strip()),5)
+        arabic=(ROOT/'README.ar.md').read_text(encoding='utf-8')
+        match=re.search(r'!\[([^\]]+)\]\(assets/ai-live-translator-hero\.png\)',arabic)
+        self.assertTrue(any(word in match.group(1) for word in ('ترجمة','الترجمة')))
+
+    def test_release_builder_creates_four_versioned_verified_archives(self):
+        release_builder_path=ROOT/'plugin/installation/build_release.py'
+        self.assertTrue(release_builder_path.is_file(),str(release_builder_path))
+        release_spec=importlib.util.spec_from_file_location('release_builder',release_builder_path)
+        release_builder=importlib.util.module_from_spec(release_spec)
+        sys.modules[release_spec.name]=release_builder
+        release_spec.loader.exec_module(release_builder)
+        output_root=ROOT/'dist'
+        output_root.mkdir(exist_ok=True)
+        with tempfile.TemporaryDirectory(dir=output_root) as directory:
+            archives=release_builder.build_archives(Path(directory))
+            self.assertEqual(set(archives),{'codex','claude_code','agent_skill','source'})
+            expected_names={
+                'codex':'AI-Live-Translator-Codex-Plugin-v1.0.7.zip',
+                'claude_code':'AI-Live-Translator-Claude-Code-Plugin-v1.0.7.zip',
+                'agent_skill':'AI-Live-Translator-Agent-Skill-v1.0.7.zip',
+                'source':'AI-Live-Translator-Source-v1.0.7.zip',
+            }
+            for key,archive_path in archives.items():
+                with self.subTest(package=key):
+                    self.assertEqual(Path(archive_path).name,expected_names[key])
+                    with __import__('zipfile').ZipFile(archive_path) as archive:
+                        self.assertIsNone(archive.testzip())
+                        names=set(archive.namelist())
+                        self.assertTrue(names)
+                        self.assertFalse(any(name.startswith(('.git/','dist/','__pycache__/','.venv/')) for name in names))
+                        self.assertFalse(any(name.endswith(('.pyc','.tmp','.temp')) for name in names))
+                        if key in ('codex','claude_code'):
+                            manifest_path='.codex-plugin/plugin.json' if key=='codex' else '.claude-plugin/plugin.json'
+                            manifest=json.loads(archive.read(manifest_path))
+                            self.assertEqual(manifest['version'],'1.0.7')
+                            for field in ('composerIcon','logo'):
+                                asset=manifest.get('interface',{}).get(field)
+                                if isinstance(asset,str) and asset.startswith('./'):
+                                    self.assertIn(asset[2:],names)
+                        if key=='codex':
+                            for required in ('.codex-plugin/plugin.json','skills/setup/SKILL.md','skills/ai-live-translator/SKILL.md','plugin/commands/start.md','plugin/commands/help.md'):
+                                self.assertIn(required,names)
+                        elif key=='claude_code':
+                            for required in ('.claude-plugin/plugin.json','plugin/commands/start.md','plugin/commands/help.md','skills/ai-live-translator/SKILL.md'):
+                                self.assertIn(required,names)
+                        elif key=='agent_skill':
+                            for required in ('ai-live-translator/SKILL.md','ai-live-translator/agents/openai.yaml','ai-live-translator/rules/translation-contract.md','ai-live-translator/examples/en-ar.jsonl','ai-live-translator/references/activation.md','ai-live-translator/scripts/router.py','ai-live-translator/assets/ai-live-translator-icon-64.png'):
+                                self.assertIn(required,names)
+                            self.assertFalse(any('/tests/' in name for name in names))
+                        else:
+                            source_root='AI-Live-Translator-v1.0.7/'
+                            self.assertTrue(all(name.startswith(source_root) for name in names))
+                            for required in ('VERSION','plugin.json','assets/ai-live-translator-hero.png','skills/ai-live-translator/SKILL.md'):
+                                self.assertIn(source_root+required,names)
+
+    def test_five_release_assets_have_direct_links_in_bilingual_guides(self):
+        assets=(
+            'AI-Live-Translator-ChatGPT-Plugin-v1.0.7.zip',
+            'AI-Live-Translator-Codex-Plugin-v1.0.7.zip',
+            'AI-Live-Translator-Claude-Code-Plugin-v1.0.7.zip',
+            'AI-Live-Translator-Agent-Skill-v1.0.7.zip',
+            'AI-Live-Translator-Source-v1.0.7.zip',
+        )
+        base='https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/'
+        for filename in ('docs/installation.md','docs/installation.ar.md'):
+            text=(ROOT/filename).read_text(encoding='utf-8')
+            with self.subTest(guide=filename):
+                for asset in assets:
+                    self.assertIn(base+asset,text)
+        build_guide=ROOT/'plugin/installation/BUILD-RELEASE.md'
+        self.assertTrue(build_guide.is_file(),str(build_guide))
+        build_text=build_guide.read_text(encoding='utf-8')
+        self.assertIn('build-chatgpt.py',build_text)
+        self.assertIn('build_release.py',build_text)
+
+    def test_bilingual_release_notes_cover_features_and_limits(self):
+        release_notes=ROOT/'docs/releases/v1.0.7.md'
+        self.assertTrue(release_notes.is_file(),str(release_notes))
+        text=release_notes.read_text(encoding='utf-8')
+        english,arabic=text.split('## العربية',1)
+        for phrase in ('bidirectional','text-only','ordinary messages','tone','context','dialect','explicitly addressing the agent','model'):
+            with self.subTest(language='en',phrase=phrase):
+                self.assertIn(phrase.lower(),english.lower())
+        for phrase in ('ذهابًا وإيابًا','ترجمة نصية','الرسائل العادية','النبرة','السياق','اللهجة','مخاطبة الوكيل مباشرة','النموذج'):
+            with self.subTest(language='ar',phrase=phrase):
+                self.assertIn(phrase,arabic)
+
+    def test_readmes_surface_downloads_and_remove_duplicate_chatgpt_install_section(self):
+        assets=(
+            'AI-Live-Translator-ChatGPT-Plugin-v1.0.7.zip',
+            'AI-Live-Translator-Codex-Plugin-v1.0.7.zip',
+            'AI-Live-Translator-Claude-Code-Plugin-v1.0.7.zip',
+            'AI-Live-Translator-Agent-Skill-v1.0.7.zip',
+            'AI-Live-Translator-Source-v1.0.7.zip',
+        )
+        for filename,heading,guide in (('README.md','## Downloads','docs/installation.md'),('README.ar.md','## التنزيلات','docs/installation.ar.md')):
+            text=(ROOT/filename).read_text(encoding='utf-8')
+            with self.subTest(readme=filename):
+                self.assertIn(heading,text)
+                self.assertIn(guide,text)
+                for asset in assets:
+                    self.assertIn(asset,text)
+                self.assertLessEqual(text.count('## حزمة التثبيت المخصصة لـ ChatGPT'),1)
+
+    def test_agents_governance_documents_release_package_and_tag_flow(self):
+        text=(ROOT/'AGENTS.md').read_text(encoding='utf-8')
+        self.assertIn('plugin/installation/build_release.py',text)
+        self.assertIn('portable Agent Skill',text)
+        self.assertIn('GitHub Release',text)
+        self.assertIn('tag',text.lower())
+
+    def test_release_workflow_builds_all_archives_and_publishes_only_tags(self):
+        workflow=(ROOT/'.github/workflows/build-chatgpt-plugin.yml').read_text(encoding='utf-8')
+        self.assertIn('python plugin/installation/build-chatgpt.py',workflow)
+        self.assertIn('python plugin/installation/build_release.py',workflow)
+        self.assertIn('path: dist/*.zip',workflow)
+        self.assertIn("if: startsWith(github.ref, 'refs/tags/v')",workflow)
+        self.assertIn('docs/releases/v$(cat VERSION).md',workflow)
+        self.assertIn('gh release create',workflow)
+
     def test_stats_command(self):
         import subprocess
         import json

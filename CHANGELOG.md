@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.0.7] — 2026-10-12
+
+### Added
+- Added a language-neutral project hero showing two people exchanging messages through a two-way translation loop.
+- Prepared the first GitHub Release with direct-download packages for ChatGPT, Codex, Claude Code, the portable Agent Skill, and the source code.
+
+### Improved
+- Synchronized release metadata and homepage titles to 1.0.7.
+- Expanded reproducible package validation and tag-triggered Release publishing.
+
 ## [1.0.6] — 2026-10-12
 
 ### Added
