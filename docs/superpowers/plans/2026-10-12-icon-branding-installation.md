@@ -70,8 +70,10 @@
 - Modify: release version references, `CHANGELOG.md`, and ChatGPT ZIP build output
 
 - [x] Set all release metadata to `1.0.6`, build and verify the dedicated ZIP, and remove stale generated/cache files.
-- [ ] Review `git diff --check` and the complete change list, commit on `main`, and push to `origin/main`.
-- [ ] Verify the pushed commit and confirm the working tree is clean apart from ignored generated distribution output.
+- [x] Review `git diff --check` and the complete change list, commit on `main`, and push to `origin/main`.
+- [x] Verify the pushed commit and confirm the working tree is clean apart from ignored generated distribution output.
+
+Reviewer follow-up: strengthen corpus statistics assertions to exact translation, pair, control, and clarification totals; rerun both required checks successfully.
 
 ## Execution ledger
 
