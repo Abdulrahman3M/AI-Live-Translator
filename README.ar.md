@@ -70,6 +70,12 @@
 
 الحزمة تحتوي على ملف `plugin.json` الرسمي في جذر المشروع، ومهارة الإعداد `skills/setup/SKILL.md`، وملف توافق Codex. لتثبيتها على حسابك افتح **Plugins ← Add ← Upload plugin** وارفع ملف ZIP إذا كان خيار الرفع متاحًا، أو افتح **Plugins ← Add (+) ← Plugin Creator** لإنشاء الإضافة من الملفات. الربط بـ GitHub لا يمنح أداة GitHub صلاحية التثبيت داخل ChatGPT. تفاصيل إضافية في `plugin/adapters/chatgpt.md`.
 
-## حزمة التثبيت المعتمدة (v1.0.4)
+## حزمة التثبيت المخصصة لـ ChatGPT (v1.0.5)
 
-استخدم حزمة **AI-Live-Translator-ChatGPT-Plugin-v1.0.4.zip** المخصصة لـ ChatGPT، وليس ملف ZIP التلقائي للمستودع. فشلت الحزمة القديمة 1.0.1 في التثبيت، ثم بُسّطت الحزمة في الإصدار 1.0.4. راجع `plugin/installation/BUILD-CHATGPT.md` لإنشاء حزمة مطابقة من ملفات المستودع. رقم الإصدار هو **1.0.4** وليس **1.0.40**.
+بعد تنزيل ملفات المشروع من فرع `main` وفك ضغطها، شغّل:
+
+```sh
+python plugin/installation/build-chatgpt.py
+```
+
+ينشئ الأمر الحزمة `dist/AI-Live-Translator-ChatGPT-Plugin-v1.0.5.zip`. ارفع هذه الحزمة المخصصة من داخل ChatGPT، ولا ترفع ZIP المصدر الذي ينشئه GitHub تلقائيًا. راجع `plugin/installation/BUILD-CHATGPT.md` للتفاصيل.
