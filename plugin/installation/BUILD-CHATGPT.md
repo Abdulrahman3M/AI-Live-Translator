@@ -1,21 +1,31 @@
-# ChatGPT Plugin Distribution (v1.0.2)
+# ChatGPT Plugin Distribution (v1.0.5)
 
-The GitHub source ZIP is **not** the installable ChatGPT distribution. The initial v1.0.1 upload was rejected by ChatGPT; the simplified v1.0.2 package was accepted in the user's ChatGPT account.
+Build the ChatGPT-specific ZIP from the merged repository source. GitHub's automatically generated source ZIP is **not** the installable plugin archive.
 
-## Build from the repository
+## Build the archive
 
-From the repository root, run:
+1. Download the repository from the `main` branch and extract it, or update your local clone:
+   ```sh
+   git switch main
+   git pull origin main
+   ```
+2. From the repository root, run:
+   ```sh
+   python plugin/installation/build-chatgpt.py
+   ```
+3. The script reads `VERSION` and verifies it matches the root `plugin.json`. For v1.0.5 it creates:
+   ```
+   dist/AI-Live-Translator-ChatGPT-Plugin-v1.0.5.zip
+   ```
 
-```sh
-python plugin/installation/build-chatgpt.py
-```
+The archive contains the root plugin manifest, setup skill, translator skill, prompts, rules, examples and runtime scripts. The script checks the archive integrity and confirms its embedded plugin version.
 
-This creates `dist/AI-Live-Translator-ChatGPT-Plugin-v1.0.2.zip`, with a root `plugin.json`, the onboarding skill, the translation skill, prompts, rules, examples and scripts. It excludes host-specific manifests, GitHub metadata, and repository maintenance documents.
+## Install or update in ChatGPT
 
-Install the generated ZIP in ChatGPT under **Plugins → Add → Upload plugin**. Do not upload GitHub's auto-generated repository archive.
+In ChatGPT, open **Plugins → Add → Upload plugin** (if this option is available) and upload the generated version-matched ZIP. If the interface instead offers **Plugin Creator**, choose the existing AI Live Translator plugin to edit/update it, or create it from the new ZIP/folder if editing an existing plugin is unavailable. Review the generated plugin details, save, then open AI Live Translator and confirm it asks for two languages and shows the updated localized setup guidance.
 
-For Claude Code, use the repository's `.claude-plugin/plugin.json` and `plugin/installation/INSTALL.md` rather than the ChatGPT ZIP.
+Do **not** upload GitHub's auto-generated source ZIP. Do not use an older v1.0.1 or v1.0.4 archive for this update.
 
-The manifest's semantic version must exactly match `VERSION`, currently **1.0.2** (not 1.0.20). The host may display its own release number; check the plugin's actual metadata before attributing it to this repository.
+For Claude Code, use `.claude-plugin/plugin.json` and `plugin/installation/INSTALL.md`, not the ChatGPT ZIP.
 
-Note: Packaging validation does not guarantee acceptance by every ChatGPT account or every Claude Code version.
+Note: Plugin Creator/upload options can vary by account and product rollout. Building the archive verifies its structure and version; it cannot guarantee acceptance by every ChatGPT account.
