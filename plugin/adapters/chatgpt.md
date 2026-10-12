@@ -4,11 +4,11 @@ This is a **skills-only** plugin: it needs no third-party MCP server, credential
 
 ## Option A: plugin ZIP upload
 
-Upload the complete `AI-Live-Translator-v1.0.1.zip` via **Plugins** → **Add** → **Upload plugin**, if available for your account/workspace. The archive contains a portable root `plugin.json`, the `skills/` tree, a setup skill, and host compatibility files. Follow the user-visible installation controls. Uploading a ZIP here is a user/admin action; it cannot be performed by a GitHub connector.
+Upload the generated `AI-Live-Translator-ChatGPT-Plugin-v1.0.5.zip` via **Plugins** → **Add** → **Upload plugin**, if available for your account/workspace. Build this archive from the merged `main` branch using `python plugin/installation/build-chatgpt.py`; the script reads the current `VERSION` and verifies the packaged manifest. Follow the user-visible installation controls. Uploading a ZIP here is a user/admin action; it cannot be performed by a GitHub connector.
 
 ## Option B: Plugin Creator
 
-Open **Plugins** → **Add (+)** → **Plugin Creator** and supply the ZIP or the plugin folder. Request a **skills-only plugin** called AI Live Translator, preserve its SKILL.md and onboarding setup skill, and save/install through the creator's interface. Feature availability depends on account/rollout.
+Open **Plugins** → **Add (+)** → **Plugin Creator** and supply the newly built v1.0.5 ZIP or extracted plugin folder. If an existing plugin can be edited, update it there; otherwise create a new plugin from the updated files. Request a **skills-only plugin** called AI Live Translator, preserve its SKILL.md and onboarding setup skill, and save/install through the creator's interface. Feature availability depends on account/rollout.
 
 ## Option C: Codex/ChatGPT Desktop local marketplace
 
