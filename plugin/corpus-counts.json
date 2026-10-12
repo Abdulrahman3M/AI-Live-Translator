@@ -1,10 +1,11 @@
 {
-  "curated_pairs": 330,
-  "directional_records": 660,
+  "curated_pairs": 332,
+  "directional_records": 664,
+  "clarification_fixtures": 2,
   "per_file": {
     "en-ar.jsonl": [
-      195,
-      390
+      197,
+      394
     ],
     "en-ru.jsonl": [
       30,

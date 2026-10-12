@@ -1,8 +1,8 @@
 {
   "name": "ai-live-translator",
   "displayName": "AI Live Translator",
-  "version": "1.0.5",
-  "description": "A portable, text-only, two-way live translator skill with strict translate-not-answer routing.",
+  "version": "1.0.6",
+  "description": "Translate messages both ways",
   "author": {
     "name": "Abdulrahman ElBatrah"
   },

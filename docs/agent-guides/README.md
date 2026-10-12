@@ -2,6 +2,10 @@
 
 Choose the guide for the product where you want to use **AI Live Translator**.
 
+**Translate messages both ways.**
+
+For a short cross-platform comparison, start with the [installation overview](../installation.md); the guides below keep each host's detailed steps.
+
 | Agent | Guide | Recommended route |
 |---|---|---|
 | ChatGPT | [ChatGPT setup](CHATGPT.md) | Build and upload the dedicated ChatGPT ZIP |

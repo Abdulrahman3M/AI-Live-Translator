@@ -1,7 +1,9 @@
 {
   "name": "AI Live Translator",
   "id": "ai-live-translator",
-  "version": "1.0.5",
+  "version": "1.0.6",
+  "description": "Translate messages both ways",
+  "short_description": "Translate messages both ways",
   "format": "portable-metadata-not-standard-plugin-schema",
   "entrypoint": "skills/ai-live-translator/SKILL.md",
   "prompt": "prompt/live-translation.md",

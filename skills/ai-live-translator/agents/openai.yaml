@@ -1,0 +1,5 @@
+interface:
+  display_name: AI Live Translator
+  short_description: Translate messages both ways
+  icon_small: ./assets/ai-live-translator-icon-64.png
+  icon_large: ./assets/ai-live-translator-icon-512.png

@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.0.6] — 2026-10-12
+
+### Added
+- Created a distinctive two-bubble, opposing-arrow translation-loop icon in SVG and 64, 128, 256, and 512 px PNG sizes.
+- Added OpenAI composer/listing artwork and small/large skill icon metadata; included referenced assets in the dedicated ChatGPT ZIP.
+- Added concise English and Arabic installation maps under `docs/` and expanded bidirectional Arabic dialect, names, dates, times, number, and code-switch fixtures.
+- Added source-language clarification fixtures for meaning-changing English and Arabic ambiguity.
+
+### Improved
+- Standardized plugin descriptions to **AI Live Translator — Translate messages both ways** across supported manifests and metadata.
+- Put quick-start and platform-install links at the top of both READMEs and removed the repeated Arabic usage checklist.
+- Documented a mandatory per-change Git, ignore-file, verification, cleanup, commit, and push workflow in `AGENTS.md`.
+- Fixed root-directory validation to allow documented support directories and kept clarification cases out of translation corpus totals.
+
+### Release
+- Synchronized release metadata to 1.0.6 and rebuilt the ChatGPT distribution from the dedicated package builder.
+
 ## [1.0.5] — 2026-10-11
 
 ### Added

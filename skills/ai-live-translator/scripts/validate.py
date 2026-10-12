@@ -6,7 +6,11 @@ ROOT=Path(__file__).resolve().parents[3]
 EXAMPLES=ROOT/'skills/ai-live-translator/examples'
 NEEDED=['plugin.json','.codex-plugin/plugin.json','.agents/plugins/marketplace.json','skills/setup/SKILL.md','README.md','README.ar.md','AGENTS.md','VERSION','CHANGELOG.md','LICENSE','prompt/live-translation.md','prompt/setup-messages.md',
         'skills/ai-live-translator/SKILL.md','skills/ai-live-translator/rules/address-and-control.md',
-        '.claude-plugin/plugin.json','plugin/metadata.json','plugin/installation/INSTALL.md','plugin/commands/start.md']
+        '.claude-plugin/plugin.json','.gitignore','.gitattributes','plugin/metadata.json','plugin/installation/INSTALL.md','plugin/commands/start.md',
+        'docs/installation.md','docs/installation.ar.md','assets/ai-live-translator-icon.svg',
+        'assets/ai-live-translator-icon-64.png','assets/ai-live-translator-icon-128.png',
+        'assets/ai-live-translator-icon-256.png','assets/ai-live-translator-icon-512.png',
+        'skills/ai-live-translator/agents/openai.yaml','skills/ai-live-translator/examples/clarification-cases.jsonl']
 def validate():
     errors=[]
     for rel in NEEDED:
@@ -18,9 +22,12 @@ def validate():
     metadata=json.loads((ROOT/'plugin/metadata.json').read_text(encoding='utf-8'))
     portable=json.loads((ROOT/'plugin.json').read_text(encoding='utf-8'))
     codex=json.loads((ROOT/'.codex-plugin/plugin.json').read_text(encoding='utf-8'))
+    claude=json.loads((ROOT/'.claude-plugin/plugin.json').read_text(encoding='utf-8'))
     for field,value in [('plugin.version',plugin.get('version')),('metadata.version',metadata.get('version')),('portable.version',portable.get('version')),('codex.version',codex.get('version'))]:
         if value!=version: errors.append(f'{field} differs from VERSION')
-    for doc in ['README.md','README.ar.md','AGENTS.md','prompt/live-translation.md']:
+    for doc in ['README.md','README.ar.md','AGENTS.md','prompt/live-translation.md','prompt/setup-messages.md',
+                'plugin/installation/BUILD-CHATGPT.md','plugin/adapters/chatgpt.md',
+                'plugin/installation/CHATGPT.md']:
         if version not in (ROOT/doc).read_text(encoding='utf-8'):errors.append('Version not synchronized in '+doc)
     if ('['+version+']') not in (ROOT/'CHANGELOG.md').read_text(encoding='utf-8'):errors.append('Missing current changelog entry')
     prompt_text=(ROOT/'prompt/live-translation.md').read_text(encoding='utf-8')
@@ -46,8 +53,12 @@ def validate():
         if not (ROOT/cmd.get('source','')[2:]).is_file():errors.append('Missing Claude command '+str(cmd))
     if portable.get('extensions',{}).get('com.openai',{}).get('onboardingSkill')!='./skills/setup/SKILL.md':errors.append('Bad portable onboarding skill path')
     if any(len(d)>64 for d in [plugin['name']]):errors.append('Bad plugin name')
-    primary={x.name for x in ROOT.iterdir() if x.is_dir() and not x.name.startswith('.')}
-    if primary!={'prompt','skills','plugin'}: errors.append('Expected three functional directories, got '+str(primary))
+    functional={'prompt','skills','plugin'}
+    allowed_support={'assets','docs','dist'}
+    root_dirs={x.name for x in ROOT.iterdir() if x.is_dir() and not x.name.startswith('.')}
+    if not functional <= root_dirs: errors.append('Missing primary functional directories: '+str(sorted(functional-root_dirs)))
+    unexpected=root_dirs-functional-allowed_support
+    if unexpected: errors.append('Unexpected top-level functional directories: '+str(sorted(unexpected)))
     seen=set(); directions=set(); categories=set(); count=0
     for file in sorted(EXAMPLES.glob('*.jsonl')):
         for index,line in enumerate(file.read_text(encoding='utf-8').splitlines(),1):
@@ -58,6 +69,13 @@ def validate():
             if file.name=='control-cases.jsonl':
                 if not {'input','mode','expected_kind','expected_action','expected_mode'} <=r.keys():errors.append('Incomplete control fixture')
                 continue
+            if file.name=='clarification-cases.jsonl':
+                required={'id','source_language','message','expected_action','clarification_question'}
+                if not required<=r.keys():errors.append(f'Incomplete clarification fixture {index}');continue
+                if r['expected_action']!='ASK_CLARIFICATION' or r['source_language'] not in {'en','ar'} or not r['message'].strip() or not r['clarification_question'].strip():
+                    errors.append(f'Invalid clarification fixture {index}')
+                if r['id'] in seen:errors.append('Duplicate ID: '+r['id'])
+                seen.add(r['id']);continue
             if not {'id','source_language','target_language','source','target','category'} <= r.keys():errors.append(f'Incomplete corpus record {file.name}:{index}');continue
             if not r['source'].strip() or not r['target'].strip() or r['source_language']==r['target_language']:
                 errors.append(f'Invalid corpus example {file.name}:{index}')
@@ -68,6 +86,8 @@ def validate():
     if len(directions)<8:errors.append('Insufficient language directions')
     info=json.loads((ROOT/'plugin/corpus-counts.json').read_text(encoding='utf-8'))
     if info['directional_records']!=count:errors.append('Corpus counts mismatch')
+    clarification_count=sum(1 for line in (EXAMPLES/'clarification-cases.jsonl').read_text(encoding='utf-8').splitlines() if line.strip())
+    if info.get('clarification_fixtures')!=clarification_count:errors.append('Clarification fixture counts mismatch')
     return errors
 if __name__=='__main__':
     failures=validate()

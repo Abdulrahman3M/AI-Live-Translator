@@ -1,20 +1,33 @@
 {
   "name": "ai-live-translator",
-  "version": "1.0.5",
-  "description": "A bilingual text interpreter for AI agents.",
+  "version": "1.0.6",
+  "description": "Translate messages both ways",
   "author": {
     "name": "Abdulrahman ElBatrah"
   },
+  "license": "MIT",
+  "keywords": [
+    "translation",
+    "bilingual",
+    "agent-skills",
+    "interpreter"
+  ],
   "skills": "./skills/",
   "interface": {
     "displayName": "AI Live Translator",
-    "shortDescription": "Two-way translation without answering messages",
-    "longDescription": "Choose two languages and translate ordinary messages without answering them. Setup recommends clear standard-language phrasing, explains an optional cue for identifying text to translate, and describes ChatGPT's message and Voice Advanced workflows.",
+    "shortDescription": "Translate messages both ways",
+    "longDescription": "Translate ordinary messages naturally in either direction without answering them. Use direct address to control the translator.",
     "developerName": "Abdulrahman ElBatrah",
     "category": "Productivity",
+    "capabilities": [
+      "Two-way text translation",
+      "Explicit control routing"
+    ],
     "defaultPrompt": [
       "Start AI Live Translator and ask me which two languages to use."
-    ]
+    ],
+    "composerIcon": "./assets/ai-live-translator-icon-128.png",
+    "logo": "./assets/ai-live-translator-icon-512.png"
   },
   "extensions": {
     "com.openai": {

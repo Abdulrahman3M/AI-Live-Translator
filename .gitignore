@@ -1,0 +1,31 @@
+# Python bytecode and test caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Virtual environments and local tooling
+.venv/
+venv/
+.idea/
+.vscode/
+
+# Temporary, swap, and backup files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+*.bak
+
+# Locally generated plugin archives
+/dist/
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+Desktop.ini

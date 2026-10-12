@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">AI Live Translator: two speech bubbles and opposing translation arrows</title>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#10264A"/>
+      <stop offset="1" stop-color="#075361"/>
+    </linearGradient>
+    <linearGradient id="bubble" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5BF0DC"/>
+      <stop offset="1" stop-color="#31C9D5"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#background)"/>
+  <path d="M130 136C179 83 272 75 329 115" fill="none" stroke="#50E5D5" stroke-width="28" stroke-linecap="round"/>
+  <path d="m365 141-47-5 18-42z" fill="#50E5D5"/>
+  <path d="M382 374c-52 49-145 57-203 17" fill="none" stroke="#8CD7FF" stroke-width="28" stroke-linecap="round"/>
+  <path d="m143 379 47 5-18 42z" fill="#8CD7FF"/>
+  <path d="M127 169h139a40 40 0 0 1 40 40v48a40 40 0 0 1-40 40h-69l-43 34 11-34h-38a40 40 0 0 1-40-40v-48a40 40 0 0 1 40-40z" fill="#F5FBFF"/>
+  <path d="M287 229h98a40 40 0 0 1 40 40v47a40 40 0 0 1-40 40h-24l12 33-42-33h-44a40 40 0 0 1-40-40v-47a40 40 0 0 1 40-40z" fill="url(#bubble)"/>
+  <g fill="#285478">
+    <circle cx="151" cy="234" r="11"/>
+    <circle cx="197" cy="234" r="11"/>
+    <circle cx="243" cy="234" r="11"/>
+  </g>
+  <g fill="#075361">
+    <circle cx="310" cy="294" r="10"/>
+    <circle cx="349" cy="294" r="10"/>
+    <circle cx="388" cy="294" r="10"/>
+  </g>
+</svg>

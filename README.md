@@ -1,20 +1,21 @@
-# AI Live Translator · v1.0.5
+# AI Live Translator · v1.0.6
 
-**Turn a compatible AI chat into a two-way, message-only interpreter.** After activation, choose two languages. Ordinary messages are **translated, not answered**. The assistant only leaves translation-only behavior when the speaker **explicitly addresses the agent** or uses a reserved control command.
+**Translate messages both ways.** Turn a compatible AI chat into a two-way, message-only interpreter. After activation, choose two languages. Ordinary messages are **translated, not answered**. The assistant only leaves translation-only behavior when the speaker **explicitly addresses the agent** or uses a reserved control command.
 
-> **Compatibility matters:** No universal AI-plugin installer exists. The core is an [Agent Skills](https://agentskills.io/specification) skill plus a reusable prompt; Claude Code has a native plugin manifest and command. Codex, Copilot, Gemini, and other hosts need their documented installation method or manual prompt loading. Their higher-priority system policies remain authoritative. This is a text-message interpreter, not a microphone, call, real-time audio, or externally hosted translation service.
-
-## Install as a ChatGPT plugin
-
-Use **Plugins → Add → Upload plugin** to upload the version-matched `AI-Live-Translator-ChatGPT-Plugin-v1.0.5.zip` file if your account offers direct ZIP upload; otherwise use **Plugins → Add (+) → Plugin Creator**. Use the dedicated **ChatGPT distribution archive**, not the full repository ZIP: the previously uploaded v1.0.1 distribution failed ChatGPT installation; the v1.0.5 distribution is built from the merged source using the documented build script. **Do not upload GitHub's automatic source ZIP as a ChatGPT plugin.** See [`plugin/installation/BUILD-CHATGPT.md`](plugin/installation/BUILD-CHATGPT.md). The archive includes a portable Agent Plugins root `plugin.json`, a setup skill, and a compatible `.codex-plugin/plugin.json`. See [`plugin/adapters/chatgpt.md`](plugin/adapters/chatgpt.md). The GitHub connector cannot install a ChatGPT plugin on your behalf.
+**Jump to:** [Quick start](#quick-start) · [Choose an installation method](docs/installation.md) · [Full installation guide](plugin/installation/INSTALL.md)
 
 ## Quick start
 
-1. Install or load `skills/ai-live-translator/SKILL.md` in an Agent-Skills-capable client **or** paste `prompt/live-translation.md` into a new chat's instruction context. See [`plugin/installation/INSTALL.md`](plugin/installation/INSTALL.md).
-2. Trigger **AI Live Translator**. The agent asks which two languages to translate between.
-3. Answer, e.g. **Arabic and English**. The agent gives concise instructions **only in both chosen languages**, localized separately for that exact pair.
-4. Send natural messages in either language. Receive **only** the translation in the other language. Optional `ME:` / `OTHER:` and `أنا:` / `الطرف الآخر:` markers help clarify who is speaking and are never copied into the translation.
-5. To control the agent, start a message with `@agent:` or an **unambiguous direct address** such as `ChatGPT, change the languages to English and Russian.` or `يا ChatGPT، غيّر اللغتين إلى العربية والروسية.` Mere mentions of AI names *inside a message* are translated like normal text.
+1. Choose a host-specific route below, or load `skills/ai-live-translator/SKILL.md` / paste `prompt/live-translation.md` into a new session.
+2. Activate **AI Live Translator** and choose two languages, such as Arabic and English.
+3. Send messages in either language and receive only the translation in the other. Optional `ME:` / `OTHER:` and `أنا:` / `الطرف الآخر:` labels clarify the speaker.
+4. Control the agent with `@agent:` or a clear direct address at the start of a message. Mentions inside ordinary content are translated.
+
+> **Compatibility matters:** No universal AI-plugin installer exists. The core is an [Agent Skills](https://agentskills.io/specification) skill plus a reusable prompt; Claude Code has a native plugin manifest and command. Codex, Copilot, Gemini, and other hosts need their documented installation method or manual prompt loading. Their higher-priority system policies remain authoritative. This is a text-message interpreter, not a microphone, call, real-time audio, or externally hosted translation service.
+
+## Choose an installation method
+
+Use the short [platform installation guide](docs/installation.md) to choose between ChatGPT/Codex plugin packaging, a native Claude Code plugin, or loading the portable skill and prompt in other agents. Complete command-by-command instructions remain in [`plugin/installation/INSTALL.md`](plugin/installation/INSTALL.md).
 
 ## End-user setup guidance
 
@@ -60,12 +61,14 @@ AI-Live-Translator/
 │       ├── examples/                 Multilingual gold-standard examples
 │       ├── scripts/                  Python stdlib checks/router demo
 │       ├── references/               Protocol, locale, and examples index
-│       └── assets/                   Sample conversations
+│       └── assets/                   Skill icon exports
 ├── plugin/                          Host-specific adapters and docs
 │   ├── adapters/
 │   ├── commands/
 │   ├── installation/
 │   └── schemas/
+├── assets/                          Host-supported plugin icon exports
+├── docs/                            Platform installation summaries and user guides
 ├── .claude-plugin/plugin.json       Claude Code native manifest
 ├── .github/                         Copilot guidance and CI
 ├── AGENTS.md                        Agent-independent repository governance

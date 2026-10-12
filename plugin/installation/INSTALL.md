@@ -1,8 +1,12 @@
+# Install AI Live Translator in AI agents
+
+**AI Live Translator** — Translate messages both ways.
+
+Start with the short [platform installation overview](../../docs/installation.md) or its [Arabic version](../../docs/installation.ar.md). This guide retains the full setup details for advanced users.
+
 ## Direct ChatGPT plugin installation (2026)
 
 The project contains **portable Agent Plugins** `plugin.json`, a first-run onboarding skill at `skills/setup/SKILL.md`, and a Codex compatibility manifest at `.codex-plugin/plugin.json`. For a user-created ChatGPT plugin, **upload the ZIP** via Plugins → Add → Upload plugin where available, or use **Plugin Creator** from Plugins → Add (+). The GitHub connector does not install plugins to ChatGPT accounts. See `plugin/adapters/chatgpt.md`.
-
-# Install AI Live Translator in AI agents
 
 ## Universal fallback (any chat that accepts a user/system prompt)
 

@@ -2,6 +2,8 @@
 
 This guide covers the recommended ChatGPT plugin upload, what to select from a complete GitHub download, how to activate the translator, and how to update an older upload.
 
+**AI Live Translator** — Translate messages both ways.
+
 ## Which files do I upload?
 
 ### Recommended: build the dedicated ChatGPT plugin archive
@@ -15,7 +17,7 @@ python plugin/installation/build-chatgpt.py
 On some systems, use `python3` instead of `python`. The script creates:
 
 ```text
-dist/AI-Live-Translator-ChatGPT-Plugin-v1.0.4.zip
+dist/AI-Live-Translator-ChatGPT-Plugin-v1.0.6.zip
 ```
 
 The exact versioned name is taken from the repository's `VERSION` file, so use the name printed by the script if a newer release is present. Upload **that generated file only**.
@@ -23,6 +25,7 @@ The exact versioned name is taken from the repository's `VERSION` file, so use t
 The builder packages the files ChatGPT needs:
 
 - `plugin.json`, `README.md`, and `LICENSE`
+- OpenAI composer/listing icons under `assets/`
 - `prompt/`
 - `skills/ai-live-translator/` and its supporting files
 - `skills/setup/`

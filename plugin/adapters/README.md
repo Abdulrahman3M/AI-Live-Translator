@@ -1,5 +1,9 @@
 # Agent adapter index
 
+**AI Live Translator** — Translate messages both ways.
+
+For a short platform comparison, see [`docs/installation.md`](../../docs/installation.md) or its [Arabic version](../../docs/installation.ar.md).
+
 - `generic-agent.md`: universal prompt-only fallback.
 - `claude-code.md`: native plugin manifest and commands.
 - `codex.md`: Agent Skills and explicit skill loading.

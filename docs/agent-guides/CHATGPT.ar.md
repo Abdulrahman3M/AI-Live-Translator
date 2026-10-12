@@ -2,6 +2,8 @@
 
 يوضح هذا الدليل طريقة رفع إضافة ChatGPT المخصصة، والملفات المطلوب اختيارها عند تنزيل المشروع كاملًا، وكيفية تشغيل المترجم وتحديث نسخة قديمة.
 
+**AI Live Translator** — ترجمة الرسائل ذهابًا وإيابًا.
+
 ## ما الملفات التي أرفعها؟
 
 ### الطريقة الموصى بها: إنشاء حزمة ChatGPT المخصصة
@@ -15,7 +17,7 @@ python plugin/installation/build-chatgpt.py
 في بعض الأنظمة استخدم `python3` بدلًا من `python`. سيُنشئ السكربت ملفًا مثل:
 
 ```text
-dist/AI-Live-Translator-ChatGPT-Plugin-v1.0.4.zip
+dist/AI-Live-Translator-ChatGPT-Plugin-v1.0.6.zip
 ```
 
 يُؤخذ رقم الإصدار من ملف `VERSION`؛ لذلك استخدم الاسم الذي يطبعه السكربت إذا كان هناك إصدار أحدث. ارفع **ملف ZIP الذي أنشأه السكربت فقط**.
@@ -23,6 +25,7 @@ dist/AI-Live-Translator-ChatGPT-Plugin-v1.0.4.zip
 تحتوي الحزمة على الملفات التي يحتاجها ChatGPT:
 
 - `plugin.json` و`README.md` و`LICENSE`
+- أيقونتا المحرر والإضافة ضمن `assets/`
 - مجلد `prompt/`
 - مجلد `skills/ai-live-translator/` وكل ملفاته المساندة
 - مجلد `skills/setup/`
