@@ -56,6 +56,9 @@ The project is built from instructions and skills, so it does not contain its ow
 
 ## Voice Turn Management (best effort)
 
+**New concrete examples (unreleased source update):** [16 expected/forbidden voice cases](skills/ai-live-translator/examples/voice-turn-examples.md), plus [structured regression fixtures](skills/ai-live-translator/examples/voice-turn-cases.json). These distinguish host-interim speech from finalized input and audio behavior from text-only instruction preferences.
+
+
 Voice-derived input follows [Voice Turn Management](skills/ai-live-translator/rules/voice-turn-management.md). When the host provides **interim** speech, a breath or brief silence alone should not trigger translation before a thought is complete; finalized chat messages still translate normally without an artificial delay. Once output starts, prioritize finishing the current translation rather than reacting voluntarily to stray background speech. Interpret host transcripts by checking intended foreground speech, the dominant language in the chosen pair, and the translation direction. Ask for clarification if attribution is uncertain; preserve short genuine replies.
 
 **ChatGPT Advanced Voice limitations:** This plugin is a text-only skill, not an audio engine. It cannot change the host's pause threshold, listen to raw sound, perform noise reduction/speaker identification, disable barge-in or guarantee uninterrupted spoken playback. These instructions are preferences **only where the host exposes sufficient context**. See [ChatGPT guidance](docs/agent-guides/CHATGPT.md) and [voice scenario cases](skills/ai-live-translator/examples/voice-turn-cases.json).

@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased (main only; no new GitHub Release)
+
+### Added
+- Added detailed worked voice-turn examples showing actual inputs, expected outputs and forbidden interpretations for semantic completion, interruption, speech intent, noise, language direction and controls.
+- Expanded structured voice fixtures with inputs/results/negative cases and linked examples in the SKILL, prompt and policy; added regression validation.
+
+### Note
+- Source-only changes remain at v1.0.8; no tag or Release publication is intended.
+
+
 ## [1.0.8] — 2026-10-14
 
 ### Added

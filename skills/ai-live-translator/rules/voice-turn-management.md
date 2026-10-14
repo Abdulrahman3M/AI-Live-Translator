@@ -23,7 +23,26 @@ This policy is **best-effort instruction guidance**, not microphone/DSP code. It
 2. **Language gate:** Identify the dominant source language using the complete utterance, its words, script, and conversation context from **either selected language**, not speaker identity or accent alone. Mixed language follows the existing language-detection policy.
 3. **Translation gate:** Translate exactly once into the other selected language, preserving meaning, dialect, names, negation, and tone. If foreground speech versus ambient speech or translation direction remains uncertain, ask for one clean repeat or speaker label rather than inventing ownership, language, or words.
 
-## 4. Availability and Priority
+## 4. Worked Examples — expected behavior versus mistakes
+
+See the [full voice-turn worked examples](../examples/voice-turn-examples.md) and [machine-readable scenarios](../examples/voice-turn-cases.json). These are conditional on **host-visible signals**, not inferred audio telemetry.
+
+| Actual host signal and example | Expected | Must NOT do |
+| --- | --- | --- |
+| Open interim: "أنا كنت عايز..." [breath], then "أروح السوق بكرة." | Wait if host permits; on final produce once "I wanted to go to the market tomorrow." | Translate at the breath or invent a 10-second timeout |
+| Already-final fragment: "أنا كنت عايز..." | Translate once "I wanted to..." | Reopen finalized audio or invent an ending |
+| Already-final short speech: "نعم." | "Yes." | Discard the short valid turn as noise |
+| Translation of "سأصل الساعة الثامنة." is spoken; unrelated bystander: "Hey!" | Finish "I'll arrive at eight." once if the host still permits it | Start translating the stray word or claim playback cannot be interrupted |
+| Host cuts speech off after "I'll arrive..." | Do not claim completion; resume only with reliable host support or an explicit user request | Automatically restart/duplicate an entire spoken translation |
+| Host labels TV "Buy now!" next to foreground "فين أقرب صيدلية؟" | Output only "Where's the nearest pharmacy?" | Include TV speech or pretend raw-audio filtering occurred |
+| Conflicting speakers/numbers: "خمسة عشر / خمسين؟" | Ask once "هل قلت خمسة عشر أم خمسين درهمًا؟" | Guess a number or speaker |
+| Genuine direct message "@agent: pause" | Honor direct control | Discard a legitimate instruction as ambient sound |
+| Arabic "أنا مش جاي بكرة." | "I'm not coming tomorrow." | Lose negation |
+| English "Where is the nearest pharmacy?" | "أين أقرب صيدلية؟" | Provide actual directions |
+
+If no interim/final/playback metadata is available, simply process the host-delivered message under the normal translation-only rule; never invent host signals. Canonical outputs are illustrative, not rigid exact-string requirements.
+
+## 5. Availability and Priority
 
 The skill receives messages/transcripts supplied by the host. It cannot inspect raw audio, perform noise suppression, voice identification, voice activity detection, semantic endpointing at the engine level, or manage playback automatically. Instructions above affect the agent's **interpretation** of data where available, never override the host's capture/end-of-turn/interrupt pipeline. In ChatGPT Advanced Voice, pause thresholds, playback lock, and microphone gating are not exposed to this Markdown skill. An independently engineered realtime client with supported audio/turn controls would be needed for enforceable audio behavior.
 

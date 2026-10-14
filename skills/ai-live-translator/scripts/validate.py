@@ -11,7 +11,8 @@ NEEDED=['plugin.json','.codex-plugin/plugin.json','.agents/plugins/marketplace.j
         'assets/ai-live-translator-icon-64.png','assets/ai-live-translator-icon-128.png',
         'assets/ai-live-translator-icon-256.png','assets/ai-live-translator-icon-512.png',
         'skills/ai-live-translator/agents/openai.yaml','skills/ai-live-translator/examples/clarification-cases.jsonl',
-        'skills/ai-live-translator/rules/voice-turn-management.md','skills/ai-live-translator/examples/voice-turn-cases.json']
+        'skills/ai-live-translator/rules/voice-turn-management.md','skills/ai-live-translator/examples/voice-turn-cases.json',
+        'skills/ai-live-translator/examples/voice-turn-examples.md']
 def validate():
     errors=[]
     for rel in NEEDED:
@@ -89,14 +90,15 @@ def validate():
             'PRIORITIZE_CURRENT_TRANSLATION','IGNORE_UNRELATED_BACKGROUND',
             'DETECT_LANGUAGE_AND_TRANSLATE_ONCE','ASK_CLARIFICATION','NO_FALSE_COMPLETION',
             'HONOR_DIRECT_CONTROL'}
-        if not isinstance(voice_cases,list) or len(voice_cases)<12:
+        if not isinstance(voice_cases,list) or len(voice_cases)<16:
             errors.append('Insufficient voice turn cases')
         else:
             ids=[case.get('id') for case in voice_cases]
             if len(ids)!=len(set(ids)): errors.append('Duplicate voice turn case IDs')
             for case in voice_cases:
                 if not all(isinstance(case.get(key),str) and case[key].strip() for key in
-                           ('id','scenario','host_signal','expected_action','note')):
+                           ('id','scenario','host_signal','expected_action','note',
+                            'example_input','expected_result','forbidden_behavior')):
                     errors.append('Incomplete voice turn case')
             if not required_voice_actions<={case.get('expected_action') for case in voice_cases}:
                 errors.append('Voice turn cases missing required outcomes')
@@ -109,6 +111,10 @@ def validate():
                 'README.md','README.ar.md','docs/agent-guides/CHATGPT.md','docs/agent-guides/CHATGPT.ar.md'):
         if 'Voice Turn Management' not in (ROOT/doc).read_text(encoding='utf-8'):
             errors.append('Voice Turn Management not linked in '+doc)
+    for doc in ('skills/ai-live-translator/SKILL.md','prompt/live-translation.md',
+                'skills/ai-live-translator/rules/voice-turn-management.md'):
+        if 'voice-turn-examples.md' not in (ROOT/doc).read_text(encoding='utf-8'):
+            errors.append('Missing voice worked-examples link in '+doc)
     if count<500: errors.append(f'Too few directional examples: {count}')
     if len(categories)<10:errors.append('Insufficient categories')
     if len(directions)<8:errors.append('Insufficient language directions')

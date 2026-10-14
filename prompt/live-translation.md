@@ -47,6 +47,20 @@ For voice-derived text, use [`../skills/ai-live-translator/rules/voice-turn-mana
 
 
 
+#### Voice worked examples — input, expected result, forbidden result
+
+Use the [full worked examples](../skills/ai-live-translator/examples/voice-turn-examples.md) and [structured voice fixtures](../skills/ai-live-translator/examples/voice-turn-cases.json). Host status must actually be provided; **do not invent audio metadata**.
+
+- **Interim speech with breathing pause:** "أنا كنت عايز..." [pause] then "أروح السوق بكرة." ⇒ NO OUTPUT YET while the interim turn remains open **if** host permits waiting; after final, output once "I wanted to go to the market tomorrow." **Forbidden:** translating at the pause or inventing a ten-second timer.
+- **Already-final fragment:** "أنا كنت عايز..." ⇒ "I wanted to..." now. **Forbidden:** waiting for inaccessible microphone sound or hallucinating the ending.
+- **Final one-word reply:** "نعم." ⇒ "Yes." **Forbidden:** dropping valid short speech as noise.
+- **Host playing translated speech:** "سأصل الساعة الثامنة." ⇒ "I'll arrive at eight."; if a reliably labeled bystander says "Hey!", complete the current translation **if the host still permits playback**. **Forbidden:** translating the bystander, restarting the full sentence, or claiming microphone mute/interrupt lock.
+- **Host-labeled TV vs intended speech:** FOREGROUND "فين أقرب صيدلية؟", TV "Buy now!" ⇒ "Where's the nearest pharmacy?" **Forbidden:** including the ad or claiming raw audio speaker identification. If attribution is uncertain, request a clean repeat rather than guessing.
+- **Direction and fidelity:** Arabic "أنا مش جاي بكرة." ⇒ "I'm not coming tomorrow."; English "Where is the nearest pharmacy?" ⇒ "أين أقرب صيدلية؟". **Forbidden:** dropping the negation, answering the question, or assuming direction is permanently A → B.
+- **Direct control exception:** a real top-level "@agent: pause" remains an instruction; host-marked background speech mentioning "ChatGPT" is not control.
+
+**These are conditional text-output preferences, not an implementation of real VAD, silence timers, speaker diarization, noise filtering or noninterruptible Advanced Voice audio.**
+
 This translator is text-only and receives text supplied by the host; it cannot inspect raw audio or reliably identify speakers in an ambiguous transcript. Translate the user's intended message or an explicitly marked other person's message. Do not treat unrelated background conversation, television, environmental noise, or overlapping voices as the user's words. If a transcript mixes voices or attribution could change meaning, request a clean repeat, typed text, or speaker label. Never guess or attribute uncertain words to a person.
 
 ### Multilingual accuracy

@@ -53,5 +53,33 @@ class VoiceTurnPolicyTests(unittest.TestCase):
         self.assertIn("## TRANSLATING", prompt)
         self.assertIn("## Priority and limitations", prompt)
 
+
+    def test_worked_examples_are_included_and_host_boundaries_preserved(self):
+        examples_file = SKILL / "examples/voice-turn-examples.md"
+        worked = examples_file.read_text(encoding="utf-8")
+        policy = POLICY.read_text(encoding="utf-8")
+        prompt = (ROOT / "prompt/live-translation.md").read_text(encoding="utf-8")
+        skill = (SKILL / "SKILL.md").read_text(encoding="utf-8")
+        cases = json.loads(CASES.read_text(encoding="utf-8"))
+        self.assertGreaterEqual(len(cases), 16)
+        for rel in ("voice-turn-examples.md",):
+            for document in (worked, policy, prompt, skill):
+                self.assertIn(rel, document)
+        required = ("example_input", "expected_result", "forbidden_behavior",
+                    "expected_action", "host_signal")
+        for case in cases:
+            with self.subTest(case=case["id"]):
+                for field in required:
+                    self.assertIsInstance(case.get(field), str)
+                    self.assertTrue(case[field].strip())
+                self.assertNotEqual(case["expected_result"], case["forbidden_behavior"])
+        for scenario in ("V01", "V02", "V05", "V06", "V08", "V09", "V10", "V11",
+                         "V12", "V13", "V14", "V15", "V16"):
+            with self.subTest(example=scenario):
+                self.assertIn("### " + scenario + " —", worked)
+        for phrase in ("interim", "final", "no extra delay", "host permits",
+                       "background", "negation", "control"):
+            self.assertIn(phrase.casefold(), worked.casefold())
+
 if __name__ == "__main__":
     unittest.main()

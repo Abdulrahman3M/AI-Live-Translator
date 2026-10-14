@@ -76,6 +76,10 @@ The v1.0.8 skill adds [Voice Turn Management](../../skills/ai-live-translator/ru
 
 **Practical checks:** In a fresh ChatGPT conversation, test (a) a natural pause mid-thought, (b) incidental speech while the translation is spoken, and (c) nearby noise plus a short genuine answer. Record separately whether the host cut speech and whether the resulting text translation was faithful; written regression fixtures cannot verify the live microphone or playback behavior.
 
+### Worked voice examples (v1.0.8 source)
+
+The [16 worked examples](../../skills/ai-live-translator/examples/voice-turn-examples.md) give a stated host signal, real utterance, expected output and a forbidden mistake. For instance, an **open interim** "أنا كنت عايز..." followed by "أروح السوق بكرة" may wait for semantic completion *if the host allows*; an **already-final** "أنا كنت عايز..." must instead be translated as "I wanted to..." without an artificial delay. During playback of "I'll arrive at eight.", a clearly unrelated "Hey!" should not become a new translation request **if the host permits finishing the output**. This is not a promise that ChatGPT Advanced Voice disables interruptions. See also [structured cases](../../skills/ai-live-translator/examples/voice-turn-cases.json).
+
 ## Official references
 
 - [OpenAI Help Center: Plugins in ChatGPT and Codex](https://help.openai.com/en/articles/12584461-plugins-in-chatgpt-and-codex)

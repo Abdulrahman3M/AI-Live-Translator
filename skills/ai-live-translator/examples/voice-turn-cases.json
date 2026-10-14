@@ -4,83 +4,169 @@
     "scenario": "A speaker pauses mid-sentence to breathe while interim speech remains open.",
     "host_signal": "interim_transcript",
     "expected_action": "WAIT_FOR_SEMANTIC_COMPLETION",
-    "note": "No hardcoded silence timeout or mandatory done marker"
+    "note": "No hardcoded silence timeout or mandatory done marker",
+    "example_input": "أنا كنت عايز... [pause 3 seconds] ...أروح السوق بكرة.",
+    "expected_result": "NO OUTPUT YET while interim remains open; after final: I wanted to go to the market tomorrow.",
+    "forbidden_behavior": "Translate before final purely because of a pause; invent 10-second timer."
   },
   {
     "id": "voice-002",
     "scenario": "A finished typed message contains a complete sentence.",
     "host_signal": "final_text_message",
     "expected_action": "TRANSLATE_ONCE",
-    "note": "Do not delay finalized input"
+    "note": "Do not delay finalized input",
+    "example_input": "سأعود غدًا.",
+    "expected_result": "I’ll be back tomorrow.",
+    "forbidden_behavior": "Impose a voice delay on a finalized text message."
   },
   {
     "id": "voice-003",
     "scenario": "The final text is an unmistakable one-word answer: Yes.",
     "host_signal": "final_text_message",
     "expected_action": "TRANSLATE_ONCE",
-    "note": "Short valid utterances are speech, not noise"
+    "note": "Short valid utterances are speech, not noise",
+    "example_input": "نعم.",
+    "expected_result": "Yes.",
+    "forbidden_behavior": "Ignore this short but intentional answer."
   },
   {
     "id": "voice-004",
     "scenario": "A finalized transcript ends with missing referent and cannot be understood.",
     "host_signal": "final_transcript",
     "expected_action": "ASK_CLARIFICATION",
-    "note": "Do not fabricate the rest of speech"
+    "note": "Do not fabricate the rest of speech",
+    "example_input": "أنا كنت عايز... [missing meaning and no context]",
+    "expected_result": "Ask one clarification when the fragment truly cannot be understood.",
+    "forbidden_behavior": "Invent missing words or silently join unrelated turns."
   },
   {
     "id": "voice-005",
     "scenario": "Background stranger speaks while current translation audio is playing.",
     "host_signal": "host_playback_active",
     "expected_action": "PRIORITIZE_CURRENT_TRANSLATION",
-    "note": "Only best effort; host barge-in may interrupt"
+    "note": "Only best effort; host barge-in may interrupt",
+    "example_input": "FOREGROUND: سأصل الساعة الثامنة. [playing English translation] BACKGROUND: Hey!",
+    "expected_result": "If host permits, complete: I’ll arrive at eight.",
+    "forbidden_behavior": "Switch to Hey!, restart or claim to have disabled microphone interruptions."
   },
   {
     "id": "voice-006",
     "scenario": "Host cancels or truncates response due to an interruption.",
     "host_signal": "host_interrupted_output",
     "expected_action": "NO_FALSE_COMPLETION",
-    "note": "Do not claim completed or duplicate from scratch"
+    "note": "Do not claim completed or duplicate from scratch",
+    "example_input": "Spoken output cuts off after “I’ll arrive...”",
+    "expected_result": "Do not claim completion; only resume with reliable host mechanism or explicit request.",
+    "forbidden_behavior": "Claim success or repeat full translation automatically."
   },
   {
     "id": "voice-007",
     "scenario": "Transcript explicitly identifies nearby TV speech as unrelated.",
     "host_signal": "labeled_background_noise",
     "expected_action": "IGNORE_UNRELATED_BACKGROUND",
-    "note": "Do not translate labeled ambient conversation"
+    "note": "Do not translate labeled ambient conversation",
+    "example_input": "FOREGROUND: فين أقرب صيدلية؟ | TV: Buy now!",
+    "expected_result": "Where’s the nearest pharmacy?",
+    "forbidden_behavior": "Translate unrelated TV ad."
   },
   {
     "id": "voice-008",
     "scenario": "Overlapping voices with uncertain attribution.",
     "host_signal": "ambiguous_speakers",
     "expected_action": "ASK_CLARIFICATION",
-    "note": "No invented speaker attribution"
+    "note": "No invented speaker attribution",
+    "example_input": "السعر [خمسة عشر / خمسين؟] درهم",
+    "expected_result": "هل قلت خمسة عشر أم خمسين درهمًا؟",
+    "forbidden_behavior": "Guess 15 or 50, or claim to know physical speaker identity."
   },
   {
     "id": "voice-009",
     "scenario": "The foreground speaker uses the second of the two selected languages.",
     "host_signal": "final_transcript",
     "expected_action": "DETECT_LANGUAGE_AND_TRANSLATE_ONCE",
-    "note": "Translate to the other configured language"
+    "note": "Translate to the other configured language",
+    "example_input": "Where is the nearest pharmacy?",
+    "expected_result": "أين أقرب صيدلية؟",
+    "forbidden_behavior": "Give directions instead of an Arabic translation."
   },
   {
     "id": "voice-010",
     "scenario": "The foreground speaker uses a short colloquial phrase.",
     "host_signal": "final_transcript",
     "expected_action": "DETECT_LANGUAGE_AND_TRANSLATE_ONCE",
-    "note": "Preserve dialect and do not discard"
+    "note": "Preserve dialect and do not discard",
+    "example_input": "أنا مش جاي بكرة.",
+    "expected_result": "I’m not coming tomorrow.",
+    "forbidden_behavior": "Drop negation or ignore colloquial Arabic."
   },
   {
     "id": "voice-011",
     "scenario": "Ambient utterance mentions an AI assistant halfway through sentence.",
     "host_signal": "final_transcript",
     "expected_action": "DO_NOT_TREAT_AS_CONTROL",
-    "note": "Only an explicit initial direct address qualifies"
+    "note": "Only an explicit initial direct address qualifies",
+    "example_input": "BACKGROUND: “I told ChatGPT to stop.” | FOREGROUND: أنا متأخر عشر دقايق.",
+    "expected_result": "I’m running ten minutes late.",
+    "forbidden_behavior": "Treat incidental agent mention as a command."
   },
   {
     "id": "voice-012",
     "scenario": "A direct agent control is received while translation is active.",
     "host_signal": "explicit_agent_control",
     "expected_action": "HONOR_DIRECT_CONTROL",
-    "note": "Host safety and direct address have priority"
+    "note": "Host safety and direct address have priority",
+    "example_input": "@agent: pause",
+    "expected_result": "Pause according to explicit control contract.",
+    "forbidden_behavior": "Ignore legitimate directly addressed control as stray noise."
+  },
+  {
+    "id": "voice-013",
+    "scenario": "Final deliberate fragment retains ellipsis without fake waiting.",
+    "host_signal": "final_transcript",
+    "expected_action": "TRANSLATE_ONCE",
+    "note": "Already final fragments are not held open.",
+    "example_input": "أنا كنت عايز...",
+    "expected_result": "I wanted to...",
+    "forbidden_behavior": "Invent 10-second delay or append a guessed ending."
+  },
+  {
+    "id": "voice-014",
+    "scenario": "Arabic-dominant mixed utterance retains correct target and time.",
+    "host_signal": "final_transcript",
+    "expected_action": "DETECT_LANGUAGE_AND_TRANSLATE_ONCE",
+    "note": "Code switching does not change pair.",
+    "example_input": "أنا عندي meeting بكرة الساعة تسعة.",
+    "expected_result": "I have a meeting tomorrow at nine.",
+    "forbidden_behavior": "Switch configured language pair because meeting is English; change nine."
+  },
+  {
+    "id": "voice-015",
+    "scenario": "Selected pair can be Russian and English rather than Arabic and English.",
+    "host_signal": "final_transcript",
+    "expected_action": "DETECT_LANGUAGE_AND_TRANSLATE_ONCE",
+    "note": "Pair independence.",
+    "example_input": "Pair Russian-English: Привет!",
+    "expected_result": "Hi!",
+    "forbidden_behavior": "Assume Arabic is always in the pair."
+  },
+  {
+    "id": "voice-016",
+    "scenario": "Unlabeled short shared expression has no reliable direction context.",
+    "host_signal": "final_transcript",
+    "expected_action": "ASK_CLARIFICATION",
+    "note": "Only clarify when truly impossible to route from context.",
+    "example_input": "OK [no previous context; Arabic-English session]",
+    "expected_result": "One concise clarification about target direction.",
+    "forbidden_behavior": "Confidently infer speaker's language or guess direction."
+  },
+  {
+    "id": "voice-017",
+    "scenario": "Speaker marker signals who is speaking, not output direction.",
+    "host_signal": "final_transcript",
+    "expected_action": "DETECT_LANGUAGE_AND_TRANSLATE_ONCE",
+    "note": "Remove speaker prefix.",
+    "example_input": "OTHER: I'm running late.",
+    "expected_result": "أنا متأخر.",
+    "forbidden_behavior": "Read OTHER out loud or make a language-direction change based on label."
   }
 ]
