@@ -1,4 +1,4 @@
-# READY setup guidance — Arabic ↔ English (v1.0.7)
+# READY setup guidance — Arabic ↔ English (v1.0.8)
 
 ### العربية
 

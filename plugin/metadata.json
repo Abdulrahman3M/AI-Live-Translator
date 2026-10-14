@@ -1,7 +1,7 @@
 {
   "name": "AI Live Translator",
   "id": "ai-live-translator",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Translate messages both ways",
   "short_description": "Translate messages both ways",
   "format": "portable-metadata-not-standard-plugin-schema",

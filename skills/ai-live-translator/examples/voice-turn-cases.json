@@ -1,0 +1,86 @@
+[
+  {
+    "id": "voice-001",
+    "scenario": "A speaker pauses mid-sentence to breathe while interim speech remains open.",
+    "host_signal": "interim_transcript",
+    "expected_action": "WAIT_FOR_SEMANTIC_COMPLETION",
+    "note": "No hardcoded silence timeout or mandatory done marker"
+  },
+  {
+    "id": "voice-002",
+    "scenario": "A finished typed message contains a complete sentence.",
+    "host_signal": "final_text_message",
+    "expected_action": "TRANSLATE_ONCE",
+    "note": "Do not delay finalized input"
+  },
+  {
+    "id": "voice-003",
+    "scenario": "The final text is an unmistakable one-word answer: Yes.",
+    "host_signal": "final_text_message",
+    "expected_action": "TRANSLATE_ONCE",
+    "note": "Short valid utterances are speech, not noise"
+  },
+  {
+    "id": "voice-004",
+    "scenario": "A finalized transcript ends with missing referent and cannot be understood.",
+    "host_signal": "final_transcript",
+    "expected_action": "ASK_CLARIFICATION",
+    "note": "Do not fabricate the rest of speech"
+  },
+  {
+    "id": "voice-005",
+    "scenario": "Background stranger speaks while current translation audio is playing.",
+    "host_signal": "host_playback_active",
+    "expected_action": "PRIORITIZE_CURRENT_TRANSLATION",
+    "note": "Only best effort; host barge-in may interrupt"
+  },
+  {
+    "id": "voice-006",
+    "scenario": "Host cancels or truncates response due to an interruption.",
+    "host_signal": "host_interrupted_output",
+    "expected_action": "NO_FALSE_COMPLETION",
+    "note": "Do not claim completed or duplicate from scratch"
+  },
+  {
+    "id": "voice-007",
+    "scenario": "Transcript explicitly identifies nearby TV speech as unrelated.",
+    "host_signal": "labeled_background_noise",
+    "expected_action": "IGNORE_UNRELATED_BACKGROUND",
+    "note": "Do not translate labeled ambient conversation"
+  },
+  {
+    "id": "voice-008",
+    "scenario": "Overlapping voices with uncertain attribution.",
+    "host_signal": "ambiguous_speakers",
+    "expected_action": "ASK_CLARIFICATION",
+    "note": "No invented speaker attribution"
+  },
+  {
+    "id": "voice-009",
+    "scenario": "The foreground speaker uses the second of the two selected languages.",
+    "host_signal": "final_transcript",
+    "expected_action": "DETECT_LANGUAGE_AND_TRANSLATE_ONCE",
+    "note": "Translate to the other configured language"
+  },
+  {
+    "id": "voice-010",
+    "scenario": "The foreground speaker uses a short colloquial phrase.",
+    "host_signal": "final_transcript",
+    "expected_action": "DETECT_LANGUAGE_AND_TRANSLATE_ONCE",
+    "note": "Preserve dialect and do not discard"
+  },
+  {
+    "id": "voice-011",
+    "scenario": "Ambient utterance mentions an AI assistant halfway through sentence.",
+    "host_signal": "final_transcript",
+    "expected_action": "DO_NOT_TREAT_AS_CONTROL",
+    "note": "Only an explicit initial direct address qualifies"
+  },
+  {
+    "id": "voice-012",
+    "scenario": "A direct agent control is received while translation is active.",
+    "host_signal": "explicit_agent_control",
+    "expected_action": "HONOR_DIRECT_CONTROL",
+    "note": "Host safety and direct address have priority"
+  }
+]

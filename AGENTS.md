@@ -1,4 +1,4 @@
-# AI Live Translator — Repository Governance (v1.0.7)
+# AI Live Translator — Repository Governance (v1.0.8)
 
 This file governs contributors **editing this repository**; it does not globally force translation mode on any arbitrary agent. The behavior to install in a conversation is in `skills/ai-live-translator/SKILL.md` and `prompt/live-translation.md`.
 
@@ -22,3 +22,5 @@ This file governs contributors **editing this repository**; it does not globally
     - Review `git diff --check`, the full diff, and `git status`; stage only intended project files and make a descriptive Conventional Commit on `main`.
     - Push the commit to `origin/main`, verify the remote commit, then push the matching `v<version>` tag and verify the GitHub Release contains all five ZIP assets and the English-language notes.
     - If a host rule, branch protection, or unavailable credential blocks a required Git action, report the exact blocker and keep the verified local work intact.
+
+14. **Voice-turn governance:** The authoritative best-effort policy is `skills/ai-live-translator/rules/voice-turn-management.md`. Update the portable prompt, ChatGPT platform guides in both languages, and regression cases when modifying it. Do not promise engine-level semantic endpointing, speaker diarization, VAD timing, microphone gating, or noninterruptible playback from a text-only Skill.

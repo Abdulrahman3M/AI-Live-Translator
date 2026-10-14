@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.0.8] — 2026-10-14
+
+### Added
+- Added host-aware `Voice Turn Management` guidance with semantic completion of interim speech, best-effort uninterrupted translation behavior, and a three-stage intentional-speech / source-language / translation-direction check.
+- Added 12 voice scenario fixtures and regression tests for normal text behavior, uncertain speakers, short complete utterances, background talk, and host interruptions.
+- Added bilingual ChatGPT Advanced Voice limitations and usage guidance.
+
+### Improved
+- Preserved the text-only translation contract and explicit agent controls; clearly stated that Markdown skills cannot set silence timers, control voice activity detection, mute microphones, or disable host barge-in.
+- Synchronized versioned plugin metadata and release notes. Previously published v1.0.7 download URLs remain unchanged until the v1.0.8 release assets are published.
+
+
 ## [1.0.7] — 2026-10-12
 
 ### Added

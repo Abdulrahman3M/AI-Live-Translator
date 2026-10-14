@@ -1,4 +1,4 @@
-# AI Live Translator · v1.0.7
+# AI Live Translator · v1.0.8
 
 ![Two people exchanging messages through a two-way translation loop](assets/ai-live-translator-hero.png)
 
@@ -16,6 +16,8 @@
 > **Compatibility matters:** No universal AI-plugin installer exists. The core is an [Agent Skills](https://agentskills.io/specification) skill plus a reusable prompt; Claude Code has a native plugin manifest and command. Codex, Copilot, Gemini, and other hosts need their documented installation method or manual prompt loading. Their higher-priority system policies remain authoritative. This is a text-message interpreter, not a microphone, call, real-time audio, or externally hosted translation service.
 
 ## Downloads
+
+**Current source version: v1.0.8.** The direct links below are for the previously published **v1.0.7** release; they do **not** include the new voice-turn policy. Until v1.0.8 release assets are published, build the updated archives from `main` using the documented builders.
 
 Choose a package using the [short platform guide](docs/installation.md):
 
@@ -51,6 +53,12 @@ AI Live Translator is designed for use with compatible AI assistants. For ChatGP
 Try both workflows and use the one that works best for your conversation. In either workflow, clearly distinguish your own words from the other person's message when needed, for example “My message:” or “Other person's message:”. Avoid speaking over people, television, or surrounding conversations. The translator receives text supplied by the host; it cannot inspect raw audio or reliably identify an unlabeled voice. If a transcript mixes speakers or includes noise that could affect meaning, request a clean repeat, typed text, or a speaker label instead of guessing. This recommendation reflects the owner's experience with ChatGPT; it is not a guarantee of perfect results.
 
 The project is built from instructions and skills, so it does not contain its own translation model. Other AI assistants may work, but translation quality and adherence to the one-translation-only behavior can vary between models, language pairs and sessions. The selected AI's language ability is the main factor. Review translations involving important or sensitive details.
+
+## Voice Turn Management (best effort)
+
+Voice-derived input follows [Voice Turn Management](skills/ai-live-translator/rules/voice-turn-management.md). When the host provides **interim** speech, a breath or brief silence alone should not trigger translation before a thought is complete; finalized chat messages still translate normally without an artificial delay. Once output starts, prioritize finishing the current translation rather than reacting voluntarily to stray background speech. Interpret host transcripts by checking intended foreground speech, the dominant language in the chosen pair, and the translation direction. Ask for clarification if attribution is uncertain; preserve short genuine replies.
+
+**ChatGPT Advanced Voice limitations:** This plugin is a text-only skill, not an audio engine. It cannot change the host's pause threshold, listen to raw sound, perform noise reduction/speaker identification, disable barge-in or guarantee uninterrupted spoken playback. These instructions are preferences **only where the host exposes sufficient context**. See [ChatGPT guidance](docs/agent-guides/CHATGPT.md) and [voice scenario cases](skills/ai-live-translator/examples/voice-turn-cases.json).
 
 ## Translation contract
 

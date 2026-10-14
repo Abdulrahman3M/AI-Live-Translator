@@ -1,7 +1,7 @@
 {
   "name": "ai-live-translator",
   "displayName": "AI Live Translator",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Translate messages both ways",
   "author": {
     "name": "Abdulrahman ElBatrah"

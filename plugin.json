@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "ai-live-translator",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Translate messages both ways",
   "author": {
     "name": "Abdulrahman ElBatrah"

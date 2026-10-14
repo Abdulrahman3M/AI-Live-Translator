@@ -10,7 +10,8 @@ NEEDED=['plugin.json','.codex-plugin/plugin.json','.agents/plugins/marketplace.j
         'docs/installation.md','docs/installation.ar.md','assets/ai-live-translator-icon.svg',
         'assets/ai-live-translator-icon-64.png','assets/ai-live-translator-icon-128.png',
         'assets/ai-live-translator-icon-256.png','assets/ai-live-translator-icon-512.png',
-        'skills/ai-live-translator/agents/openai.yaml','skills/ai-live-translator/examples/clarification-cases.jsonl']
+        'skills/ai-live-translator/agents/openai.yaml','skills/ai-live-translator/examples/clarification-cases.jsonl',
+        'skills/ai-live-translator/rules/voice-turn-management.md','skills/ai-live-translator/examples/voice-turn-cases.json']
 def validate():
     errors=[]
     for rel in NEEDED:
@@ -81,6 +82,33 @@ def validate():
                 errors.append(f'Invalid corpus example {file.name}:{index}')
             if r['id'] in seen:errors.append('Duplicate ID: '+r['id'])
             seen.add(r['id']);directions.add((r['source_language'],r['target_language']));categories.add(r['category']);count+=1
+    voice_cases_path=EXAMPLES/'voice-turn-cases.json'
+    try:
+        voice_cases=json.loads(voice_cases_path.read_text(encoding='utf-8'))
+        required_voice_actions={'WAIT_FOR_SEMANTIC_COMPLETION','TRANSLATE_ONCE',
+            'PRIORITIZE_CURRENT_TRANSLATION','IGNORE_UNRELATED_BACKGROUND',
+            'DETECT_LANGUAGE_AND_TRANSLATE_ONCE','ASK_CLARIFICATION','NO_FALSE_COMPLETION',
+            'HONOR_DIRECT_CONTROL'}
+        if not isinstance(voice_cases,list) or len(voice_cases)<12:
+            errors.append('Insufficient voice turn cases')
+        else:
+            ids=[case.get('id') for case in voice_cases]
+            if len(ids)!=len(set(ids)): errors.append('Duplicate voice turn case IDs')
+            for case in voice_cases:
+                if not all(isinstance(case.get(key),str) and case[key].strip() for key in
+                           ('id','scenario','host_signal','expected_action','note')):
+                    errors.append('Incomplete voice turn case')
+            if not required_voice_actions<={case.get('expected_action') for case in voice_cases}:
+                errors.append('Voice turn cases missing required outcomes')
+    except (OSError,ValueError,TypeError,AttributeError) as error:
+        errors.append(f'Invalid voice turn cases: {error}')
+    policy=(ROOT/'skills/ai-live-translator/rules/voice-turn-management.md').read_text(encoding='utf-8')
+    for label in ('Semantic End-of-Turn Detection','Uninterrupted Translation Mode','Intentional Speech, Noise, and Language Direction','ChatGPT Advanced Voice'):
+        if label not in policy: errors.append('Incomplete voice policy: '+label)
+    for doc in ('skills/ai-live-translator/SKILL.md','prompt/live-translation.md',
+                'README.md','README.ar.md','docs/agent-guides/CHATGPT.md','docs/agent-guides/CHATGPT.ar.md'):
+        if 'Voice Turn Management' not in (ROOT/doc).read_text(encoding='utf-8'):
+            errors.append('Voice Turn Management not linked in '+doc)
     if count<500: errors.append(f'Too few directional examples: {count}')
     if len(categories)<10:errors.append('Insufficient categories')
     if len(directions)<8:errors.append('Insufficient language directions')
