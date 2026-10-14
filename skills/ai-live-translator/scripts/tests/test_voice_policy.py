@@ -63,7 +63,7 @@ class VoiceTurnPolicyTests(unittest.TestCase):
         cases = json.loads(CASES.read_text(encoding="utf-8"))
         self.assertGreaterEqual(len(cases), 16)
         for rel in ("voice-turn-examples.md",):
-            for document in (worked, policy, prompt, skill):
+            for document in (policy, prompt, skill):
                 self.assertIn(rel, document)
         required = ("example_input", "expected_result", "forbidden_behavior",
                     "expected_action", "host_signal")
@@ -73,6 +73,7 @@ class VoiceTurnPolicyTests(unittest.TestCase):
                     self.assertIsInstance(case.get(field), str)
                     self.assertTrue(case[field].strip())
                 self.assertNotEqual(case["expected_result"], case["forbidden_behavior"])
+        self.assertIn("voice-turn-cases.json", worked)
         for scenario in ("V01", "V02", "V05", "V06", "V08", "V09", "V10", "V11",
                          "V12", "V13", "V14", "V15", "V16"):
             with self.subTest(example=scenario):

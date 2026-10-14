@@ -31,13 +31,13 @@
   },
   {
     "id": "voice-004",
-    "scenario": "A finalized transcript ends with missing referent and cannot be understood.",
+    "scenario": "A finalized transcript contains an unclear negation that changes the meaning.",
     "host_signal": "final_transcript",
     "expected_action": "ASK_CLARIFICATION",
     "note": "Do not fabricate the rest of speech",
-    "example_input": "أنا كنت عايز... [missing meaning and no context]",
-    "expected_result": "Ask one clarification when the fragment truly cannot be understood.",
-    "forbidden_behavior": "Invent missing words or silently join unrelated turns."
+    "example_input": "أنا [موافق / مش موافق؟] على السفر",
+    "expected_result": "هل قلت إنك موافق أم غير موافق على السفر؟",
+    "forbidden_behavior": "Select الموافق or غير الموافق without evidence; lose negation."
   },
   {
     "id": "voice-005",
