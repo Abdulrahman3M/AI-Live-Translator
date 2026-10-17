@@ -2,15 +2,15 @@
 
 **AI Live Translator** — ترجمة الرسائل ذهابًا وإيابًا.
 
-## التنزيلات المباشرة — الإصدار المنشور v1.0.7
+## التنزيلات المباشرة — الإصدار المنشور v1.0.8
 
-**يحتوي فرع `main` حاليًا على الإصدار v1.0.8** وسياسة Voice Turn Management. روابط التنزيل المنشورة أدناه هي للإصدار v1.0.7 حتى نشر حزم v1.0.8. للحصول على التعديلات الجديدة أنشئ الحزم من المصدر في `main`.
+**أحدث إصدار منشور هو v1.0.8.** اختر الحزمة المناسبة لمنصتك أدناه، وراجع [ملاحظات الإصدار](releases/v1.0.8.md) لمعرفة التغييرات مقارنةً بـv1.0.8.
 
-- [إضافة ChatGPT — AI-Live-Translator-ChatGPT-Plugin-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-ChatGPT-Plugin-v1.0.7.zip)
-- [إضافة Codex — AI-Live-Translator-Codex-Plugin-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Codex-Plugin-v1.0.7.zip)
-- [إضافة Claude Code — AI-Live-Translator-Claude-Code-Plugin-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Claude-Code-Plugin-v1.0.7.zip)
-- [مهارة Agent Skill المحمولة — AI-Live-Translator-Agent-Skill-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Agent-Skill-v1.0.7.zip)
-- [حزمة المصدر — AI-Live-Translator-Source-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Source-v1.0.7.zip)
+- [إضافة ChatGPT — AI-Live-Translator-ChatGPT-Plugin-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-ChatGPT-Plugin-v1.0.8.zip)
+- [إضافة Codex — AI-Live-Translator-Codex-Plugin-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-Codex-Plugin-v1.0.8.zip)
+- [إضافة Claude Code — AI-Live-Translator-Claude-Code-Plugin-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-Claude-Code-Plugin-v1.0.8.zip)
+- [مهارة Agent Skill المحمولة — AI-Live-Translator-Agent-Skill-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-Agent-Skill-v1.0.8.zip)
+- [حزمة المصدر — AI-Live-Translator-Source-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-Source-v1.0.8.zip)
 
 ## أي حزمة تناسب منصتك؟
 
