@@ -99,11 +99,11 @@ class ReleaseTests(unittest.TestCase):
 
     def test_five_release_assets_have_direct_links_in_bilingual_guides(self):
         assets=(
-            'AI-Live-Translator-ChatGPT-Plugin-v1.0.7.zip',
-            'AI-Live-Translator-Codex-Plugin-v1.0.7.zip',
-            'AI-Live-Translator-Claude-Code-Plugin-v1.0.7.zip',
-            'AI-Live-Translator-Agent-Skill-v1.0.7.zip',
-            'AI-Live-Translator-Source-v1.0.7.zip',
+            'AI-Live-Translator-ChatGPT-Plugin-v1.0.8.zip',
+            'AI-Live-Translator-Codex-Plugin-v1.0.8.zip',
+            'AI-Live-Translator-Claude-Code-Plugin-v1.0.8.zip',
+            'AI-Live-Translator-Agent-Skill-v1.0.8.zip',
+            'AI-Live-Translator-Source-v1.0.8.zip',
         )
         base='https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/'
         for filename in ('docs/installation.md','docs/installation.ar.md'):
@@ -128,11 +128,11 @@ class ReleaseTests(unittest.TestCase):
 
     def test_readmes_surface_downloads_and_remove_duplicate_chatgpt_install_section(self):
         assets=(
-            'AI-Live-Translator-ChatGPT-Plugin-v1.0.7.zip',
-            'AI-Live-Translator-Codex-Plugin-v1.0.7.zip',
-            'AI-Live-Translator-Claude-Code-Plugin-v1.0.7.zip',
-            'AI-Live-Translator-Agent-Skill-v1.0.7.zip',
-            'AI-Live-Translator-Source-v1.0.7.zip',
+            'AI-Live-Translator-ChatGPT-Plugin-v1.0.8.zip',
+            'AI-Live-Translator-Codex-Plugin-v1.0.8.zip',
+            'AI-Live-Translator-Claude-Code-Plugin-v1.0.8.zip',
+            'AI-Live-Translator-Agent-Skill-v1.0.8.zip',
+            'AI-Live-Translator-Source-v1.0.8.zip',
         )
         for filename,heading,guide in (('README.md','## Downloads','docs/installation.md'),('README.ar.md','## التنزيلات','docs/installation.ar.md')):
             text=(ROOT/filename).read_text(encoding='utf-8')
