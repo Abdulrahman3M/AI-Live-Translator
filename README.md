@@ -1,4 +1,4 @@
-<h1 align="center">AI Live Translator</h1>
+# AI Live Translator · v1.0.8
 
 <p align="center"><strong>Translate messages both ways.</strong><br />A text-only interpreter for compatible AI assistants.</p>
 
@@ -8,11 +8,11 @@
   <a href="https://github.com/Abdulrahman3M/AI-Live-Translator/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Abdulrahman3M/AI-Live-Translator" alt="MIT license" /></a>
 </p>
 
-![Premium abstract illustration of two conversation panels connected by a bidirectional translation loop](assets/ai-live-translator-hero-v1.0.8.png)
+![Premium abstract illustration of two conversation panels connected by a bidirectional translation loop](assets/ai-live-translator-hero.png)
 
 > **Release status:** Source version **v1.0.8** is prepared. The latest published release is **v1.0.7**; the downloads below stay on v1.0.7 until the v1.0.8 release packages are published.
 
-**[Installation guide](docs/installation.md)** · **[Full setup instructions](plugin/installation/INSTALL.md)** · **[v1.0.8 release notes and file-by-file changes](docs/releases/v1.0.8.md)** · **[Changelog](CHANGELOG.md)**
+**[Choose an installation method](docs/installation.md)** · **[Full setup instructions](plugin/installation/INSTALL.md)** · **[v1.0.8 release notes and file-by-file changes](docs/releases/v1.0.8.md)** · **[Changelog](CHANGELOG.md)**
 
 AI Live Translator turns a compatible AI chat into a bilingual interpreter. Choose two languages, then send messages in either one. Ordinary messages receive **one translation only**; the assistant does not answer their content. Use a clear direct address or `@agent:` to control the session.
 

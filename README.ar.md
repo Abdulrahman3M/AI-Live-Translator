@@ -1,6 +1,6 @@
-<h1 align="center">AI Live Translator</h1>
+# AI Live Translator · v1.0.8
 
-<p align="center"><strong>ترجمة الرسائل في الاتجاهين.</strong><br />مترجم نصي يعمل مع مساعدات الذكاء الاصطناعي المتوافقة.</p>
+<p align="center"><strong>ترجمة الرسائل ذهابًا وإيابًا.</strong><br />مترجم نصي يعمل مع مساعدات الذكاء الاصطناعي المتوافقة.</p>
 
 <p align="center">
   <a href="https://github.com/Abdulrahman3M/AI-Live-Translator/releases"><img src="https://img.shields.io/github/v/release/Abdulrahman3M/AI-Live-Translator?label=آخر%20إصدار" alt="أحدث إصدار منشور" /></a>
@@ -8,11 +8,11 @@
   <a href="https://github.com/Abdulrahman3M/AI-Live-Translator/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Abdulrahman3M/AI-Live-Translator" alt="رخصة MIT" /></a>
 </p>
 
-![تصميم احترافي يوضح واجهتي محادثة بينهما مسار ترجمة ثنائي الاتجاه](assets/ai-live-translator-hero-v1.0.8.png)
+![تصميم احترافي يوضح واجهتي محادثة بينهما مسار ترجمة ثنائي الاتجاه](assets/ai-live-translator-hero.png)
 
 > **حالة الإصدار:** المصدر محدّث إلى **v1.0.8**، بينما أحدث إصدار منشور هو **v1.0.7**. روابط التنزيل أدناه تخص v1.0.7 حتى نشر حزم v1.0.8.
 
-**[دليل التثبيت](docs/installation.ar.md)** · **[خطوات التثبيت الكاملة](plugin/installation/INSTALL.md)** · **[ملاحظات v1.0.8 وقائمة الملفات](docs/releases/v1.0.8.md)** · **[سجل التغييرات](CHANGELOG.md)**
+**[اختر طريقة التثبيت](docs/installation.ar.md)** · **[خطوات التثبيت الكاملة](plugin/installation/INSTALL.md)** · **[ملاحظات v1.0.8 وقائمة الملفات](docs/releases/v1.0.8.md)** · **[سجل التغييرات](CHANGELOG.md)**
 
 يحوّل AI Live Translator محادثة متوافقة إلى مترجم ثنائي اللغة. اختر لغتين، ثم أرسل الرسائل بأي منهما. تحصل الرسائل العادية على **ترجمة واحدة فقط** دون الإجابة عن محتواها. للتحكم، وجّه كلامك للمساعد بوضوح أو استخدم `@agent:`.
 
