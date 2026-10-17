@@ -105,7 +105,7 @@ class ReleaseTests(unittest.TestCase):
             'AI-Live-Translator-Agent-Skill-v1.0.8.zip',
             'AI-Live-Translator-Source-v1.0.8.zip',
         )
-        base='https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/'
+        base='https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/'
         for filename in ('docs/installation.md','docs/installation.ar.md'):
             text=(ROOT/filename).read_text(encoding='utf-8')
             with self.subTest(guide=filename):
