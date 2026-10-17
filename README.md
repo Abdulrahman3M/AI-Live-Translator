@@ -10,7 +10,7 @@
 
 ![Premium abstract illustration of two conversation panels connected by a bidirectional translation loop](assets/ai-live-translator-hero.png)
 
-> **Release status:** Source version **v1.0.8** is prepared. The latest published release is **v1.0.7**; the downloads below stay on v1.0.7 until the v1.0.8 release packages are published.
+> **Latest release:** **v1.0.8** is now published. Choose the matching installation package below; the release notes include a full comparison with v1.0.7.
 
 **[Choose an installation method](docs/installation.md)** · **[Full setup instructions](plugin/installation/INSTALL.md)** · **[v1.0.8 release notes and file-by-file changes](docs/releases/v1.0.8.md)** · **[Changelog](CHANGELOG.md)**
 
@@ -55,13 +55,13 @@ See the [complete v1.0.7 → v1.0.8 comparison and changed-file inventory](docs/
 
 ## Downloads
 
-Choose a package using the [short platform guide](docs/installation.md). These links are for the latest published release, **v1.0.7**:
+Choose a package using the [short platform guide](docs/installation.md). These links are for the latest published release, **v1.0.8**:
 
-- [ChatGPT plugin — AI-Live-Translator-ChatGPT-Plugin-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-ChatGPT-Plugin-v1.0.7.zip)
-- [Codex plugin — AI-Live-Translator-Codex-Plugin-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Codex-Plugin-v1.0.7.zip)
-- [Claude Code plugin — AI-Live-Translator-Claude-Code-Plugin-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Claude-Code-Plugin-v1.0.7.zip)
-- [Portable Agent Skill — AI-Live-Translator-Agent-Skill-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Agent-Skill-v1.0.7.zip)
-- [Source code — AI-Live-Translator-Source-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Source-v1.0.7.zip)
+- [ChatGPT plugin — AI-Live-Translator-ChatGPT-Plugin-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-ChatGPT-Plugin-v1.0.8.zip)
+- [Codex plugin — AI-Live-Translator-Codex-Plugin-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-Codex-Plugin-v1.0.8.zip)
+- [Claude Code plugin — AI-Live-Translator-Claude-Code-Plugin-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-Claude-Code-Plugin-v1.0.8.zip)
+- [Portable Agent Skill — AI-Live-Translator-Agent-Skill-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-Agent-Skill-v1.0.8.zip)
+- [Source code — AI-Live-Translator-Source-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-Source-v1.0.8.zip)
 
 ## Choose an installation method
 
@@ -92,7 +92,7 @@ The project is built from instructions and skills, so it does not contain its ow
 
 ## Voice Turn Management (best effort)
 
-**New concrete examples (unreleased source update):** [16 expected/forbidden voice cases](skills/ai-live-translator/examples/voice-turn-examples.md), plus [structured regression fixtures](skills/ai-live-translator/examples/voice-turn-cases.json). These distinguish host-interim speech from finalized input and audio behavior from text-only instruction preferences.
+**New in v1.0.8:** [16 expected/forbidden voice cases](skills/ai-live-translator/examples/voice-turn-examples.md), plus [structured regression fixtures](skills/ai-live-translator/examples/voice-turn-cases.json). These distinguish host-interim speech from finalized input and audio behavior from text-only instruction preferences.
 
 
 Voice-derived input follows [Voice Turn Management](skills/ai-live-translator/rules/voice-turn-management.md). When the host provides **interim** speech, a breath or brief silence alone should not trigger translation before a thought is complete; finalized chat messages still translate normally without an artificial delay. Once output starts, prioritize finishing the current translation rather than reacting voluntarily to stray background speech. Interpret host transcripts by checking intended foreground speech, the dominant language in the chosen pair, and the translation direction. Ask for clarification if attribution is uncertain; preserve short genuine replies.
