@@ -1,27 +1,18 @@
 # Changelog
 
-## Unreleased (source updates; no new GitHub Release)
+## [1.0.8] — 2026-10-17
 
 ### Added
-- Added detailed worked voice-turn examples showing actual inputs, expected outputs and forbidden interpretations for semantic completion, interruption, speech intent, noise, language direction and controls.
-- Expanded structured voice fixtures with inputs/results/negative cases and linked examples in the SKILL, prompt and policy; added regression validation.
-- Refreshed the English and Arabic project homepages with a new hero image, a v1.0.7-to-v1.0.8 comparison, and clear published-release status.
-
-### Note
-- v1.0.8 source and release notes are prepared, but the GitHub Release and versioned archives have not been published; v1.0.7 remains the latest published release.
-
-
-## [1.0.8] — 2026-10-14
-
-### Added
-- Added host-aware `Voice Turn Management` guidance with semantic completion of interim speech, best-effort uninterrupted translation behavior, and a three-stage intentional-speech / source-language / translation-direction check.
-- Added 12 voice scenario fixtures and regression tests for normal text behavior, uncertain speakers, short complete utterances, background talk, and host interruptions.
-- Added bilingual ChatGPT Advanced Voice limitations and usage guidance.
+- Added host-aware Voice Turn Management for interim and finalized host transcripts, semantic completion guidance, and best-effort active-translation continuity.
+- Added 16 worked voice examples and structured regression fixtures for pauses, speech intent, language direction, interruptions, speaker uncertainty, and controls.
+- Expanded bilingual ChatGPT Advanced Voice guidance and documented host limitations.
 
 ### Improved
-- Preserved the text-only translation contract and explicit agent controls; clearly stated that Markdown skills cannot set silence timers, control voice activity detection, mute microphones, or disable host barge-in.
-- Synchronized versioned plugin metadata and release notes. Previously published v1.0.7 download URLs remain unchanged until the v1.0.8 release assets are published.
+- Refreshed both project homepages with professional hero artwork, a v1.0.7 comparison, and current release package links.
+- Preserved the translation-only contract, explicit controls, and the existing text-message workflow.
 
+### Release
+- Published the ChatGPT, Codex, Claude Code, portable Agent Skill, and complete source ZIP packages for v1.0.8.
 
 ## [1.0.7] — 2026-10-12
 
