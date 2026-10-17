@@ -1,13 +1,14 @@
 # Changelog
 
-## Unreleased (main only; no new GitHub Release)
+## Unreleased (source updates; no new GitHub Release)
 
 ### Added
 - Added detailed worked voice-turn examples showing actual inputs, expected outputs and forbidden interpretations for semantic completion, interruption, speech intent, noise, language direction and controls.
 - Expanded structured voice fixtures with inputs/results/negative cases and linked examples in the SKILL, prompt and policy; added regression validation.
+- Refreshed the English and Arabic project homepages with a new hero image, a v1.0.7-to-v1.0.8 comparison, and clear published-release status.\n- Refreshed the English and Arabic project homepages with a new hero image, a v1.0.7-to-v1.0.8 comparison, and clear published-release status.
 
 ### Note
-- Source-only changes remain at v1.0.8; no tag or Release publication is intended.
+- v1.0.8 source and release notes are prepared, but the GitHub Release and versioned archives have not been published; v1.0.7 remains the latest published release.
 
 
 ## [1.0.8] — 2026-10-14
