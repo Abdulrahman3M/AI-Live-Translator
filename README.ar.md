@@ -10,7 +10,7 @@
 
 ![تصميم احترافي يوضح واجهتي محادثة بينهما مسار ترجمة ثنائي الاتجاه](assets/ai-live-translator-hero.png)
 
-> **حالة الإصدار:** المصدر محدّث إلى **v1.0.8**، بينما أحدث إصدار منشور هو **v1.0.7**. روابط التنزيل أدناه تخص v1.0.7 حتى نشر حزم v1.0.8.
+> **أحدث إصدار:** نُشر **v1.0.8** الآن. اختر حزمة التثبيت المناسبة أدناه، وراجع ملاحظات الإصدار للاطلاع على المقارنة الكاملة مع v1.0.7.
 
 **[اختر طريقة التثبيت](docs/installation.ar.md)** · **[خطوات التثبيت الكاملة](plugin/installation/INSTALL.md)** · **[ملاحظات v1.0.8 وقائمة الملفات](docs/releases/v1.0.8.md)** · **[سجل التغييرات](CHANGELOG.md)**
 
@@ -55,13 +55,13 @@
 
 ## التنزيلات
 
-استخدم [دليل المنصات المختصر](docs/installation.ar.md) لاختيار الحزمة المناسبة. الروابط التالية لأحدث إصدار منشور، **v1.0.7**:
+استخدم [دليل المنصات المختصر](docs/installation.ar.md) لاختيار الحزمة المناسبة. الروابط التالية لأحدث إصدار منشور، **v1.0.8**:
 
-- [إضافة ChatGPT — AI-Live-Translator-ChatGPT-Plugin-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-ChatGPT-Plugin-v1.0.7.zip)
-- [إضافة Codex — AI-Live-Translator-Codex-Plugin-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Codex-Plugin-v1.0.7.zip)
-- [إضافة Claude Code — AI-Live-Translator-Claude-Code-Plugin-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Claude-Code-Plugin-v1.0.7.zip)
-- [مهارة Agent Skill المحمولة — AI-Live-Translator-Agent-Skill-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Agent-Skill-v1.0.7.zip)
-- [حزمة المصدر — AI-Live-Translator-Source-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Source-v1.0.7.zip)
+- [إضافة ChatGPT — AI-Live-Translator-ChatGPT-Plugin-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-ChatGPT-Plugin-v1.0.8.zip)
+- [إضافة Codex — AI-Live-Translator-Codex-Plugin-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-Codex-Plugin-v1.0.8.zip)
+- [إضافة Claude Code — AI-Live-Translator-Claude-Code-Plugin-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-Claude-Code-Plugin-v1.0.8.zip)
+- [مهارة Agent Skill المحمولة — AI-Live-Translator-Agent-Skill-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-Agent-Skill-v1.0.8.zip)
+- [حزمة المصدر — AI-Live-Translator-Source-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-Source-v1.0.8.zip)
 
 ## اختر طريقة التثبيت
 
@@ -97,7 +97,7 @@
 
 ## Voice Turn Management — إدارة أدوار الكلام
 
-**أمثلة عملية جديدة (تعديل على المصدر دون نشر Release):** [16 حالة توضح المدخل الصحيح والنتيجة المتوقعة والخطأ الممنوع](skills/ai-live-translator/examples/voice-turn-examples.md)، مع [حالات اختبار مهيكلة](skills/ai-live-translator/examples/voice-turn-cases.json). تفرق هذه الأمثلة بين النص المؤقت والنص النهائي وبين التحكم الحقيقي في الصوت والتعليمات السلوكية فقط.
+**أمثلة عملية جديدة في الإصدار v1.0.8:** [16 حالة توضح المدخل الصحيح والنتيجة المتوقعة والخطأ الممنوع](skills/ai-live-translator/examples/voice-turn-examples.md)، مع [حالات اختبار مهيكلة](skills/ai-live-translator/examples/voice-turn-cases.json). تفرق هذه الأمثلة بين النص المؤقت والنص النهائي وبين التحكم الحقيقي في الصوت والتعليمات السلوكية فقط.
 
 
 أُضيفت [سياسة إدارة أدوار الكلام](skills/ai-live-translator/rules/voice-turn-management.md) كتعليمات إرشادية عند استخدام الإدخال الصوتي. إذا أتاحت المنصة نصًا صوتيًا مؤقتًا غير مكتمل، فلا يُعتبر التوقف القصير لأخذ النفس دليلًا كافيًا على انتهاء الكلام؛ أما الرسالة المكتملة فتُترجم دون انتظار مصطنع. وعند بدء إخراج الترجمة، تكون الأولوية لإكمالها مرة واحدة بدل الانتقال طوعًا لكلام عابر. تُراجع الرسالة بثلاث خطوات: هل الكلام مقصود أم ضوضاء معروفة؟ ما اللغة الغالبة من اللغتين المحددتين؟ وما لغة الترجمة المقابلة؟ ويُطلب التوضيح عند اختلاط الأصوات بدل التخمين.
