@@ -1,25 +1,61 @@
-# AI Live Translator · v1.0.8
+<h1 align="center">AI Live Translator</h1>
 
-![Two people exchanging messages through a two-way translation loop](assets/ai-live-translator-hero.png)
+<p align="center"><strong>Translate messages both ways.</strong><br />A text-only interpreter for compatible AI assistants.</p>
 
-**Translate messages both ways.** Turn a compatible AI chat into a two-way, message-only interpreter. After activation, choose two languages. Ordinary messages are **translated, not answered**. The assistant only leaves translation-only behavior when the speaker **explicitly addresses the agent** or uses a reserved control command.
+<p align="center">
+  <a href="https://github.com/Abdulrahman3M/AI-Live-Translator/releases"><img src="https://img.shields.io/github/v/release/Abdulrahman3M/AI-Live-Translator?label=latest%20release" alt="Latest published release" /></a>
+  <a href="https://github.com/Abdulrahman3M/AI-Live-Translator/stargazers"><img src="https://img.shields.io/github/stars/Abdulrahman3M/AI-Live-Translator?style=flat&label=stars" alt="GitHub stars" /></a>
+  <a href="https://github.com/Abdulrahman3M/AI-Live-Translator/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Abdulrahman3M/AI-Live-Translator" alt="MIT license" /></a>
+</p>
 
-**Jump to:** [Quick start](#quick-start) · [Downloads](#downloads) · [Choose an installation method](docs/installation.md) · [Full installation guide](plugin/installation/INSTALL.md)
+![Premium abstract illustration of two conversation panels connected by a bidirectional translation loop](assets/ai-live-translator-hero-v1.0.8.png)
+
+> **Release status:** Source version **v1.0.8** is prepared. The latest published release is **v1.0.7**; the downloads below stay on v1.0.7 until the v1.0.8 release packages are published.
+
+**[Installation guide](docs/installation.md)** · **[Full setup instructions](plugin/installation/INSTALL.md)** · **[v1.0.8 release notes and file-by-file changes](docs/releases/v1.0.8.md)** · **[Changelog](CHANGELOG.md)**
+
+AI Live Translator turns a compatible AI chat into a bilingual interpreter. Choose two languages, then send messages in either one. Ordinary messages receive **one translation only**; the assistant does not answer their content. Use a clear direct address or `@agent:` to control the session.
+
+## At a glance
+
+| | |
+| --- | --- |
+| **Two-way translation** | Switches direction based on the language of each message. |
+| **Meaning preserved** | Keeps intent, tone, dialect, names, numbers, dates, negation and formatting. |
+| **Clear controls** | Directly address the agent or use `@agent:` for help, language changes, pause or stop. |
+| **Portable by design** | Includes an Agent Skill and prompt, with host-specific packages and setup guides. |
+
+This project processes text supplied by the host. It does not listen to microphones, translate raw audio or calls, or provide its own translation model. Compatibility and translation quality depend on the host and selected model.
 
 ## Quick start
 
-1. Choose a host-specific route below, or load `skills/ai-live-translator/SKILL.md` / paste `prompt/live-translation.md` into a new session.
+1. Choose a host-specific route below, or load [the portable skill](skills/ai-live-translator/SKILL.md) / [the activation prompt](prompt/live-translation.md).
 2. Activate **AI Live Translator** and choose two languages, such as Arabic and English.
-3. Send messages in either language and receive only the translation in the other. Optional `ME:` / `OTHER:` and `أنا:` / `الطرف الآخر:` labels clarify the speaker.
-4. Control the agent with `@agent:` or a clear direct address at the start of a message. Mentions inside ordinary content are translated.
+3. Send a message in either language and receive only its translation in the other. Optional `ME:` / `OTHER:` labels clarify the speaker.
+4. Use `@agent:` or a clear direct address at the beginning of a message to control the agent. Mentions inside ordinary content are translated.
 
-> **Compatibility matters:** No universal AI-plugin installer exists. The core is an [Agent Skills](https://agentskills.io/specification) skill plus a reusable prompt; Claude Code has a native plugin manifest and command. Codex, Copilot, Gemini, and other hosts need their documented installation method or manual prompt loading. Their higher-priority system policies remain authoritative. This is a text-message interpreter, not a microphone, call, real-time audio, or externally hosted translation service.
+## What's new in v1.0.8
+
+- Adds best-effort **Voice Turn Management** for host-provided interim and finalized transcripts, including a three-step check for intentional speech, source language and translation direction.
+- Adds **16 worked voice examples** and structured regression coverage for pauses, short utterances, background speech, interruptions, speaker uncertainty and controls.
+- Expands English and Arabic ChatGPT guidance and clarifies what text-only skills cannot control in voice mode.
+- Preserves the translation-only contract, explicit controls and the existing text-message workflow.
+
+See the [complete v1.0.7 → v1.0.8 comparison and changed-file inventory](docs/releases/v1.0.8.md).
+
+## v1.0.8 compared with v1.0.7
+
+| Area | v1.0.7 | v1.0.8 |
+| --- | --- | --- |
+| Voice-derived messages | General text-only usage guidance | Best-effort handling of interim versus finalized host transcripts |
+| Turn completion | No dedicated policy | Considers semantic completion when the host exposes interim text |
+| Background speech and interruptions | General voice limitations | Clear speaker-attribution guidance and a preference to finish an active translation where the host permits |
+| Examples and checks | Core translation cases | Worked voice scenarios and structured regression coverage |
+| Host limits | No raw-audio processing | Explicitly documents that the skill cannot control microphones, silence thresholds, noise reduction or barge-in |
 
 ## Downloads
 
-**Current source version: v1.0.8.** The direct links below are for the previously published **v1.0.7** release; they do **not** include the new voice-turn policy. Until v1.0.8 release assets are published, build the updated archives from `main` using the documented builders.
-
-Choose a package using the [short platform guide](docs/installation.md):
+Choose a package using the [short platform guide](docs/installation.md). These links are for the latest published release, **v1.0.7**:
 
 - [ChatGPT plugin — AI-Live-Translator-ChatGPT-Plugin-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-ChatGPT-Plugin-v1.0.7.zip)
 - [Codex plugin — AI-Live-Translator-Codex-Plugin-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Codex-Plugin-v1.0.7.zip)
