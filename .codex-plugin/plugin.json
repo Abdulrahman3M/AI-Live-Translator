@@ -1,7 +1,7 @@
 {
   "name": "ai-live-translator",
-  "version": "1.0.7",
-  "description": "Translate messages both ways",
+  "version": "1.0.8",
+  "description": "Live translation and SRT/ASS subtitle translation",
   "author": {
     "name": "Abdulrahman ElBatrah"
   },
@@ -15,16 +15,17 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "AI Live Translator",
-    "shortDescription": "Translate messages both ways",
-    "longDescription": "Translate ordinary messages naturally in either direction without answering them. Use direct address to control the translator.",
+    "shortDescription": "Live translation and SRT/ASS subtitle translation",
+    "longDescription": "Choose live bilingual translation or translate SRT/ASS subtitles into a styled ASS file.",
     "developerName": "Abdulrahman ElBatrah",
     "category": "Productivity",
     "capabilities": [
       "Two-way text translation",
+      "SRT/ASS subtitle translation",
       "Explicit control routing"
     ],
     "defaultPrompt": [
-      "Start AI Live Translator and ask me which two languages to use."
+      "Open translator home and choose live translation or subtitle translation."
     ],
     "composerIcon": "./assets/ai-live-translator-icon-128.png",
     "logo": "./assets/ai-live-translator-icon-512.png"

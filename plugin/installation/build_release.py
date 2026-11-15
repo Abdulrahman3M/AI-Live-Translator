@@ -113,8 +113,8 @@ def build_archives(output_dir: pathlib.Path = OUTPUT_DIR) -> dict[str, pathlib.P
     """Build and verify the four non-ChatGPT release ZIPs."""
     output_dir = pathlib.Path(output_dir)
     manifests = {
-        ".codex-plugin/plugin.json": (".codex-plugin/plugin.json", "skills/setup/SKILL.md", "skills/ai-live-translator/SKILL.md", "plugin/commands/start.md", "plugin/commands/help.md"),
-        ".claude-plugin/plugin.json": (".claude-plugin/plugin.json", "plugin/commands/start.md", "plugin/commands/help.md", "skills/ai-live-translator/SKILL.md"),
+        ".codex-plugin/plugin.json": (".codex-plugin/plugin.json", "skills/setup/SKILL.md", "skills/ai-live-translator/SKILL.md", "skills/subtitle-translator/SKILL.md", "plugin/commands/start.md", "plugin/commands/help.md"),
+        ".claude-plugin/plugin.json": (".claude-plugin/plugin.json", "plugin/commands/start.md", "plugin/commands/help.md", "skills/ai-live-translator/SKILL.md", "skills/subtitle-translator/SKILL.md"),
     }
     archives: dict[str, pathlib.Path] = {}
 
@@ -124,7 +124,7 @@ def build_archives(output_dir: pathlib.Path = OUTPUT_DIR) -> dict[str, pathlib.P
     _verify_archive(codex_path, required=manifests[".codex-plugin/plugin.json"], manifest_path=".codex-plugin/plugin.json")
     archives["codex"] = codex_path
 
-    claude_files = _collect_paths((".claude-plugin/plugin.json", "LICENSE", "VERSION", "plugin/commands", "skills/ai-live-translator", "prompt"), exclude_tests=True)
+    claude_files = _collect_paths((".claude-plugin/plugin.json", "LICENSE", "VERSION", "plugin/commands", "skills", "prompt"), exclude_tests=True)
     claude_path = output_dir / f"AI-Live-Translator-Claude-Code-Plugin-v{VERSION}.zip"
     _write_archive(claude_path, claude_files)
     _verify_archive(claude_path, required=manifests[".claude-plugin/plugin.json"], manifest_path=".claude-plugin/plugin.json")

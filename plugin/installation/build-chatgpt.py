@@ -8,7 +8,7 @@ import zipfile
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 VERSION = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
 FILES = ["LICENSE", "plugin.json", "README.md"]
-DIRECTORIES = ["assets", "prompt", "skills/ai-live-translator", "skills/setup"]
+DIRECTORIES = ["assets", "prompt", "skills/ai-live-translator", "skills/setup", "skills/subtitle-translator"]
 EXCLUDE_PARTS = {".git", "__pycache__", ".pytest_cache", ".mypy_cache", ".ruff_cache"}
 EXCLUDE_SUFFIXES = {".pyc", ".pyo"}
 OUTPUT = ROOT / "dist" / f"AI-Live-Translator-ChatGPT-Plugin-v{VERSION}.zip"
@@ -22,7 +22,7 @@ def build_archive(output_path=OUTPUT):
         for path in (ROOT / directory).rglob("*"):
             if path.is_file() and not (set(path.relative_to(ROOT).parts) & EXCLUDE_PARTS) and path.suffix not in EXCLUDE_SUFFIXES:
                 included[path.relative_to(ROOT).as_posix()] = path
-    required = ["plugin.json", "skills/setup/SKILL.md", "skills/ai-live-translator/SKILL.md"]
+    required = ["plugin.json", "skills/setup/SKILL.md", "skills/ai-live-translator/SKILL.md", "skills/subtitle-translator/SKILL.md"]
     for path in required:
         if path not in included or not included[path].is_file():
             raise SystemExit(f"Required plugin file missing: {path}")

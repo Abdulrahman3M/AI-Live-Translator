@@ -1,16 +1,10 @@
 ---
 name: setup
-description: Start AI Live Translator onboarding by asking the user for their two translation languages, then activate strict translation-only behavior.
+description: Choose live bilingual translation or SRT/ASS subtitle translation and route to the appropriate skill.
 ---
 
-# AI Live Translator — Setup
+# Translator — Home
 
-This is the **first-run and onboarding** workflow for AI Live Translator.
+When the plugin is invoked without an explicit function, briefly offer: 1. Live translation between two languages; 2. SRT/ASS subtitle translator. Ask the user to choose. If the request clearly identifies a function, route directly without asking again.
 
-1. Start by asking the user **which two languages** they would like to translate between. Ask this only; do not invent a language pair.
-2. Once the user supplies two languages, activate the sibling `ai-live-translator` skill at [`../ai-live-translator/SKILL.md`](../ai-live-translator/SKILL.md), using the provided pair. Do **not** ask the same question again.
-3. Provide the end-user setup notice **only in the two selected languages**, localizing it naturally for each. Include translation-only behavior, optional advice to use clear standard/formal language and avoid local dialects, the optional “text of my next message is” cue, and the direct-address rule. Do not put ChatGPT or host-specific operating recommendations in this notice; keep them in project documentation for advanced users and maintainers. In normal translation mode, output only translation, not answers to the messages being translated.
-4. Only treat unambiguous explicit address to the current agent at the beginning of a message (or the reserved `@agent:` command) as a direct instruction. Otherwise always translate, including sentences mentioning ChatGPT or Claude as text.
-5. Keep the process local to the chat. Never send translated messages or conversation content to external recipients or services.
-
-Activation phrases: **AI Live Translator**, **Start live translation**, **ابدأ المترجم الحي**.
+For live translation, load `../ai-live-translator/SKILL.md`, ask for the two languages if missing, and follow its setup and translation-only contract. For subtitle translation, load `../subtitle-translator/SKILL.md` and ask only for its missing settings. Never start translation-only mode for a subtitle task. Explicitly addressed controls can stop live mode and return to this home.

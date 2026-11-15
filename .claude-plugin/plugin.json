@@ -1,8 +1,8 @@
 {
   "name": "ai-live-translator",
   "displayName": "AI Live Translator",
-  "version": "1.0.7",
-  "description": "Translate messages both ways",
+  "version": "1.0.8",
+  "description": "Live translation and SRT/ASS subtitle translation",
   "author": {
     "name": "Abdulrahman ElBatrah"
   },
@@ -16,7 +16,7 @@
   "commands": {
     "start": {
       "source": "./plugin/commands/start.md",
-      "description": "Start a two-language live translation session"
+      "description": "Choose live translation or subtitle translation"
     },
     "help": {
       "source": "./plugin/commands/help.md",

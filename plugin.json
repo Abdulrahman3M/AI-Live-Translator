@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "ai-live-translator",
-  "version": "1.0.7",
-  "description": "Translate messages both ways",
+  "version": "1.0.8",
+  "description": "Live translation and SRT/ASS subtitle translation",
   "author": {
     "name": "Abdulrahman ElBatrah"
   },
@@ -19,15 +19,15 @@
       "onboardingSkill": "./skills/setup/SKILL.md",
       "interface": {
         "displayName": "AI Live Translator",
-        "shortDescription": "Translate messages both ways",
-        "longDescription": "Activate a two-way text interpreter, choose any two languages, and get only natural translations of ordinary messages. Setup recommends clear standard-language phrasing, explains an optional cue for identifying the text to translate, and describes ChatGPT's written or voice-message workflow plus Voice Advanced. Explicit direct address lets you control the agent, pause, or change languages.",
+        "shortDescription": "Live translation and SRT/ASS subtitle translation",
+        "longDescription": "Choose live bilingual translation or translate SRT/ASS subtitles into an ASS file with optional styling.",
         "composerIcon": "./assets/ai-live-translator-icon-128.png",
         "logo": "./assets/ai-live-translator-icon-512.png",
         "developerName": "Abdulrahman ElBatrah",
         "category": "Productivity",
         "defaultPrompt": [
-          "Start AI Live Translator and ask me which two languages to use.",
-          "ابدأ المترجم الحي واسألني عن اللغتين."
+          "Open translator home and choose live translation or subtitle translation.",
+          "افتح قائمة المترجم واختر الترجمة الحية أو ترجمة ملفات الترجمة."
         ]
       }
     }
