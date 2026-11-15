@@ -17,7 +17,7 @@ python plugin/installation/build-chatgpt.py
 في بعض الأنظمة استخدم `python3` بدلًا من `python`. سيُنشئ السكربت ملفًا مثل:
 
 ```text
-dist/AI-Live-Translator-ChatGPT-Plugin-v1.2.0.zip
+dist/AI-Live-Translator-ChatGPT-Plugin-v1.1.1.zip
 ```
 
 يُؤخذ رقم الإصدار من ملف `VERSION`؛ لذلك استخدم الاسم الذي يطبعه السكربت إذا كان هناك إصدار أحدث. ارفع **ملف ZIP الذي أنشأه السكربت فقط**.

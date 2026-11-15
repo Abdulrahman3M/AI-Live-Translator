@@ -1,7 +1,7 @@
 {
   "name": "AI Live Translator",
   "id": "ai-live-translator",
-  "version": "1.2.0",
+  "version": "1.1.1",
   "description": "Live translation and SRT/ASS subtitle translation",
   "short_description": "Live translation and SRT/ASS subtitle translation",
   "format": "portable-metadata-not-standard-plugin-schema",

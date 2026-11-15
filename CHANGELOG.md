@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.1.1] — 2026-11-15
+
+### Changed
+- Replaced the homepage hero artwork with the approved planet, bilingual chat panels, and bidirectional translation design.
+- Reissued the current project package set as v1.1.1 with synchronized manifests and installation links.
+
+### Notes
+- The v1.2.0 release record remains historical; v1.1.1 is the version explicitly requested for this reissue.
+
 ## [1.2.0] — 2026-11-15
 
 ### Added

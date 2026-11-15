@@ -17,7 +17,7 @@ python plugin/installation/build-chatgpt.py
 On some systems, use `python3` instead of `python`. The script creates:
 
 ```text
-dist/AI-Live-Translator-ChatGPT-Plugin-v1.2.0.zip
+dist/AI-Live-Translator-ChatGPT-Plugin-v1.1.1.zip
 ```
 
 The exact versioned name is taken from the repository's `VERSION` file, so use the name printed by the script if a newer release is present. Upload **that generated file only**.

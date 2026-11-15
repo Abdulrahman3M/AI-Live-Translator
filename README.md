@@ -1,4 +1,4 @@
-# AI Live Translator · v1.2.0
+# AI Live Translator · v1.1.1
 
 <p align="center"><strong>Translate messages both ways.</strong><br />A practical interpreter and subtitle workflow for compatible AI assistants.</p>
 
@@ -10,7 +10,7 @@
 
 ![Premium abstract illustration of two conversation panels connected by a bidirectional translation loop](assets/ai-live-translator-hero.png)
 
-> **Project version:** **v1.2.0**. Choose the package for your assistant below.
+> **Project version:** **v1.1.1**. Choose the package for your assistant below.
 
 **[Choose an installation method](docs/installation.md)** · **[Quick start](#quick-start)** · **[Subtitle translation](#subtitle-translation)** · **[العربية](README.ar.md)**
 
@@ -45,13 +45,13 @@ Large files can be translated in ordered batches with a local resumable checkpoi
 
 ## Downloads
 
-Choose a package using the [short platform guide](docs/installation.md). These links are for **v1.2.0**:
+Choose a package using the [short platform guide](docs/installation.md). These links are for **v1.1.1**:
 
-- [ChatGPT plugin — AI-Live-Translator-ChatGPT-Plugin-v1.2.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.2.0/AI-Live-Translator-ChatGPT-Plugin-v1.2.0.zip)
-- [Codex plugin — AI-Live-Translator-Codex-Plugin-v1.2.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.2.0/AI-Live-Translator-Codex-Plugin-v1.2.0.zip)
-- [Claude Code plugin — AI-Live-Translator-Claude-Code-Plugin-v1.2.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.2.0/AI-Live-Translator-Claude-Code-Plugin-v1.2.0.zip)
-- [Portable Agent Skill — AI-Live-Translator-Agent-Skill-v1.2.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.2.0/AI-Live-Translator-Agent-Skill-v1.2.0.zip)
-- [Source code — AI-Live-Translator-Source-v1.2.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.2.0/AI-Live-Translator-Source-v1.2.0.zip)
+- [ChatGPT plugin — AI-Live-Translator-ChatGPT-Plugin-v1.1.1.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.1/AI-Live-Translator-ChatGPT-Plugin-v1.1.1.zip)
+- [Codex plugin — AI-Live-Translator-Codex-Plugin-v1.1.1.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.1/AI-Live-Translator-Codex-Plugin-v1.1.1.zip)
+- [Claude Code plugin — AI-Live-Translator-Claude-Code-Plugin-v1.1.1.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.1/AI-Live-Translator-Claude-Code-Plugin-v1.1.1.zip)
+- [Portable Agent Skill — AI-Live-Translator-Agent-Skill-v1.1.1.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.1/AI-Live-Translator-Agent-Skill-v1.1.1.zip)
+- [Source code — AI-Live-Translator-Source-v1.1.1.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.1/AI-Live-Translator-Source-v1.1.1.zip)
 
 ## Choose an installation method
 
