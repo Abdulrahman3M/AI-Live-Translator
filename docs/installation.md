@@ -2,15 +2,15 @@
 
 **AI Live Translator** — Translate messages both ways.
 
-## Direct downloads — published v1.1.0
+## Direct downloads — v1.2.0
 
-**The latest published release is v1.1.0.** Download the matching host package below; the [release notes](releases/v1.1.0.md) summarize the changes from v1.0.8.
+Download the matching v1.2.0 host package below; the [release notes](releases/v1.2.0.md) describe the release and its limitations.
 
-- [ChatGPT plugin — AI-Live-Translator-ChatGPT-Plugin-v1.1.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.0/AI-Live-Translator-ChatGPT-Plugin-v1.1.0.zip)
-- [Codex plugin — AI-Live-Translator-Codex-Plugin-v1.1.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.0/AI-Live-Translator-Codex-Plugin-v1.1.0.zip)
-- [Claude Code plugin — AI-Live-Translator-Claude-Code-Plugin-v1.1.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.0/AI-Live-Translator-Claude-Code-Plugin-v1.1.0.zip)
-- [Portable Agent Skill — AI-Live-Translator-Agent-Skill-v1.1.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.0/AI-Live-Translator-Agent-Skill-v1.1.0.zip)
-- [Source code — AI-Live-Translator-Source-v1.1.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.0/AI-Live-Translator-Source-v1.1.0.zip)
+- [ChatGPT plugin — AI-Live-Translator-ChatGPT-Plugin-v1.2.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.2.0/AI-Live-Translator-ChatGPT-Plugin-v1.2.0.zip)
+- [Codex plugin — AI-Live-Translator-Codex-Plugin-v1.2.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.2.0/AI-Live-Translator-Codex-Plugin-v1.2.0.zip)
+- [Claude Code plugin — AI-Live-Translator-Claude-Code-Plugin-v1.2.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.2.0/AI-Live-Translator-Claude-Code-Plugin-v1.2.0.zip)
+- [Portable Agent Skill — AI-Live-Translator-Agent-Skill-v1.2.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.2.0/AI-Live-Translator-Agent-Skill-v1.2.0.zip)
+- [Source code — AI-Live-Translator-Source-v1.2.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.2.0/AI-Live-Translator-Source-v1.2.0.zip)
 
 ## Which package fits?
 

@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.0] — 2026-11-15
+
+### Added
+- Added an optional offline subtitle helper for reference style extraction, SRT/ASS assembly, configurable profiles, and resumable checkpoints tied to the source file.
+- Added synthetic examples and focused checks for timing, overlap, formatting, style references, and interrupted work.
+
+### Improved
+- Clarified direct agent translation, reference precedence, fidelity requirements, and the limits of visual and semantic verification.
+- Redesigned the English and Arabic project homepages around the current capabilities, installation, usage, and limitations.
+
+### Limitations
+- The helper rejects unsupported SRT markup and only restyles single-style ASS files when source and chosen resolutions match. Review font availability, inline overrides, translation quality, and target-player rendering separately.
+
 ## [1.1.0] — 2026-11-15
 
 ### Added

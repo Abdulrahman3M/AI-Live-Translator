@@ -1,6 +1,6 @@
-# AI Live Translator · v1.1.0
+# AI Live Translator · v1.2.0
 
-<p align="center"><strong>Translate messages both ways.</strong><br />A text-only interpreter for compatible AI assistants.</p>
+<p align="center"><strong>Translate messages both ways.</strong><br />A practical interpreter and subtitle workflow for compatible AI assistants.</p>
 
 <p align="center">
   <a href="https://github.com/Abdulrahman3M/AI-Live-Translator/releases"><img src="https://img.shields.io/github/v/release/Abdulrahman3M/AI-Live-Translator?label=latest%20release" alt="Latest published release" /></a>
@@ -10,11 +10,13 @@
 
 ![Premium abstract illustration of two conversation panels connected by a bidirectional translation loop](assets/ai-live-translator-hero.png)
 
-> **Latest release:** **v1.1.0** is now published. Choose the matching installation package below; the release notes include a full comparison with v1.0.7.
+> **Project version:** **v1.2.0**. Choose the package for your assistant below.
 
-**[Choose an installation method](docs/installation.md)** · **[Full setup instructions](plugin/installation/INSTALL.md)** · **[v1.1.0 release notes and file-by-file changes](docs/releases/v1.1.0.md)** · **[Changelog](CHANGELOG.md)**
+**[Choose an installation method](docs/installation.md)** · **[Quick start](#quick-start)** · **[Subtitle translation](#subtitle-translation)** · **[العربية](README.ar.md)**
 
-AI Live Translator turns a compatible AI chat into a bilingual interpreter. Choose two languages, then send messages in either one. Ordinary messages receive **one translation only**; the assistant does not answer their content. Use a clear direct address or `@agent:` to control the session.
+AI Live Translator turns a compatible AI chat into a bilingual interpreter and provides a separate workflow for translating subtitle files. Choose two languages and send messages in either one: ordinary messages receive **one translation only**. To control the interpreter, address the assistant clearly at the start of a message or use `@agent:`. For subtitles, supply an SRT or ASS file and a target language; the assistant translates the content and can prepare a styled ASS file.
+
+**Explore:** [Features](#at-a-glance) · [Live translation](#quick-start) · [Subtitles](#subtitle-translation) · [Downloads](#downloads) · [Voice input](#voice-turn-management-best-effort) · [Architecture](#layout) · [Quality and limitations](#quality--limitations)
 
 ## At a glance
 
@@ -24,6 +26,7 @@ AI Live Translator turns a compatible AI chat into a bilingual interpreter. Choo
 | **Meaning preserved** | Keeps intent, tone, dialect, names, numbers, dates, negation and formatting. |
 | **Clear controls** | Directly address the agent or use `@agent:` for help, language changes, pause or stop. |
 | **Portable by design** | Includes an Agent Skill and prompt, with host-specific packages and setup guides. |
+| **Subtitle workflow** | Translates SRT and ASS into ASS with a configurable design and event-level review. |
 
 This project processes text supplied by the host. It does not listen to microphones, translate raw audio or calls, or provide its own translation model. Compatibility and translation quality depend on the host and selected model.
 
@@ -34,42 +37,27 @@ This project processes text supplied by the host. It does not listen to micropho
 3. Send a message in either language and receive only its translation in the other. Optional `ME:` / `OTHER:` labels clarify the speaker.
 4. Use `@agent:` or a clear direct address at the beginning of a message to control the agent. Mentions inside ordinary content are translated.
 
-## What's new in v1.1.0
+## Subtitle translation
 
-AI Live Translator now includes a dedicated SRT/ASS subtitle translation workflow. It creates a readable ASS file with preserved subtitle order and timing, optional styling, and RTL-aware formatting. Choose it from the translator home, separately from live message translation.
+Choose subtitle translation from the setup menu, then supply an SRT or ASS file and the target language. The assistant translates the content directly in context and delivers ASS; no external upload or separate translation service is required. Specify a dialect, visual preferences, or an ASS reference when desired. Explicit choices take precedence over the reference, which takes precedence over the default design. The assistant preserves event order and timing, reports rounding and unresolved material, and checks the result. A visual check is reported only when performed in a renderer.
 
-## What's new in v1.0.8
-
-- Adds best-effort **Voice Turn Management** for host-provided interim and finalized transcripts, including a three-step check for intentional speech, source language and translation direction.
-- Adds **16 worked voice examples** and structured regression coverage for pauses, short utterances, background speech, interruptions, speaker uncertainty and controls.
-- Expands English and Arabic ChatGPT guidance and clarifies what text-only skills cannot control in voice mode.
-- Preserves the translation-only contract, explicit controls and the existing text-message workflow.
-
-See the [complete v1.0.7 → v1.0.8 comparison and changed-file inventory](docs/releases/v1.0.8.md).
-
-## v1.0.8 compared with v1.0.7
-
-| Area | v1.0.7 | v1.0.8 |
-| --- | --- | --- |
-| Voice-derived messages | General text-only usage guidance | Best-effort handling of interim versus finalized host transcripts |
-| Turn completion | No dedicated policy | Considers semantic completion when the host exposes interim text |
-| Background speech and interruptions | General voice limitations | Clear speaker-attribution guidance and a preference to finish an active translation where the host permits |
-| Examples and checks | Core translation cases | Worked voice scenarios and structured regression coverage |
-| Host limits | No raw-audio processing | Explicitly documents that the skill cannot control microphones, silence thresholds, noise reduction or barge-in |
+Large files can be translated in ordered batches with a local resumable checkpoint where the host permits. The assistant must identify partial work as incomplete. Translation accuracy requires human review; structural checks cannot establish meaning or dialect quality. The optional [offline helper](skills/subtitle-translator/references/local-helper.md) extracts visual settings and assembles agent-authored translations; see its documented format restrictions. See also the [subtitle workflow](skills/subtitle-translator/SKILL.md) and [ASS styling guide](skills/subtitle-translator/references/ass-rtl.md).
 
 ## Downloads
 
-Choose a package using the [short platform guide](docs/installation.md). These links are for the latest published release, **v1.1.0**:
+Choose a package using the [short platform guide](docs/installation.md). These links are for **v1.2.0**:
 
-- [ChatGPT plugin — AI-Live-Translator-ChatGPT-Plugin-v1.1.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.0/AI-Live-Translator-ChatGPT-Plugin-v1.1.0.zip)
-- [Codex plugin — AI-Live-Translator-Codex-Plugin-v1.1.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.0/AI-Live-Translator-Codex-Plugin-v1.1.0.zip)
-- [Claude Code plugin — AI-Live-Translator-Claude-Code-Plugin-v1.1.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.0/AI-Live-Translator-Claude-Code-Plugin-v1.1.0.zip)
-- [Portable Agent Skill — AI-Live-Translator-Agent-Skill-v1.1.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.0/AI-Live-Translator-Agent-Skill-v1.1.0.zip)
-- [Source code — AI-Live-Translator-Source-v1.1.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.0/AI-Live-Translator-Source-v1.1.0.zip)
+- [ChatGPT plugin — AI-Live-Translator-ChatGPT-Plugin-v1.2.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.2.0/AI-Live-Translator-ChatGPT-Plugin-v1.2.0.zip)
+- [Codex plugin — AI-Live-Translator-Codex-Plugin-v1.2.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.2.0/AI-Live-Translator-Codex-Plugin-v1.2.0.zip)
+- [Claude Code plugin — AI-Live-Translator-Claude-Code-Plugin-v1.2.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.2.0/AI-Live-Translator-Claude-Code-Plugin-v1.2.0.zip)
+- [Portable Agent Skill — AI-Live-Translator-Agent-Skill-v1.2.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.2.0/AI-Live-Translator-Agent-Skill-v1.2.0.zip)
+- [Source code — AI-Live-Translator-Source-v1.2.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.2.0/AI-Live-Translator-Source-v1.2.0.zip)
 
 ## Choose an installation method
 
 Use the short [platform installation guide](docs/installation.md) to choose between ChatGPT/Codex plugin packaging, a native Claude Code plugin, or loading the portable skill and prompt in other agents. Complete command-by-command instructions remain in [`plugin/installation/INSTALL.md`](plugin/installation/INSTALL.md).
+
+The standalone Agent Skill archive contains the live interpreter skill. The subtitle workflow and setup menu are included in the ChatGPT, Codex, Claude Code and source packages; use those packages or load [`skills/subtitle-translator`](skills/subtitle-translator/) separately when your host supports it.
 
 ## End-user setup guidance
 
@@ -96,7 +84,7 @@ The project is built from instructions and skills, so it does not contain its ow
 
 ## Voice Turn Management (best effort)
 
-**New in v1.0.8:** [16 expected/forbidden voice cases](skills/ai-live-translator/examples/voice-turn-examples.md), plus [structured regression fixtures](skills/ai-live-translator/examples/voice-turn-cases.json). These distinguish host-interim speech from finalized input and audio behavior from text-only instruction preferences.
+[16 expected/forbidden voice cases](skills/ai-live-translator/examples/voice-turn-examples.md), plus [structured regression fixtures](skills/ai-live-translator/examples/voice-turn-cases.json). These distinguish host-interim speech from finalized input and audio behavior from text-only instruction preferences.
 
 
 Voice-derived input follows [Voice Turn Management](skills/ai-live-translator/rules/voice-turn-management.md). When the host provides **interim** speech, a breath or brief silence alone should not trigger translation before a thought is complete; finalized chat messages still translate normally without an artificial delay. Once output starts, prioritize finishing the current translation rather than reacting voluntarily to stray background speech. Interpret host transcripts by checking intended foreground speech, the dominant language in the chosen pair, and the translation direction. Ask for clarification if attribution is uncertain; preserve short genuine replies.
@@ -118,13 +106,15 @@ Voice-derived input follows [Voice Turn Management](skills/ai-live-translator/ru
 AI-Live-Translator/
 ├── prompt/                          Portable activation and setup prompts
 ├── skills/                          Agent Skills standard
-│   └── ai-live-translator/
+│   ├── ai-live-translator/
 │       ├── SKILL.md                  Portable skill entrypoint
 │       ├── rules/                    Translation and control policies
 │       ├── examples/                 Multilingual gold-standard examples
 │       ├── scripts/                  Python stdlib checks/router demo
 │       ├── references/               Protocol, locale, and examples index
 │       └── assets/                   Skill icon exports
+│   ├── setup/                       Entry menu for available workflows
+│   └── subtitle-translator/         Subtitle instructions, examples, and offline helper
 ├── plugin/                          Host-specific adapters and docs
 │   ├── adapters/
 │   ├── commands/

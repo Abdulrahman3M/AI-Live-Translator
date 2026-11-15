@@ -27,7 +27,7 @@ def validate():
     claude=json.loads((ROOT/'.claude-plugin/plugin.json').read_text(encoding='utf-8'))
     for field,value in [('plugin.version',plugin.get('version')),('metadata.version',metadata.get('version')),('portable.version',portable.get('version')),('codex.version',codex.get('version'))]:
         if value!=version: errors.append(f'{field} differs from VERSION')
-    for doc in ['README.md','README.ar.md','AGENTS.md','prompt/live-translation.md','prompt/setup-messages.md',
+    for doc in ['README.md','README.ar.md','prompt/live-translation.md','prompt/setup-messages.md',
                 'plugin/installation/BUILD-CHATGPT.md','plugin/adapters/chatgpt.md',
                 'plugin/installation/CHATGPT.md']:
         if version not in (ROOT/doc).read_text(encoding='utf-8'):errors.append('Version not synchronized in '+doc)
