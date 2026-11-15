@@ -22,6 +22,11 @@ class SubtitleIntegrationTests(unittest.TestCase):
         for value in ('[Script Info]', '[V4+ Styles]', '[Events]', 'U+202B', r'{\c&H3CC8FF&}', r'\N'):
             self.assertIn(value, ref)
 
+    def test_direct_translation_and_reference_precedence_are_explicit(self):
+        text = (ROOT / 'skills/subtitle-translator/SKILL.md').read_text(encoding='utf-8-sig')
+        for value in ('ordered batches', 'checkpoint', 'external service', 'explicit user choices', 'reference', 'partial'):
+            self.assertIn(value, text)
+
     def test_chatgpt_and_claude_archives_include_subtitle_skill(self):
         for script in ('build-chatgpt.py', 'build_release.py'):
             spec = importlib.util.spec_from_file_location('builder_' + script.replace('-', '_'), ROOT / 'plugin/installation' / script)
@@ -36,6 +41,8 @@ class SubtitleIntegrationTests(unittest.TestCase):
                 with zipfile.ZipFile(output) as archive:
                     self.assertIn('skills/subtitle-translator/SKILL.md', archive.namelist())
                     self.assertIn('skills/subtitle-translator/references/ass-rtl.md', archive.namelist())
+                    self.assertIn('skills/subtitle-translator/scripts/subtitle_tools.py', archive.namelist())
+                    self.assertIn('skills/subtitle-translator/examples/sample-reference.ass', archive.namelist())
                     self.assertIsNone(archive.testzip())
 
 if __name__ == '__main__':
