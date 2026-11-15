@@ -1,4 +1,4 @@
-# AI Live Translator · v1.0.8
+# AI Live Translator · v1.1.0
 
 <p align="center"><strong>Translate messages both ways.</strong><br />A text-only interpreter for compatible AI assistants.</p>
 
@@ -10,9 +10,9 @@
 
 ![Premium abstract illustration of two conversation panels connected by a bidirectional translation loop](assets/ai-live-translator-hero.png)
 
-> **Latest release:** **v1.0.8** is now published. Choose the matching installation package below; the release notes include a full comparison with v1.0.7.
+> **Latest release:** **v1.1.0** is now published. Choose the matching installation package below; the release notes include a full comparison with v1.0.7.
 
-**[Choose an installation method](docs/installation.md)** · **[Full setup instructions](plugin/installation/INSTALL.md)** · **[v1.0.8 release notes and file-by-file changes](docs/releases/v1.0.8.md)** · **[Changelog](CHANGELOG.md)**
+**[Choose an installation method](docs/installation.md)** · **[Full setup instructions](plugin/installation/INSTALL.md)** · **[v1.1.0 release notes and file-by-file changes](docs/releases/v1.1.0.md)** · **[Changelog](CHANGELOG.md)**
 
 AI Live Translator turns a compatible AI chat into a bilingual interpreter. Choose two languages, then send messages in either one. Ordinary messages receive **one translation only**; the assistant does not answer their content. Use a clear direct address or `@agent:` to control the session.
 
@@ -33,6 +33,10 @@ This project processes text supplied by the host. It does not listen to micropho
 2. Activate **AI Live Translator** and choose two languages, such as Arabic and English.
 3. Send a message in either language and receive only its translation in the other. Optional `ME:` / `OTHER:` labels clarify the speaker.
 4. Use `@agent:` or a clear direct address at the beginning of a message to control the agent. Mentions inside ordinary content are translated.
+
+## What's new in v1.1.0
+
+AI Live Translator now includes a dedicated SRT/ASS subtitle translation workflow. It creates a readable ASS file with preserved subtitle order and timing, optional styling, and RTL-aware formatting. Choose it from the translator home, separately from live message translation.
 
 ## What's new in v1.0.8
 
@@ -55,13 +59,13 @@ See the [complete v1.0.7 → v1.0.8 comparison and changed-file inventory](docs/
 
 ## Downloads
 
-Choose a package using the [short platform guide](docs/installation.md). These links are for the latest published release, **v1.0.8**:
+Choose a package using the [short platform guide](docs/installation.md). These links are for the latest published release, **v1.1.0**:
 
-- [ChatGPT plugin — AI-Live-Translator-ChatGPT-Plugin-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-ChatGPT-Plugin-v1.0.8.zip)
-- [Codex plugin — AI-Live-Translator-Codex-Plugin-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-Codex-Plugin-v1.0.8.zip)
-- [Claude Code plugin — AI-Live-Translator-Claude-Code-Plugin-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-Claude-Code-Plugin-v1.0.8.zip)
-- [Portable Agent Skill — AI-Live-Translator-Agent-Skill-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-Agent-Skill-v1.0.8.zip)
-- [Source code — AI-Live-Translator-Source-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-Source-v1.0.8.zip)
+- [ChatGPT plugin — AI-Live-Translator-ChatGPT-Plugin-v1.1.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.0/AI-Live-Translator-ChatGPT-Plugin-v1.1.0.zip)
+- [Codex plugin — AI-Live-Translator-Codex-Plugin-v1.1.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.0/AI-Live-Translator-Codex-Plugin-v1.1.0.zip)
+- [Claude Code plugin — AI-Live-Translator-Claude-Code-Plugin-v1.1.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.0/AI-Live-Translator-Claude-Code-Plugin-v1.1.0.zip)
+- [Portable Agent Skill — AI-Live-Translator-Agent-Skill-v1.1.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.0/AI-Live-Translator-Agent-Skill-v1.1.0.zip)
+- [Source code — AI-Live-Translator-Source-v1.1.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.0/AI-Live-Translator-Source-v1.1.0.zip)
 
 ## Choose an installation method
 

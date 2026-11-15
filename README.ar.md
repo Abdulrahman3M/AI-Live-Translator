@@ -1,4 +1,4 @@
-# AI Live Translator · v1.0.8
+# AI Live Translator · v1.1.0
 
 <p align="center"><strong>ترجمة الرسائل ذهابًا وإيابًا.</strong><br />مترجم نصي يعمل مع مساعدات الذكاء الاصطناعي المتوافقة.</p>
 
@@ -10,9 +10,9 @@
 
 ![تصميم احترافي يوضح واجهتي محادثة بينهما مسار ترجمة ثنائي الاتجاه](assets/ai-live-translator-hero.png)
 
-> **أحدث إصدار:** نُشر **v1.0.8** الآن. اختر حزمة التثبيت المناسبة أدناه، وراجع ملاحظات الإصدار للاطلاع على المقارنة الكاملة مع v1.0.7.
+> **أحدث إصدار:** نُشر **v1.1.0** الآن. اختر حزمة التثبيت المناسبة أدناه، وراجع ملاحظات الإصدار للاطلاع على المقارنة الكاملة مع v1.0.7.
 
-**[اختر طريقة التثبيت](docs/installation.ar.md)** · **[خطوات التثبيت الكاملة](plugin/installation/INSTALL.md)** · **[ملاحظات v1.0.8 وقائمة الملفات](docs/releases/v1.0.8.md)** · **[سجل التغييرات](CHANGELOG.md)**
+**[اختر طريقة التثبيت](docs/installation.ar.md)** · **[خطوات التثبيت الكاملة](plugin/installation/INSTALL.md)** · **[ملاحظات v1.1.0 وقائمة الملفات](docs/releases/v1.1.0.md)** · **[سجل التغييرات](CHANGELOG.md)**
 
 يحوّل AI Live Translator محادثة متوافقة إلى مترجم ثنائي اللغة. اختر لغتين، ثم أرسل الرسائل بأي منهما. تحصل الرسائل العادية على **ترجمة واحدة فقط** دون الإجابة عن محتواها. للتحكم، وجّه كلامك للمساعد بوضوح أو استخدم `@agent:`.
 
@@ -33,6 +33,10 @@
 2. فعّل **AI Live Translator** وحدد لغتين، مثل العربية والإنجليزية.
 3. أرسل رسالة بإحدى اللغتين لتحصل على ترجمتها فقط. ويمكن استخدام `أنا:` و`الطرف الآخر:` لتحديد المتحدث.
 4. للتحكم، استخدم `@agent:` أو خاطب المساعد بوضوح في بداية الرسالة. ذكر اسمه داخل المحتوى العادي يظل جزءًا من النص المترجم.
+
+## الجديد في v1.1.0
+
+أضيف سير عمل مستقل لترجمة ملفات SRT/ASS إلى ملف ASS مقروء مع الحفاظ على ترتيب المقاطع وتوقيتها، وتنسيق اختياري ودعم اتجاه الكتابة من اليمين إلى اليسار. اختره من قائمة المترجم إلى جانب الترجمة الحية.
 
 ## الجديد في v1.0.8
 
@@ -55,13 +59,13 @@
 
 ## التنزيلات
 
-استخدم [دليل المنصات المختصر](docs/installation.ar.md) لاختيار الحزمة المناسبة. الروابط التالية لأحدث إصدار منشور، **v1.0.8**:
+استخدم [دليل المنصات المختصر](docs/installation.ar.md) لاختيار الحزمة المناسبة. الروابط التالية لأحدث إصدار منشور، **v1.1.0**:
 
-- [إضافة ChatGPT — AI-Live-Translator-ChatGPT-Plugin-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-ChatGPT-Plugin-v1.0.8.zip)
-- [إضافة Codex — AI-Live-Translator-Codex-Plugin-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-Codex-Plugin-v1.0.8.zip)
-- [إضافة Claude Code — AI-Live-Translator-Claude-Code-Plugin-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-Claude-Code-Plugin-v1.0.8.zip)
-- [مهارة Agent Skill المحمولة — AI-Live-Translator-Agent-Skill-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-Agent-Skill-v1.0.8.zip)
-- [حزمة المصدر — AI-Live-Translator-Source-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-Source-v1.0.8.zip)
+- [إضافة ChatGPT — AI-Live-Translator-ChatGPT-Plugin-v1.1.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.0/AI-Live-Translator-ChatGPT-Plugin-v1.1.0.zip)
+- [إضافة Codex — AI-Live-Translator-Codex-Plugin-v1.1.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.0/AI-Live-Translator-Codex-Plugin-v1.1.0.zip)
+- [إضافة Claude Code — AI-Live-Translator-Claude-Code-Plugin-v1.1.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.0/AI-Live-Translator-Claude-Code-Plugin-v1.1.0.zip)
+- [مهارة Agent Skill المحمولة — AI-Live-Translator-Agent-Skill-v1.1.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.0/AI-Live-Translator-Agent-Skill-v1.1.0.zip)
+- [حزمة المصدر — AI-Live-Translator-Source-v1.1.0.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.0/AI-Live-Translator-Source-v1.1.0.zip)
 
 ## اختر طريقة التثبيت
 

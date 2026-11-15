@@ -17,7 +17,7 @@ python plugin/installation/build-chatgpt.py
 On some systems, use `python3` instead of `python`. The script creates:
 
 ```text
-dist/AI-Live-Translator-ChatGPT-Plugin-v1.0.8.zip
+dist/AI-Live-Translator-ChatGPT-Plugin-v1.1.0.zip
 ```
 
 The exact versioned name is taken from the repository's `VERSION` file, so use the name printed by the script if a newer release is present. Upload **that generated file only**.
@@ -66,7 +66,7 @@ The tool is built from a prompt and skills, not a dedicated translation model. C
 
 ## Voice Turn Management — what Advanced Voice can and cannot do
 
-The v1.0.8 skill adds [Voice Turn Management](../../skills/ai-live-translator/rules/voice-turn-management.md), with three best-effort behaviors:
+The v1.1.0 skill adds [Voice Turn Management](../../skills/ai-live-translator/rules/voice-turn-management.md), with three best-effort behaviors:
 
 1. **Semantic End-of-Turn Detection:** Prefer a complete thought over a short pause **if interim speech is available to the host/agent**. Do not require a spoken "done" cue or insert a fixed 10-second waiting period. When ChatGPT has already submitted the utterance as a final message, a Markdown skill cannot reopen it or change the endpoint timer.
 2. **Uninterrupted Translation Mode:** Finish the current translation once rather than willingly changing topics for random background speech. However, ChatGPT Voice itself may interrupt spoken output when it detects new speech; the skill cannot mute the microphone or turn off the engine's interruption handling. If playback was cut short, do not assert it completed or repeat an entire translation unprompted.
@@ -76,7 +76,7 @@ The v1.0.8 skill adds [Voice Turn Management](../../skills/ai-live-translator/ru
 
 **Practical checks:** In a fresh ChatGPT conversation, test (a) a natural pause mid-thought, (b) incidental speech while the translation is spoken, and (c) nearby noise plus a short genuine answer. Record separately whether the host cut speech and whether the resulting text translation was faithful; written regression fixtures cannot verify the live microphone or playback behavior.
 
-### Worked voice examples (v1.0.8 source)
+### Worked voice examples (v1.1.0 source)
 
 The [16 worked examples](../../skills/ai-live-translator/examples/voice-turn-examples.md) give a stated host signal, real utterance, expected output and a forbidden mistake. For instance, an **open interim** "أنا كنت عايز..." followed by "أروح السوق بكرة" may wait for semantic completion *if the host allows*; an **already-final** "أنا كنت عايز..." must instead be translated as "I wanted to..." without an artificial delay. During playback of "I'll arrive at eight.", a clearly unrelated "Hey!" should not become a new translation request **if the host permits finishing the output**. This is not a promise that ChatGPT Advanced Voice disables interruptions. See also [structured cases](../../skills/ai-live-translator/examples/voice-turn-cases.json).
 

@@ -1,7 +1,7 @@
 {
   "name": "ai-live-translator",
   "displayName": "AI Live Translator",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "description": "Live translation and SRT/ASS subtitle translation",
   "author": {
     "name": "Abdulrahman ElBatrah"

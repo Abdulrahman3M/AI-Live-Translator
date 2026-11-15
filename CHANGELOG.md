@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.1.0] — 2026-11-15
+
+### Added
+- Added a dedicated SRT/ASS subtitle translation workflow that delivers styled ASS output while preserving event order and timings.
+- Added optional speaker styling, dialect/register guidance, RTL formatting, and structural checks for subtitle package integration.
+
+### Improved
+- Kept subtitle translation separate from live bilingual message translation and updated both project homepages and platform setup guidance.
+- Carried forward host-aware voice-turn guidance and worked examples from v1.0.8.
+
 ## [1.0.8] — 2026-10-17
 
 ### Added

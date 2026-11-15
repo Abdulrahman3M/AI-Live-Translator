@@ -19,14 +19,14 @@ class ReleaseTests(unittest.TestCase):
     def test_package_integrity(self):
         self.assertEqual(validator.validate(),[])
 
-    def test_release_metadata_is_synchronized_to_v1_0_8(self):
-        self.assertEqual((ROOT/'VERSION').read_text(encoding='utf-8').strip(),'1.0.8')
+    def test_release_metadata_is_synchronized_to_v1_1_0(self):
+        self.assertEqual((ROOT/'VERSION').read_text(encoding='utf-8').strip(),'1.1.0')
         for relative in ('plugin.json','.codex-plugin/plugin.json','.claude-plugin/plugin.json','plugin/metadata.json'):
             with self.subTest(manifest=relative):
-                self.assertEqual(json.loads((ROOT/relative).read_text(encoding='utf-8'))['version'],'1.0.8')
-        self.assertEqual((ROOT/'README.md').read_text(encoding='utf-8').splitlines()[0],'# AI Live Translator · v1.0.8')
-        self.assertEqual((ROOT/'README.ar.md').read_text(encoding='utf-8').splitlines()[0],'# AI Live Translator · v1.0.8')
-        self.assertIn('## [1.0.8]',(ROOT/'CHANGELOG.md').read_text(encoding='utf-8'))
+                self.assertEqual(json.loads((ROOT/relative).read_text(encoding='utf-8'))['version'],'1.1.0')
+        self.assertEqual((ROOT/'README.md').read_text(encoding='utf-8').splitlines()[0],'# AI Live Translator · v1.1.0')
+        self.assertEqual((ROOT/'README.ar.md').read_text(encoding='utf-8').splitlines()[0],'# AI Live Translator · v1.1.0')
+        self.assertIn('## [1.1.0]',(ROOT/'CHANGELOG.md').read_text(encoding='utf-8'))
 
     def test_project_hero_is_a_wide_png_referenced_with_localized_alt_text(self):
         hero=ROOT/'assets/ai-live-translator-hero.png'
@@ -59,10 +59,10 @@ class ReleaseTests(unittest.TestCase):
             archives=release_builder.build_archives(Path(directory))
             self.assertEqual(set(archives),{'codex','claude_code','agent_skill','source'})
             expected_names={
-                'codex':'AI-Live-Translator-Codex-Plugin-v1.0.8.zip',
-                'claude_code':'AI-Live-Translator-Claude-Code-Plugin-v1.0.8.zip',
-                'agent_skill':'AI-Live-Translator-Agent-Skill-v1.0.8.zip',
-                'source':'AI-Live-Translator-Source-v1.0.8.zip',
+                'codex':'AI-Live-Translator-Codex-Plugin-v1.1.0.zip',
+                'claude_code':'AI-Live-Translator-Claude-Code-Plugin-v1.1.0.zip',
+                'agent_skill':'AI-Live-Translator-Agent-Skill-v1.1.0.zip',
+                'source':'AI-Live-Translator-Source-v1.1.0.zip',
             }
             for key,archive_path in archives.items():
                 with self.subTest(package=key):
@@ -76,7 +76,7 @@ class ReleaseTests(unittest.TestCase):
                         if key in ('codex','claude_code'):
                             manifest_path='.codex-plugin/plugin.json' if key=='codex' else '.claude-plugin/plugin.json'
                             manifest=json.loads(archive.read(manifest_path))
-                            self.assertEqual(manifest['version'],'1.0.8')
+                            self.assertEqual(manifest['version'],'1.1.0')
                             for field in ('composerIcon','logo'):
                                 asset=manifest.get('interface',{}).get(field)
                                 if isinstance(asset,str) and asset.startswith('./'):
@@ -92,20 +92,20 @@ class ReleaseTests(unittest.TestCase):
                                 self.assertIn(required,names)
                             self.assertFalse(any('/tests/' in name for name in names))
                         else:
-                            source_root='AI-Live-Translator-v1.0.8/'
+                            source_root='AI-Live-Translator-v1.1.0/'
                             self.assertTrue(all(name.startswith(source_root) for name in names))
                             for required in ('VERSION','plugin.json','assets/ai-live-translator-hero.png','skills/ai-live-translator/SKILL.md'):
                                 self.assertIn(source_root+required,names)
 
     def test_five_release_assets_have_direct_links_in_bilingual_guides(self):
         assets=(
-            'AI-Live-Translator-ChatGPT-Plugin-v1.0.8.zip',
-            'AI-Live-Translator-Codex-Plugin-v1.0.8.zip',
-            'AI-Live-Translator-Claude-Code-Plugin-v1.0.8.zip',
-            'AI-Live-Translator-Agent-Skill-v1.0.8.zip',
-            'AI-Live-Translator-Source-v1.0.8.zip',
+            'AI-Live-Translator-ChatGPT-Plugin-v1.1.0.zip',
+            'AI-Live-Translator-Codex-Plugin-v1.1.0.zip',
+            'AI-Live-Translator-Claude-Code-Plugin-v1.1.0.zip',
+            'AI-Live-Translator-Agent-Skill-v1.1.0.zip',
+            'AI-Live-Translator-Source-v1.1.0.zip',
         )
-        base='https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/'
+        base='https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.0/'
         for filename in ('docs/installation.md','docs/installation.ar.md'):
             text=(ROOT/filename).read_text(encoding='utf-8')
             with self.subTest(guide=filename):
@@ -118,7 +118,7 @@ class ReleaseTests(unittest.TestCase):
         self.assertIn('build_release.py',build_text)
 
     def test_english_release_notes_cover_features_and_limits(self):
-        release_notes=ROOT/'docs/releases/v1.0.8.md'
+        release_notes=ROOT/'docs/releases/v1.1.0.md'
         self.assertTrue(release_notes.is_file(),str(release_notes))
         text=release_notes.read_text(encoding='utf-8')
         for phrase in ('bidirectional','text-only','ordinary messages','tone','context','dialect','explicitly addressing the agent','model'):
@@ -128,11 +128,11 @@ class ReleaseTests(unittest.TestCase):
 
     def test_readmes_surface_downloads_and_remove_duplicate_chatgpt_install_section(self):
         assets=(
-            'AI-Live-Translator-ChatGPT-Plugin-v1.0.8.zip',
-            'AI-Live-Translator-Codex-Plugin-v1.0.8.zip',
-            'AI-Live-Translator-Claude-Code-Plugin-v1.0.8.zip',
-            'AI-Live-Translator-Agent-Skill-v1.0.8.zip',
-            'AI-Live-Translator-Source-v1.0.8.zip',
+            'AI-Live-Translator-ChatGPT-Plugin-v1.1.0.zip',
+            'AI-Live-Translator-Codex-Plugin-v1.1.0.zip',
+            'AI-Live-Translator-Claude-Code-Plugin-v1.1.0.zip',
+            'AI-Live-Translator-Agent-Skill-v1.1.0.zip',
+            'AI-Live-Translator-Source-v1.1.0.zip',
         )
         for filename,heading,guide in (('README.md','## Downloads','docs/installation.md'),('README.ar.md','## التنزيلات','docs/installation.ar.md')):
             text=(ROOT/filename).read_text(encoding='utf-8')
