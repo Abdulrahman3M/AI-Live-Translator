@@ -2,9 +2,9 @@
 
 **AI Live Translator** — Translate messages both ways.
 
-## Direct downloads — v1.0.8
+## Direct downloads — published v1.0.8
 
-Download the five v1.0.8 release packages below.
+**The latest published release is v1.0.8.** Download the matching host package below; the [release notes](releases/v1.0.8.md) summarize the changes from v1.0.8.
 
 - [ChatGPT plugin — AI-Live-Translator-ChatGPT-Plugin-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-ChatGPT-Plugin-v1.0.8.zip)
 - [Codex plugin — AI-Live-Translator-Codex-Plugin-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-Codex-Plugin-v1.0.8.zip)
