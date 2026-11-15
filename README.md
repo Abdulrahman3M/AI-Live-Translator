@@ -1,4 +1,4 @@
-# AI Live Translator · v1.0.7
+# AI Live Translator · v1.0.8
 
 ![Two people exchanging messages through a two-way translation loop](assets/ai-live-translator-hero.png)
 
@@ -17,13 +17,15 @@
 
 ## Downloads
 
+**Current source version: v1.0.8.** Download the five v1.0.8 packages below.
+
 Choose a package using the [short platform guide](docs/installation.md):
 
-- [ChatGPT plugin — AI-Live-Translator-ChatGPT-Plugin-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-ChatGPT-Plugin-v1.0.7.zip)
-- [Codex plugin — AI-Live-Translator-Codex-Plugin-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Codex-Plugin-v1.0.7.zip)
-- [Claude Code plugin — AI-Live-Translator-Claude-Code-Plugin-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Claude-Code-Plugin-v1.0.7.zip)
-- [Portable Agent Skill — AI-Live-Translator-Agent-Skill-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Agent-Skill-v1.0.7.zip)
-- [Source code — AI-Live-Translator-Source-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Source-v1.0.7.zip)
+- [ChatGPT plugin — AI-Live-Translator-ChatGPT-Plugin-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-ChatGPT-Plugin-v1.0.8.zip)
+- [Codex plugin — AI-Live-Translator-Codex-Plugin-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-Codex-Plugin-v1.0.8.zip)
+- [Claude Code plugin — AI-Live-Translator-Claude-Code-Plugin-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-Claude-Code-Plugin-v1.0.8.zip)
+- [Portable Agent Skill — AI-Live-Translator-Agent-Skill-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-Agent-Skill-v1.0.8.zip)
+- [Source code — AI-Live-Translator-Source-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-Source-v1.0.8.zip)
 
 ## Choose an installation method
 
@@ -51,6 +53,15 @@ AI Live Translator is designed for use with compatible AI assistants. For ChatGP
 Try both workflows and use the one that works best for your conversation. In either workflow, clearly distinguish your own words from the other person's message when needed, for example “My message:” or “Other person's message:”. Avoid speaking over people, television, or surrounding conversations. The translator receives text supplied by the host; it cannot inspect raw audio or reliably identify an unlabeled voice. If a transcript mixes speakers or includes noise that could affect meaning, request a clean repeat, typed text, or a speaker label instead of guessing. This recommendation reflects the owner's experience with ChatGPT; it is not a guarantee of perfect results.
 
 The project is built from instructions and skills, so it does not contain its own translation model. Other AI assistants may work, but translation quality and adherence to the one-translation-only behavior can vary between models, language pairs and sessions. The selected AI's language ability is the main factor. Review translations involving important or sensitive details.
+
+## Voice Turn Management (best effort)
+
+**New concrete examples (new in v1.0.8):** [16 expected/forbidden voice cases](skills/ai-live-translator/examples/voice-turn-examples.md), plus [structured regression fixtures](skills/ai-live-translator/examples/voice-turn-cases.json). These distinguish host-interim speech from finalized input and audio behavior from text-only instruction preferences.
+
+
+Voice-derived input follows [Voice Turn Management](skills/ai-live-translator/rules/voice-turn-management.md). When the host provides **interim** speech, a breath or brief silence alone should not trigger translation before a thought is complete; finalized chat messages still translate normally without an artificial delay. Once output starts, prioritize finishing the current translation rather than reacting voluntarily to stray background speech. Interpret host transcripts by checking intended foreground speech, the dominant language in the chosen pair, and the translation direction. Ask for clarification if attribution is uncertain; preserve short genuine replies.
+
+**ChatGPT Advanced Voice limitations:** This plugin is a text-only skill, not an audio engine. It cannot change the host's pause threshold, listen to raw sound, perform noise reduction/speaker identification, disable barge-in or guarantee uninterrupted spoken playback. These instructions are preferences **only where the host exposes sufficient context**. See [ChatGPT guidance](docs/agent-guides/CHATGPT.md) and [voice scenario cases](skills/ai-live-translator/examples/voice-turn-cases.json).
 
 ## Translation contract
 
@@ -124,3 +135,7 @@ MIT. See `LICENSE`. For changes, update `VERSION`, root `plugin.json`, host-spec
 After extracting the ZIP, use the guarded scripts in [`plugin/installation/PUBLISHING.md`](plugin/installation/PUBLISHING.md). They create `Abdulrahman3M/AI-Live-Translator` as a **private** repository by default, provided GitHub CLI is authenticated.
 
 **Natural speaker introductions:** `My message:`, `Other person's message:`, and `Say to the other person:` (Arabic: `رسالتي:`, `رسالة الطرف الآخر:`, `قل للطرف الآخر:`) are also recognized as optional speaker markers and removed.
+
+## Subtitle Translation
+
+Start the plugin and choose live translation or SRT/ASS translation. Subtitle translation asks for the target language, dialect and optional speaker colors, then produces an ASS file. See [subtitle skill](skills/subtitle-translator/SKILL.md).

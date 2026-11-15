@@ -1,4 +1,4 @@
-# AI Live Translator · v1.0.7
+# AI Live Translator · v1.0.8
 
 ![شخصان يتبادلان الرسائل عبر حلقة ترجمة ذهابًا وإيابًا](assets/ai-live-translator-hero.png)
 
@@ -15,13 +15,15 @@
 
 ## التنزيلات
 
+**إصدار المصدر الحالي v1.0.8.** حمّل حزم v1.0.8 الخمس أدناه.
+
 استخدم [دليل المنصات المختصر](docs/installation.ar.md) لاختيار الحزمة المناسبة:
 
-- [إضافة ChatGPT — AI-Live-Translator-ChatGPT-Plugin-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-ChatGPT-Plugin-v1.0.7.zip)
-- [إضافة Codex — AI-Live-Translator-Codex-Plugin-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Codex-Plugin-v1.0.7.zip)
-- [إضافة Claude Code — AI-Live-Translator-Claude-Code-Plugin-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Claude-Code-Plugin-v1.0.7.zip)
-- [مهارة Agent Skill المحمولة — AI-Live-Translator-Agent-Skill-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Agent-Skill-v1.0.7.zip)
-- [حزمة المصدر — AI-Live-Translator-Source-v1.0.7.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.7/AI-Live-Translator-Source-v1.0.7.zip)
+- [إضافة ChatGPT — AI-Live-Translator-ChatGPT-Plugin-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-ChatGPT-Plugin-v1.0.8.zip)
+- [إضافة Codex — AI-Live-Translator-Codex-Plugin-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-Codex-Plugin-v1.0.8.zip)
+- [إضافة Claude Code — AI-Live-Translator-Claude-Code-Plugin-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-Claude-Code-Plugin-v1.0.8.zip)
+- [مهارة Agent Skill المحمولة — AI-Live-Translator-Agent-Skill-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-Agent-Skill-v1.0.8.zip)
+- [حزمة المصدر — AI-Live-Translator-Source-v1.0.8.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.0.8/AI-Live-Translator-Source-v1.0.8.zip)
 
 ## اختر طريقة التثبيت
 
@@ -55,6 +57,15 @@
 - يجب أن تكون النتيجة ترجمة واحدة فقط، بلا تكرار أو إجابة أو شرح.
 - في اللغات أو اللهجات الأقل شيوعًا، اكتب اسم اللغة أو اللهجة بوضوح عند التفعيل، وراجع الأسماء والأرقام والنفي والتفاصيل المهمة.
 
+## Voice Turn Management — إدارة أدوار الكلام
+
+**أمثلة عملية جديدة (جديد في v1.0.8):** [16 حالة توضح المدخل الصحيح والنتيجة المتوقعة والخطأ الممنوع](skills/ai-live-translator/examples/voice-turn-examples.md)، مع [حالات اختبار مهيكلة](skills/ai-live-translator/examples/voice-turn-cases.json). تفرق هذه الأمثلة بين النص المؤقت والنص النهائي وبين التحكم الحقيقي في الصوت والتعليمات السلوكية فقط.
+
+
+أُضيفت [سياسة إدارة أدوار الكلام](skills/ai-live-translator/rules/voice-turn-management.md) كتعليمات إرشادية عند استخدام الإدخال الصوتي. إذا أتاحت المنصة نصًا صوتيًا مؤقتًا غير مكتمل، فلا يُعتبر التوقف القصير لأخذ النفس دليلًا كافيًا على انتهاء الكلام؛ أما الرسالة المكتملة فتُترجم دون انتظار مصطنع. وعند بدء إخراج الترجمة، تكون الأولوية لإكمالها مرة واحدة بدل الانتقال طوعًا لكلام عابر. تُراجع الرسالة بثلاث خطوات: هل الكلام مقصود أم ضوضاء معروفة؟ ما اللغة الغالبة من اللغتين المحددتين؟ وما لغة الترجمة المقابلة؟ ويُطلب التوضيح عند اختلاط الأصوات بدل التخمين.
+
+**حدود ChatGPT Advanced Voice:** المهارة نصية ولا تستطيع ضبط زمن الصمت أو التحكم بالميكروفون أو حجب المقاطعات صوتيًا أو إزالة الضوضاء الخام، ولا تضمن اكتمال النطق إذا قاطعته المنصة. راجع [دليل ChatGPT](docs/agent-guides/CHATGPT.ar.md) و[حالات الاختبار](skills/ai-live-translator/examples/voice-turn-cases.json).
+
 ## القواعد الرئيسية
 
 - ممنوع الإجابة عن الأسئلة العادية أو شرح الترجمة أو تقديم نصائح إضافية.
@@ -70,3 +81,7 @@
 بعد فك الضغط، يمكنك نشر المشروع على حسابك من خلال التعليمات في `plugin/installation/PUBLISHING.md`؛ الإعداد الافتراضي هو إنشاء مستودع **خاص** باسم `Abdulrahman3M/AI-Live-Translator`.
 
 **مقدمات اختيارية للرسائل:** يمكنك بدء الكلام بـ `رسالتي:` أو `رسالة الطرف الآخر:` أو `قل للطرف الآخر:` ثم كتابة الرسالة مباشرةً؛ ستُحذف المقدمة من النص المترجم.
+
+## ترجمة ملفات الترجمة
+
+ابدأ الإضافة واختر الترجمة الحية أو ترجمة ملفات SRT/ASS. تسأل المهارة عن لغة الهدف واللهجة والتلوين الاختياري، وتنتج ملف ASS. راجع [مهارة الترجمة](skills/subtitle-translator/SKILL.md).
