@@ -27,6 +27,21 @@ class SubtitleIntegrationTests(unittest.TestCase):
         for value in ('ordered batches', 'checkpoint', 'external service', 'explicit user choices', 'reference', 'partial'):
             self.assertIn(value, text)
 
+    def test_persistent_execution_contract_is_packaged_in_each_subtitle_plugin(self):
+        for script in ('build-chatgpt.py', 'build_release.py'):
+            spec = importlib.util.spec_from_file_location('persistent_' + script.replace('-', '_'), ROOT / 'plugin/installation' / script)
+            module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(module)
+            with tempfile.TemporaryDirectory() as temp:
+                paths = [pathlib.Path(temp) / 'chatgpt.zip'] if script == 'build-chatgpt.py' else list(module.build_archives(pathlib.Path(temp)).values())[:2]
+                if script == 'build-chatgpt.py':
+                    module.build_archive(paths[0])
+                for path in paths:
+                    with zipfile.ZipFile(path) as archive:
+                        contract = archive.read('skills/subtitle-translator/SKILL.md').decode('utf-8')
+                        for phrase in ('large event count', 'ordered batches', 'existing goal', 'without confirmation', 'every source event', 'partial output'):
+                            self.assertIn(phrase, contract, str(path))
+
     def test_chatgpt_and_claude_archives_include_subtitle_skill(self):
         for script in ('build-chatgpt.py', 'build_release.py'):
             spec = importlib.util.spec_from_file_location('builder_' + script.replace('-', '_'), ROOT / 'plugin/installation' / script)
