@@ -1,4 +1,4 @@
-# AI Live Translator · v1.1.1
+# AI Live Translator · v1.2.1
 
 <p align="center"><strong>ترجمة الرسائل ذهابًا وإيابًا.</strong><br />مترجم عملي للرسائل وملفات الترجمة يعمل مع مساعدات الذكاء الاصطناعي المتوافقة.</p>
 
@@ -10,7 +10,7 @@
 
 ![تصميم احترافي يوضح واجهتي محادثة بينهما مسار ترجمة ثنائي الاتجاه](assets/ai-live-translator-hero.png)
 
-> **إصدار المشروع:** **v1.1.1**. اختر حزمة التثبيت المناسبة أدناه.
+> **إصدار المشروع:** **v1.2.1**. اختر حزمة التثبيت المناسبة أدناه.
 
 **[اختر طريقة التثبيت](docs/installation.ar.md)** · **[ابدأ بسرعة](#ابدأ-بسرعة)** · **[ترجمة الملفات](#ترجمة-ملفات-الترجمة)** · **[English](README.md)**
 
@@ -41,17 +41,17 @@
 
 اختر ترجمة الملفات من قائمة الإعداد، ثم قدّم ملف SRT أو ASS وحدد اللغة المستهدفة. يترجم المساعد النص بنفسه في سياقه ويسلّم ملف ASS، دون اشتراط رفعه إلى خدمة خارجية أو تثبيت أداة ترجمة مستقلة. يمكنك تحديد اللهجة أو التنسيق أو تقديم ملف ASS مرجعي؛ تتقدم اختياراتك على المرجع، ويتقدم المرجع على التصميم الافتراضي. يحافظ المساعد على ترتيب المقاطع وتوقيتها، ويذكر التقريب والمواضع غير المحسومة، ولا يدّعي فحص المظهر إلا عند عرضه فعليًا في مشغّل.
 
-يمكن معالجة الملفات الكبيرة على دفعات مرتبة مع حفظ نقطة استئناف محلية عندما تسمح البيئة بذلك، مع توضيح أي عمل غير مكتمل. تحتاج جودة المعنى واللهجة إلى مراجعة بشرية؛ لا تثبت الفحوص الشكلية دقة الترجمة. تستخرج [الأداة المحلية الاختيارية](skills/subtitle-translator/references/local-helper.md) إعدادات التصميم وتجمع الترجمات التي يكتبها المساعد؛ راجع القيود الموضحة فيها. راجع أيضًا [تعليمات ترجمة الملفات](skills/subtitle-translator/SKILL.md) و[دليل تنسيق ASS](skills/subtitle-translator/references/ass-rtl.md).
+تُعالج الملفات الكبيرة على دفعات مرتبة، ولا يُعد حجم الملف وحده سببًا للتوقف. يمكن استخدام آلية Goal المتاحة عندما تسمح قواعد المنصة وتفويض المستخدم، وتطبق شروط الإنجاز نفسها عند عدم توفرها. وتُحفظ نقطة استئناف محلية عندما تسمح البيئة بذلك، مع توضيح أي عمل غير مكتمل. تحتاج جودة المعنى واللهجة إلى مراجعة بشرية؛ لا تثبت الفحوص الشكلية دقة الترجمة. تستخرج [الأداة المحلية الاختيارية](skills/subtitle-translator/references/local-helper.md) إعدادات التصميم وتجمع الترجمات التي يكتبها المساعد؛ راجع القيود الموضحة فيها. راجع أيضًا [تعليمات ترجمة الملفات](skills/subtitle-translator/SKILL.md) و[دليل تنسيق ASS](skills/subtitle-translator/references/ass-rtl.md).
 
 ## التنزيلات
 
-استخدم [دليل المنصات المختصر](docs/installation.ar.md) لاختيار الحزمة المناسبة. الروابط التالية للإصدار **v1.1.1**:
+استخدم [دليل المنصات المختصر](docs/installation.ar.md) لاختيار الحزمة المناسبة. الروابط التالية للإصدار **v1.2.1**:
 
-- [إضافة ChatGPT — AI-Live-Translator-ChatGPT-Plugin-v1.1.1.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.1/AI-Live-Translator-ChatGPT-Plugin-v1.1.1.zip)
-- [إضافة Codex — AI-Live-Translator-Codex-Plugin-v1.1.1.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.1/AI-Live-Translator-Codex-Plugin-v1.1.1.zip)
-- [إضافة Claude Code — AI-Live-Translator-Claude-Code-Plugin-v1.1.1.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.1/AI-Live-Translator-Claude-Code-Plugin-v1.1.1.zip)
-- [مهارة Agent Skill المحمولة — AI-Live-Translator-Agent-Skill-v1.1.1.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.1/AI-Live-Translator-Agent-Skill-v1.1.1.zip)
-- [حزمة المصدر — AI-Live-Translator-Source-v1.1.1.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.1/AI-Live-Translator-Source-v1.1.1.zip)
+- [إضافة ChatGPT — AI-Live-Translator-ChatGPT-Plugin-v1.2.1.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.2.1/AI-Live-Translator-ChatGPT-Plugin-v1.2.1.zip)
+- [إضافة Codex — AI-Live-Translator-Codex-Plugin-v1.2.1.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.2.1/AI-Live-Translator-Codex-Plugin-v1.2.1.zip)
+- [إضافة Claude Code — AI-Live-Translator-Claude-Code-Plugin-v1.2.1.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.2.1/AI-Live-Translator-Claude-Code-Plugin-v1.2.1.zip)
+- [مهارة Agent Skill المحمولة — AI-Live-Translator-Agent-Skill-v1.2.1.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.2.1/AI-Live-Translator-Agent-Skill-v1.2.1.zip)
+- [حزمة المصدر — AI-Live-Translator-Source-v1.2.1.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.2.1/AI-Live-Translator-Source-v1.2.1.zip)
 
 ## اختر طريقة التثبيت
 

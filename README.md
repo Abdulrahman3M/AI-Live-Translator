@@ -1,4 +1,4 @@
-# AI Live Translator · v1.1.1
+# AI Live Translator · v1.2.1
 
 <p align="center"><strong>Translate messages both ways.</strong><br />A practical interpreter and subtitle workflow for compatible AI assistants.</p>
 
@@ -10,7 +10,7 @@
 
 ![Premium abstract illustration of two conversation panels connected by a bidirectional translation loop](assets/ai-live-translator-hero.png)
 
-> **Project version:** **v1.1.1**. Choose the package for your assistant below.
+> **Project version:** **v1.2.1**. Choose the package for your assistant below.
 
 **[Choose an installation method](docs/installation.md)** · **[Quick start](#quick-start)** · **[Subtitle translation](#subtitle-translation)** · **[العربية](README.ar.md)**
 
@@ -41,17 +41,17 @@ This project processes text supplied by the host. It does not listen to micropho
 
 Choose subtitle translation from the setup menu, then supply an SRT or ASS file and the target language. The assistant translates the content directly in context and delivers ASS; no external upload or separate translation service is required. Specify a dialect, visual preferences, or an ASS reference when desired. Explicit choices take precedence over the reference, which takes precedence over the default design. The assistant preserves event order and timing, reports rounding and unresolved material, and checks the result. A visual check is reported only when performed in a renderer.
 
-Large files can be translated in ordered batches with a local resumable checkpoint where the host permits. The assistant must identify partial work as incomplete. Translation accuracy requires human review; structural checks cannot establish meaning or dialect quality. The optional [offline helper](skills/subtitle-translator/references/local-helper.md) extracts visual settings and assembles agent-authored translations; see its documented format restrictions. See also the [subtitle workflow](skills/subtitle-translator/SKILL.md) and [ASS styling guide](skills/subtitle-translator/references/ass-rtl.md).
+Large files are translated in ordered batches; their size alone is not a reason to stop. Where host rules and user authorization allow, an available goal mechanism can track completion; the same execution contract applies without it. A local resumable checkpoint is kept where the host permits. The assistant must identify partial work as incomplete. Translation accuracy requires human review; structural checks cannot establish meaning or dialect quality. The optional [offline helper](skills/subtitle-translator/references/local-helper.md) extracts visual settings and assembles agent-authored translations; see its documented format restrictions. See also the [subtitle workflow](skills/subtitle-translator/SKILL.md) and [ASS styling guide](skills/subtitle-translator/references/ass-rtl.md).
 
 ## Downloads
 
-Choose a package using the [short platform guide](docs/installation.md). These links are for **v1.1.1**:
+Choose a package using the [short platform guide](docs/installation.md). These links are for **v1.2.1**:
 
-- [ChatGPT plugin — AI-Live-Translator-ChatGPT-Plugin-v1.1.1.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.1/AI-Live-Translator-ChatGPT-Plugin-v1.1.1.zip)
-- [Codex plugin — AI-Live-Translator-Codex-Plugin-v1.1.1.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.1/AI-Live-Translator-Codex-Plugin-v1.1.1.zip)
-- [Claude Code plugin — AI-Live-Translator-Claude-Code-Plugin-v1.1.1.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.1/AI-Live-Translator-Claude-Code-Plugin-v1.1.1.zip)
-- [Portable Agent Skill — AI-Live-Translator-Agent-Skill-v1.1.1.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.1/AI-Live-Translator-Agent-Skill-v1.1.1.zip)
-- [Source code — AI-Live-Translator-Source-v1.1.1.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.1/AI-Live-Translator-Source-v1.1.1.zip)
+- [ChatGPT plugin — AI-Live-Translator-ChatGPT-Plugin-v1.2.1.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.2.1/AI-Live-Translator-ChatGPT-Plugin-v1.2.1.zip)
+- [Codex plugin — AI-Live-Translator-Codex-Plugin-v1.2.1.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.2.1/AI-Live-Translator-Codex-Plugin-v1.2.1.zip)
+- [Claude Code plugin — AI-Live-Translator-Claude-Code-Plugin-v1.2.1.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.2.1/AI-Live-Translator-Claude-Code-Plugin-v1.2.1.zip)
+- [Portable Agent Skill — AI-Live-Translator-Agent-Skill-v1.2.1.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.2.1/AI-Live-Translator-Agent-Skill-v1.2.1.zip)
+- [Source code — AI-Live-Translator-Source-v1.2.1.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.2.1/AI-Live-Translator-Source-v1.2.1.zip)
 
 ## Choose an installation method
 

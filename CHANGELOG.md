@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.2.1] — 2026-11-17
+
+- Strengthened subtitle task persistence, completion checks and resumable progress reporting.
+- Documented conditional goal use and preserved the same execution contract when goals are unavailable.
+- Publish this release as a pre-release for evaluation.
+
 ## [1.1.1] — 2026-11-15
 
 ### Changed
