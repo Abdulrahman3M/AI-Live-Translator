@@ -30,3 +30,6 @@ venv/
 .DS_Store
 Thumbs.db
 Desktop.ini
+
+# Isolated local task workspace
+.workspace/

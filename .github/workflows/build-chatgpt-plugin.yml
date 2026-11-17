@@ -42,7 +42,11 @@ jobs:
           if gh release view "$tag" >/dev/null 2>&1; then
             gh release upload "$tag" dist/*.zip --clobber
           else
-            gh release create "$tag" dist/*.zip \
+            release_flags=()
+            if [ "$tag" = "v1.2.1" ]; then
+              release_flags+=(--prerelease --latest=false)
+            fi
+            gh release create "$tag" dist/*.zip "${release_flags[@]}" \
               --title "AI Live Translator $tag" \
               --notes-file "docs/releases/v$(cat VERSION).md"
           fi
