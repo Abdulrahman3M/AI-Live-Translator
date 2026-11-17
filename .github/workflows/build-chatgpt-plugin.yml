@@ -43,7 +43,7 @@ jobs:
             gh release upload "$tag" dist/*.zip --clobber
           else
             release_flags=()
-            if [ "$tag" = "v1.2.1" ]; then
+            if [ "$tag" = "v1.1.2" ]; then
               release_flags+=(--prerelease --latest=false)
             fi
             gh release create "$tag" dist/*.zip "${release_flags[@]}" \

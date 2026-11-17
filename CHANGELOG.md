@@ -1,7 +1,8 @@
 # Changelog
 
-## [1.2.1] — 2026-11-17
+## [1.1.2] — 2026-11-17
 
+- Reissued the pre-release package set as v1.1.2 with corrected version metadata.
 - Strengthened subtitle task persistence, completion checks and resumable progress reporting.
 - Documented conditional goal use and preserved the same execution contract when goals are unavailable.
 - Publish this release as a pre-release for evaluation.

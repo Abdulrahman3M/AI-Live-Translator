@@ -1,4 +1,4 @@
-# AI Live Translator · v1.2.1
+# AI Live Translator · v1.1.2
 
 <p align="center"><strong>ترجمة الرسائل ذهابًا وإيابًا.</strong><br />مترجم عملي للرسائل وملفات الترجمة يعمل مع مساعدات الذكاء الاصطناعي المتوافقة.</p>
 
@@ -10,7 +10,7 @@
 
 ![تصميم احترافي يوضح واجهتي محادثة بينهما مسار ترجمة ثنائي الاتجاه](assets/ai-live-translator-hero.png)
 
-> **إصدار المشروع:** **v1.2.1**. اختر حزمة التثبيت المناسبة أدناه.
+> **إصدار المشروع:** **v1.1.2**. اختر حزمة التثبيت المناسبة أدناه.
 
 **[اختر طريقة التثبيت](docs/installation.ar.md)** · **[ابدأ بسرعة](#ابدأ-بسرعة)** · **[ترجمة الملفات](#ترجمة-ملفات-الترجمة)** · **[English](README.md)**
 
@@ -45,13 +45,13 @@
 
 ## التنزيلات
 
-استخدم [دليل المنصات المختصر](docs/installation.ar.md) لاختيار الحزمة المناسبة. الروابط التالية للإصدار **v1.2.1**:
+استخدم [دليل المنصات المختصر](docs/installation.ar.md) لاختيار الحزمة المناسبة. الروابط التالية للإصدار **v1.1.2**:
 
-- [إضافة ChatGPT — AI-Live-Translator-ChatGPT-Plugin-v1.2.1.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.2.1/AI-Live-Translator-ChatGPT-Plugin-v1.2.1.zip)
-- [إضافة Codex — AI-Live-Translator-Codex-Plugin-v1.2.1.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.2.1/AI-Live-Translator-Codex-Plugin-v1.2.1.zip)
-- [إضافة Claude Code — AI-Live-Translator-Claude-Code-Plugin-v1.2.1.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.2.1/AI-Live-Translator-Claude-Code-Plugin-v1.2.1.zip)
-- [مهارة Agent Skill المحمولة — AI-Live-Translator-Agent-Skill-v1.2.1.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.2.1/AI-Live-Translator-Agent-Skill-v1.2.1.zip)
-- [حزمة المصدر — AI-Live-Translator-Source-v1.2.1.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.2.1/AI-Live-Translator-Source-v1.2.1.zip)
+- [إضافة ChatGPT — AI-Live-Translator-ChatGPT-Plugin-v1.1.2.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.2/AI-Live-Translator-ChatGPT-Plugin-v1.1.2.zip)
+- [إضافة Codex — AI-Live-Translator-Codex-Plugin-v1.1.2.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.2/AI-Live-Translator-Codex-Plugin-v1.1.2.zip)
+- [إضافة Claude Code — AI-Live-Translator-Claude-Code-Plugin-v1.1.2.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.2/AI-Live-Translator-Claude-Code-Plugin-v1.1.2.zip)
+- [مهارة Agent Skill المحمولة — AI-Live-Translator-Agent-Skill-v1.1.2.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.2/AI-Live-Translator-Agent-Skill-v1.1.2.zip)
+- [حزمة المصدر — AI-Live-Translator-Source-v1.1.2.zip](https://github.com/Abdulrahman3M/AI-Live-Translator/releases/download/v1.1.2/AI-Live-Translator-Source-v1.1.2.zip)
 
 ## اختر طريقة التثبيت
 
